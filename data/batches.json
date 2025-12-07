@@ -1,0 +1,91 @@
+[
+  {
+    "id": "2025S",
+    "name": "2025 春季创业营",
+    "year": 2025,
+    "season": "Spring",
+    "date": "2025-06-08",
+    "location": "北京·中关村国际创新中心",
+    "stats": {
+      "project_count": 57,
+      "acceptance_rate": "1.1%",
+      "phd_ratio": "66.3% 硕士及以上",
+      "researcher_founder_ratio": "59.6%"
+    },
+    "highlights": [
+      "场景智能",
+      "空间/具身智能",
+      "认知智能",
+      "科学智能"
+    ],
+    "description": "驱动创新的根本，是在源头支持那些具备研究能力与动手能力的年轻创始人。"
+  },
+  {
+    "id": "2025F",
+    "name": "2025 秋季创业营",
+    "year": 2025,
+    "season": "Fall",
+    "date": "2025-12-07",
+    "location": "北京·中关村国际创新中心",
+    "stats": {
+      "project_count": 54,
+      "acceptance_rate": "1%",
+      "overseas_experience": "43%",
+      "phd_ratio": "54% 硕士及以上",
+      "researcher_founder_ratio": "42%"
+    },
+    "highlights": [
+      "Agent",
+      "具身 & 智能硬件",
+      "多模态",
+      "AI Coding",
+      "AI for Science",
+      "出海"
+    ],
+    "description": "创新的门槛迅速降低、价值创造逻辑重塑，创新边界不断拓展。"
+  },  
+  {
+    "id": "2024S",
+    "name": "2024 春季创业营",
+    "year": 2024,
+    "season": "Spring",
+    "date": "2024-06-06",
+    "location": "北京·中关村",
+    "stats": {
+      "project_count": 53,
+      "acceptance_rate": "< 1%",
+      "phd_ratio": "70.5% 硕士及以上",
+      "overseas_experience": "53.6%",
+      "founder_age": "平均 28.7 岁"
+    },
+    "highlights": [
+      "多模态",
+      "机器人",
+      "出海",
+      "空间计算"
+    ],
+    "description": "申请人越来越年轻，前沿信号越来越强，具身智能、机器人、科研驱动成为主流。"
+  },
+  {
+    "id": "2024F",
+    "name": "2024 秋季创业营",
+    "year": 2024,
+    "season": "Fall",
+    "date": "2024-12-01",
+    "location": "北京·中关村国际创新中心",
+    "stats": {
+      "project_count": 60,
+      "acceptance_rate": "1%",
+      "phd_ratio": "64% 硕士及以上",
+      "founder_age": "平均 29 岁",
+      "female_founder": "12%"
+    },
+    "highlights": [
+      "大模型",
+      "多模态",
+      "数据",
+      "具身智能"
+    ],
+    "description": "前沿创新信号集中爆发：大模型、多模态、数据与具身智能引领新一轮创业浪潮。"
+  }
+]

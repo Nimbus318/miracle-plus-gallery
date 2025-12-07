@@ -1,0 +1,2237 @@
+[
+  {
+    "id": "2024F-001",
+    "batch_id": "2024F",
+    "name": "OpenCreator",
+    "one_liner": "AIGC 的“乐高式”创作引擎。",
+    "description": "OpenCreator 将所有的创意原子能力集成并“积木化”，让任何人都可以像搭乐高一样，创建出属于自己的 AIGC 创意工作流。OpenCreator 的愿景是：为全球 10 亿内容创作者，创造“创造”本身。",
+    "image_url": "/images/projects/2024F-001.jpg",
+    "tags": [
+      "AIGC",
+      "内容创作",
+      "工具平台"
+    ],
+    "founders": [
+      {
+        "name": "刘小艺",
+        "role": "创始人/CEO",
+        "bio": "本科全国第 7 考入中戏导演系，北大辍学；前百川 AI 产品 Owner；TED x 受邀演讲者；AI 内容创作博主，全网播放量 100w+。",
+        "education": [
+          "中央戏剧学院",
+          "北京大学"
+        ],
+        "work_history": [
+          "百川智能"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-002",
+    "batch_id": "2024F",
+    "name": "智疗 GPT",
+    "one_liner": "匹配临床试验最合适的受试者，加速临床试验最后一公里。",
+    "description": "智疗 GPT 专注于利用生成式 AI 加速临床试验最后一公里，从患者招募到 FDA 申报等，全方位提升试验效率和成功率。通过智能化解决方案和 AI Agent 支持，团队帮助制药公司缩短临床试验研发周期、优化流程，并显著提高药物审批的成功率。",
+    "image_url": "/images/projects/2024F-002.jpg",
+    "tags": [
+      "AI",
+      "医疗健康",
+      "Agent"
+    ],
+    "founders": [
+      {
+        "name": "刘瑞华",
+        "role": "CEO",
+        "bio": "拥有中国科学院的博士学位，并在耶鲁大学完成了生物统计学的博士后研究。她曾创立 CB Payments，成功领导公司在 2020 年成为中国银行美国分行的独家科技合作伙伴，达成 20 亿美元交易量。",
+        "education": [
+          "中国科学院",
+          "Yale"
+        ],
+        "work_history": [
+          "CB Payments"
+        ]
+      },
+      {
+        "name": "李睿",
+        "role": "CTO",
+        "bio": "拥有超过十年的大数据计算、分布式系统和数据库设计领域的研究经验。曾在耶鲁大学等知名学术机构，以及微软和英特尔等科技巨头任职。",
+        "education": [
+          "Yale",
+          "清华大学"
+        ],
+        "work_history": [
+          "Microsoft",
+          "Intel"
+        ]
+      },
+      {
+        "name": "Alexandre Duprey",
+        "role": "CSO",
+        "bio": "具有十年生物科技行业经验，负责领导临床团队进行试验设计、执行和数据分析。曾在 Flagship Pioneering 担任计算科学家团队的负责人，为 Moderna 的创立和 COVID-19 疫苗的开发做出重大贡献。",
+        "education": [
+          "Université Claude Bernard Lyon 1",
+          "INSA Lyon",
+          "Yale"
+        ],
+        "work_history": [
+          "Flagship Pioneering",
+          "Moderna"
+        ]
+      },
+      {
+        "name": "吴睿",
+        "role": "CAIO",
+        "bio": "清华大学钱学森班本科，剑桥大学博士。主导了公司 CancerGPT 的研发并完成交付。",
+        "education": [
+          "清华大学",
+          "Cambridge"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-003",
+    "batch_id": "2024F",
+    "name": "派哟编程拼图",
+    "one_liner": "GPT 老师带孩子玩拼图学编程，4-12 岁创造智能家居机器人。",
+    "description": "GPT 语音老师带 4-12 岁小朋友动手编程，编玩编学解锁创造力，创造小朋友想象当中的智能家居机器人！好玩！有用！全自学！直观有趣不伤眼的实体磁吸拼图搭建程序，激发好奇心。旋钮单步调试程序，灯光呈现计算逻辑，GPT 语音实时指引，目标引导全自学。",
+    "image_url": "/images/projects/2024F-003.jpg",
+    "tags": [
+      "教育",
+      "机器人",
+      "AI",
+      "消费硬件"
+    ],
+    "founders": [
+      {
+        "name": "叶博辰",
+        "role": "CEO",
+        "bio": "北大附小机器人队-保送-人大附中机器人队，前特斯拉电子工程师，25 岁 “21” 年科创教育行业研发经验。18 岁武汉大学自强创业班班长+计算机专业，22 岁特斯拉研发。",
+        "education": [
+          "武汉大学",
+          "人大附中"
+        ],
+        "work_history": [
+          "Tesla"
+        ]
+      },
+      {
+        "name": "未知",
+        "role": "结构&供应链联创",
+        "bio": "人大附中第一实验班、人大附中机器人队及人大附中电子工程社成员，东南大学机械结构 & 供应链毕业，与叶博辰十二年老同学，合伙创业九年。",
+        "education": [
+          "东南大学",
+          "人大附中"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "未知",
+        "role": "营销&设计联创",
+        "bio": "前小米智能家居产品经理，武汉大学产品设计毕业，操盘小米智能家居单品从零到亿。",
+        "education": [
+          "武汉大学"
+        ],
+        "work_history": [
+          "小米"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-004",
+    "batch_id": "2024F",
+    "name": "具身升维科技（LiftAI）",
+    "one_liner": "具身升维科技致力于打造具身智能的视觉中枢，让智能体能够快速重建物理世界并在仿真世界中训练策略。",
+    "description": "具身升维科技专注于训练具身智能的视觉中枢，通过对空间智能的深度应用，帮助具身智能体在复杂环境下快速学习任务。目前主营业务有，快速 3D 物体 / 环境生成与重建，世界模型构建，以及智能体策略训练。",
+    "image_url": "/images/projects/2024F-004.jpg",
+    "tags": [
+      "具身智能",
+      "3D",
+      "AI Infra"
+    ],
+    "founders": [
+      {
+        "name": "任逸飞",
+        "role": "CEO",
+        "bio": "英国帝国理工大学（QS 排名 2）博士三年级，研究方向为机器人与 3D 视觉。硕士毕业于英国帝国理工大学，本科毕业于南开大学。",
+        "education": [
+          "Imperial College London",
+          "南开大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "孔昕",
+        "role": "CTO",
+        "bio": "英国帝国理工大学（QS 排名 2）博士四年级，研究方向为三维计算机视觉，SLAM 以及生成式 AI 大模型。",
+        "education": [
+          "Imperial College London"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-005",
+    "batch_id": "2024F",
+    "name": "叶木科技",
+    "one_liner": "全球最轻时尚 AI 眼镜",
+    "description": "YeahMoo 是一个时尚 AI 眼镜品牌，致力于生产可以全天候佩戴舒适时尚的轻量化 AI 眼镜，将科技真正带入消费者的日常生活。当前智能眼镜市场产品冗多，定义混乱，但是无法真正满足消费者对眼镜舒适时尚的第一性需求。YeahMoo 将会从眼镜行业出发，而不是从消费电子出发，将 AR 光学和大模型技术深度与眼镜行业的产品定义、生产工艺以及市场销售进行结合。",
+    "image_url": "/images/projects/2024F-005.jpg",
+    "tags": [
+      "智能硬件",
+      "AI",
+      "可穿戴设备",
+      "AR"
+    ],
+    "founders": [
+      {
+        "name": "高也",
+        "role": "创新产品经理",
+        "bio": "是市场上唯一兼具消费电子、AR 光学与眼镜行业经验的产品经理。核心成员来自字节跳动锤子科技。",
+        "education": [],
+        "work_history": [
+          "字节跳动",
+          "锤子科技"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-006",
+    "batch_id": "2024F",
+    "name": "枢途科技 Synapath.Ai",
+    "one_liner": "让具身智能机器人今天就“下地干活”。",
+    "description": "枢途科技 Synapath.Ai 以多模态具身智能大模型赋予机器人场景作业能力，结合自主研发的通用化、模块化硬件领先实现了具身智能机器人的商业化落地；枢途致力于“让天下没有难用的机器人”，帮助机器人理解场景和人的作业逻辑，Make Robots WORK。",
+    "image_url": "/images/projects/2024F-006.jpg",
+    "tags": [
+      "具身智能",
+      "机器人",
+      "AI"
+    ],
+    "founders": [
+      {
+        "name": "林啸",
+        "role": "创始人/CEO",
+        "bio": "毕业于美国佐治亚理工学院，师从机器人领域知名专家；科技领域连续创业者，超 7 年机器人开发经验。",
+        "education": [
+          "Georgia Tech"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "卓羽",
+        "role": "联合创始人/COO",
+        "bio": "毕业于上海交通大学，机器人领域超 6 年投资运营经验；曾就职于头部产投及风投，具有丰富的机器人领域资源及落地经验。",
+        "education": [
+          "上海交通大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "Prof. Zhang",
+        "role": "首席顾问",
+        "bio": "香港科技大学郑家纯机器人研究院院长，曾任美国佐治亚理工学院电机及计算机工程院院长。",
+        "education": [],
+        "work_history": [
+          "香港科技大学",
+          "Georgia Tech"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-007",
+    "batch_id": "2024F",
+    "name": "为沃科技",
+    "one_liner": "“1 小时访谈”自主构建企业 AI 内容生产线。",
+    "description": "为沃科技致力于为企业客户打造自适应的 AIGE 内容智能体平台。通过“1 小时访谈”，AIGE 把行业专家经验打造为企业 SOP 生产线，解决 AIGC 方案在企业垂直场景不可用的痛点。与现有智能体平台相比，AIGE 从人工构建工具，升级为 AI 驱动的内容全托管服务，避免由于工具使用不当带来的内容降级，为企业 7x24 小时把控内容品质。",
+    "image_url": "/images/projects/2024F-007.jpg",
+    "tags": [
+      "AI Agent",
+      "内容生产",
+      "SaaS"
+    ],
+    "founders": [
+      {
+        "name": "刘浛",
+        "role": "创始人/CEO",
+        "bio": "国家级海外高层次人才，清华大学软件工程博士、博士后，曾任图灵人工智能研究院技术专家、英国牛津大学区块链研究中心及 Blockhouse 公司资深研究科学家。",
+        "education": [
+          "清华大学",
+          "Oxford"
+        ],
+        "work_history": [
+          "图灵人工智能研究院"
+        ]
+      },
+      {
+        "name": "张华枫",
+        "role": "联合创始人/CTO",
+        "bio": "国家级海外高层次人才，清华大学计算机博士，曾任华为杭州研究所 / 英国爱丁堡研究所 AI 专家工程师。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": [
+          "华为"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-008",
+    "batch_id": "2024F",
+    "name": "首形科技",
+    "one_liner": "超仿生角色人形机器人头+多模态角色扮演大模型。",
+    "description": "首形科技是角色人形机器人技术引领者，专注于研发超仿生角色人形机器人。团队汇聚了来自美国哥伦比亚大学、宾夕法尼亚大学、英国帝国理工学院等全球顶尖学府的顶尖人才，涵盖机器学习、大模型多模态、机械工程、机器人学、具身智能、自然语言处理、计算机视觉、心理学和化学工程等多个领域。",
+    "image_url": "/images/projects/2024F-008.jpg",
+    "tags": [
+      "机器人",
+      "仿生",
+      "AI"
+    ],
+    "founders": [
+      {
+        "name": "胡宇航",
+        "role": "创始人/CEO",
+        "bio": "PhD 哥伦比亚大学，美国自然科学基金会人工智能研究所项目成员，主攻人工智能、机器人领域。自媒体博主：U 航 （全网 50 万粉丝）。",
+        "education": [
+          "Columbia University"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "朱德航",
+        "role": "联合创始人/材料总监",
+        "bio": "美国宾夕法尼亚大学研究生，中国化学奥林匹克竞赛一等奖，专注仿生皮肤硅胶材料技术突破。",
+        "education": [
+          "UPenn"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-009",
+    "batch_id": "2024F",
+    "name": "Monstar 梦塔科技",
+    "one_liner": "用生成式交互做 10000 种活的虚拟生物。",
+    "description": "Monstar 梦塔科技是一个围绕生物类 IP 在 MR 场景下打造创意应用、互动乐园、虚拟宠物、游戏、影视等数字文化产品的科创团队，核心成员来自清华大学创客空间协会数字生命组。梦塔科技致力于在空间计算时代为用户提供最生动的数字生命空间交互，持续探索基于情感计算、人工智能、内容生成、场景交互等领域的核心技术与产品创新。",
+    "image_url": "/images/projects/2024F-009.jpg",
+    "tags": [
+      "空间计算",
+      "MR",
+      "数字人",
+      "娱乐"
+    ],
+    "founders": [
+      {
+        "name": "陶柏帆",
+        "role": "创始人/CEO",
+        "bio": "清华大学博士休学，连续创业者。国内首部空间计算行业白皮书核心编委，12 年空间计算 XR 创客经历，清华大学创客空间协会第 12 届会长。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "毛佳杰",
+        "role": "联合创始人/CTO",
+        "bio": "清华大学数理基础科学本科毕业，4 年大厂游戏 AI 研发经历，小学开始参加物理奥赛与全国信息大赛。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "颖璇",
+        "role": "联合创始人/COO",
+        "bio": "清华大学创客空间技术骨干，伦敦大学学院（UCL）硕士，知名 MR 体验设计师，获得过多项国内、国际大奖。",
+        "education": [
+          "UCL"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-010",
+    "batch_id": "2024F",
+    "name": "知识画家",
+    "one_liner": "一切知识可交互，重塑知识传播生态。",
+    "description": "知识画家致力于用 AI 技术重塑人类的知识传播生态，基于自研交互知识生成引擎，自动将文本知识转换为可交互动画，大幅降低内容生产与传播成本；同时基于全新的交互体验获取步骤级反馈的思维链数据，反哺模型自我进化；团队首先从商业价值巨大的 AI+ 编程知识开始，未来延展到其他高价值知识。",
+    "image_url": "/images/projects/2024F-010.jpg",
+    "tags": [
+      "AI",
+      "教育",
+      "内容生产"
+    ],
+    "founders": [
+      {
+        "name": "冯欣伟",
+        "role": "创始人",
+        "bio": "清华大学硕士，前百度 T8，某大模型核心成员，拥有 10 年以上 NLP 算法研发经验。长期从事大语言模型、智能问答、信息检索、知识图谱等技术的研发与应用。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": [
+          "百度"
+        ]
+      },
+      {
+        "name": "刘斌",
+        "role": "联合创始人",
+        "bio": "清华大学本科，中科院硕士，中国第一个移动搜索引擎易查创始人，曾带领易查获 3000 万美金融资，并在日本获得 3000 万用户和 2 亿年收入。",
+        "education": [
+          "清华大学",
+          "中国科学院"
+        ],
+        "work_history": [
+          "易查"
+        ]
+      },
+      {
+        "name": "秦圣林",
+        "role": "联合创始人",
+        "bio": "清华大学硕士，前百度 T7，萝卜快跑核心成员，长期保持高绩效，既有 10 年以上全栈研发经验，也有数十人产研团队的管理经验。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": [
+          "百度"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-011",
+    "batch_id": "2024F",
+    "name": "Super2Brain",
+    "one_liner": "用多智能体 + 第 2 大脑赋能人类文明。",
+    "description": "昨日萌新 shareAI 专注于使用多智能体技术释放生产力效率，深度赋能人类的日常工作与学习。当前正在开发一款 Super2Brain 产品，专注于信息的“找”和“用”，能够将日常冗余无序的信息转为结构化数据，同时提供一系列的信息搜集、信息整理、信息使用功能，面向企业客户、行业从业者、研究人员和留学生等知识信息过载人群使用。",
+    "image_url": "/images/projects/2024F-011.jpg",
+    "tags": [
+      "AI Agent",
+      "生产力工具",
+      "知识管理"
+    ],
+    "founders": [
+      {
+        "name": "来新璐",
+        "role": "创始人",
+        "bio": "00 后，Llama3 中文版作者（GitHub 4k+ star），百度飞桨、腾讯混元等顶级团队实习，曾在机器之心做讲座，大二上开发过 10 万用户软件，现休学创业中。",
+        "education": [],
+        "work_history": [
+          "百度",
+          "腾讯"
+        ]
+      },
+      {
+        "name": "武执政",
+        "role": "首席科学家",
+        "bio": "香港中文大学（深圳）教授，被评为全球前百分之二的科学家，专注于语音技术研究。他在语音识别和自然语言处理领域有着深厚的造诣。",
+        "education": [
+          "香港中文大学(深圳)"
+        ],
+        "work_history": [
+          "香港中文大学(深圳)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-012",
+    "batch_id": "2024F",
+    "name": "PamirAI",
+    "one_liner": "致力于将个人智能体引入生活空间。",
+    "description": "PamirAI 是一家专注于将大型语言模型（3-7B 参数）嵌入经济高效、节能硬件模块的科技公司。公司致力于成为通用端侧智能部署的标准平台，其模块仅有信用卡大小，无需编程，支持自然语言交互和本地推理，插入企业数据即可使用。产品可轻松集成到现有的家庭、车载和工业空间，实现对隐私数据和智能的便捷访问。",
+    "image_url": "/images/projects/2024F-012.jpg",
+    "tags": [
+      "端侧智能",
+      "智能硬件",
+      "AI",
+      "IoT"
+    ],
+    "founders": [
+      {
+        "name": "叶天奇",
+        "role": "CEO",
+        "bio": "毕业于普渡大学机械工程专业，毕业后投身于 AI 和半导体行业，曾在 Qualcomm 研究院担任 AI 架构研发工程师，在 Amazon 担任算法开发工程师。",
+        "education": [
+          "Purdue University"
+        ],
+        "work_history": [
+          "Qualcomm",
+          "Amazon"
+        ]
+      },
+      {
+        "name": "张城铭",
+        "role": "CTO",
+        "bio": "毕业于普渡大学电子工程专业，毕业后在 Microsoft Surface 团队从事硬件研发，作为核心研发成员参与了 Surface Pro 9、Surface Pro 8、Surface Laptop 4 和 Surface Duo 2 的开发。",
+        "education": [
+          "Purdue University"
+        ],
+        "work_history": [
+          "Microsoft"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-013",
+    "batch_id": "2024F",
+    "name": "朗毅具身智能小脑",
+    "one_liner": "机器人高精度具身智能小脑，赋予机器人更精准灵活的导航避障与空间交互能力。",
+    "description": "朗毅作为机器人技术的上游供应商，为机器人整机厂商提供具身导航、具身感知、具身推理等软硬件一体化解决方案。朗毅赋予每台机器人特斯拉级别的导航和感知能力。",
+    "image_url": "/images/projects/2024F-013.jpg",
+    "tags": [
+      "具身智能",
+      "机器人",
+      "导航",
+      "AI"
+    ],
+    "founders": [
+      {
+        "name": "杨鸿城",
+        "role": "创始人/CEO",
+        "bio": "华中科技大学人工智能博士，武汉 3551 光谷创业人才、湖北省大学生创业大赛亚军。长期从事机器人空间感知领域研究。",
+        "education": [
+          "华中科技大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "岳峥嵘",
+        "role": "联合创始人/COO",
+        "bio": "电子科技大学硕士，6 年创业经历，曾获重庆市创新创业先进个人荣誉。拥有多年机器人系统开发经验的同时聚焦产品运营与营销领域。",
+        "education": [
+          "电子科技大学"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-014",
+    "batch_id": "2024F",
+    "name": "Grained AI",
+    "one_liner": "数据界的淘宝。",
+    "description": "高质量数据集的协作交易平台，从数据流通层面解决数据稀缺问题。",
+    "image_url": "/images/projects/2024F-014.jpg",
+    "tags": [
+      "数据",
+      "平台",
+      "AI Infra"
+    ],
+    "founders": [
+      {
+        "name": "Vivian Hu",
+        "role": "创始人/CEO",
+        "bio": "美国伊利诺伊香槟大学 UIUC 本科 4 年 3 专业（计算机科学，化学，统计），并辅修商业；UIUC 计算机硕士全奖。研究领域为 AI for Science；前 Google，Goldman Sachs 软件算法工程师。",
+        "education": [
+          "UIUC"
+        ],
+        "work_history": [
+          "Google",
+          "Goldman Sachs"
+        ]
+      },
+      {
+        "name": "范昊迪（Anthony）",
+        "role": "联创/CTO",
+        "bio": "美国伊利诺伊大学香槟分校计算机工程大二肄业。五年 RPA 架构师，五年全栈 AI 落地解决方案工程师，ex-Nvidia Tegra SoC 工程师。",
+        "education": [
+          "UIUC"
+        ],
+        "work_history": [
+          "NVIDIA"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-015",
+    "batch_id": "2024F",
+    "name": "凭空捏造机器人科技",
+    "one_liner": "最懂非结构化场景的工业机器人。",
+    "description": "凭空捏造机器人科技致力于开发适用于多样化非结构化环境的工业机器人。凭空捏造创新性地推出了一种基于具身智能技术的欠驱动并联式机器人，旨在为非标准化的仓储和制造领域提供全面的、经济高效的工业自动化解决方案。通过降低工业机器人的部署和使用门槛，公司目标是推动智慧工业的普及，让高科技的工业自动化技术更加亲民。",
+    "image_url": "/images/projects/2024F-015.jpg",
+    "tags": [
+      "机器人",
+      "工业",
+      "具身智能",
+      "智能制造"
+    ],
+    "founders": [
+      {
+        "name": "段昱冰",
+        "role": "创始人/CEO",
+        "bio": "东北大学智能制造工程专业；获得东北大学机械工程学院院长奖章；“挑战杯”中国大学生创业计划竞赛金奖；公开发明专利 9 项。",
+        "education": [
+          "东北大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "吕智锋",
+        "role": "CTO",
+        "bio": "东北大学机械工程专业；全国大学生机器人科技创新大赛特等奖；国际先进机器人及仿真技术大赛冠军。",
+        "education": [
+          "东北大学"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-016",
+    "batch_id": "2024F",
+    "name": "nanoloop 脑回录",
+    "one_liner": "运动脑机接口，让心态可被追踪。",
+    "description": "nanoloop 脑回录专注解码大脑状态，渗透到所有计算领域，为用户带来效率变革，做智能计算终端的情感大脑。前期聚焦运动场景，首先切入高水平运动员群体，通过量化运动心态和情绪等内在状态数据，有效弥补依赖个人经验带来的不及时和不准确问题，帮助运动者提高竞技水平。团队背靠清华大学脑机接口实验室。",
+    "image_url": "/images/projects/2024F-016.jpg",
+    "tags": [
+      "脑机接口",
+      "智能硬件",
+      "运动健康",
+      "可穿戴设备"
+    ],
+    "founders": [
+      {
+        "name": "张昊天",
+        "role": "创始人/CEO",
+        "bio": "清华大学本科＋硕士毕业，工业设计方向。跨学科经历丰富，本科发表设计学顶刊，2 件设计被清华大学留校收藏；清华创客空间第 11 届会长。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "赵志龙",
+        "role": "联合创始人",
+        "bio": "清华大学硕士毕业，设计基础研究方向，主导多个脑机接口跨学科设计研究项目，连续创业者，多年电子消费硬件从业者。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "阮立清",
+        "role": "联合创始人",
+        "bio": "北京大学硕士毕业，数理逻辑方向，曾于北京大学数学研究院工作，从事 AI for Math 相关工作。",
+        "education": [
+          "北京大学"
+        ],
+        "work_history": [
+          "北京大学"
+        ]
+      },
+      {
+        "name": "胡钰",
+        "role": "联合创始人",
+        "bio": "英国皇家艺术学院设计硕士，Textiles soft system 方向，全球性顶级建筑设计公司 Foster+Partners 脑电波可穿戴装置项目负责人。",
+        "education": [
+          "Royal College of Art"
+        ],
+        "work_history": [
+          "Foster+Partners"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-017",
+    "batch_id": "2024F",
+    "name": "AskYourDatabase",
+    "one_liner": "一问即洞察的商业智能 Agent。",
+    "description": "AskYourDatabase 致力于打造 AI 时代的数据分析智能体，让企业决策者无需搭建 Tableau 看板，即可通过对话获取商业洞见，助力企业增长。",
+    "image_url": "/images/projects/2024F-017.jpg",
+    "tags": [
+      "AI Agent",
+      "数据分析",
+      "BI",
+      "SaaS"
+    ],
+    "founders": [
+      {
+        "name": "牛岱",
+        "role": "CEO/CTO",
+        "bio": "毕业于中国科学技术大学计算机系。在字节跳动期间设计数据库自动生成应用工具，AI 技术的突破让创始人愿景得以实现。知名技术博主，知乎粉丝超 7 万。",
+        "education": [
+          "中国科学技术大学"
+        ],
+        "work_history": [
+          "字节跳动"
+        ]
+      },
+      {
+        "name": "David Croom",
+        "role": "VP of Marketing",
+        "bio": "超 20 年 B2B 软件销售经验，曾任 CTO at Hybrid Financial Group，美国人，完成了早期美国市场开拓。",
+        "education": [],
+        "work_history": [
+          "Hybrid Financial Group"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-018",
+    "batch_id": "2024F",
+    "name": "Neusician 神经乐手公司",
+    "one_liner": "无感的脑波调节，改变的不仅仅是失眠。",
+    "description": "Neusician 首创了主动助眠的无感脑波调节技术，一款像 iPod+ 有线耳机的穿戴设备，只为让用户 5 分钟平静，10 分钟睡着；还能调控整个睡眠周期，让人们睡得更香。通过绝无仅有的超声慢波调控，追求极致的产品易用，实现了不打针、不吃药、不刺激。",
+    "image_url": "/images/projects/2024F-018.jpg",
+    "tags": [
+      "脑科学",
+      "智能硬件",
+      "健康",
+      "睡眠"
+    ],
+    "founders": [
+      {
+        "name": "远辉",
+        "role": "首席失眠官",
+        "bio": "慕尼黑工业大学（简称慕工大）电子系博士博后，西电技术物理本硕连读。吉他手，正在自学成才的神经生物学家。",
+        "education": [
+          "Technical University of Munich",
+          "西安电子科技大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "杨虹",
+        "role": "算法工程师",
+        "bio": "慕工大电子计算机系博士，传感器融合和图像重建专家，擅长数学建模、算法设计与软件架构。",
+        "education": [
+          "Technical University of Munich"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "陈泽安",
+        "role": "互联网专家",
+        "bio": "山大本科，软硬件测试开发全栈工程师，就职 Alibaba / Media / Xpeng。二次创业，是团队里的多面手。",
+        "education": [
+          "山东大学"
+        ],
+        "work_history": [
+          "Alibaba",
+          "Midea",
+          "Xpeng"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-019",
+    "batch_id": "2024F",
+    "name": "Poppaws.AI",
+    "one_liner": "让 AI 偶像在粉丝的生活中无处不在。",
+    "description": "北京哼哼唧唧科技有限公司用 AI 扩展粉丝和 Kpop 偶像的交互边界，创造更多更美好的追星体验。核心业务 Poppaws.AI APP，采用 Kpop 偶像的动物塑形象，将其制作成 Gen AI 驱动的桌宠，打造粉丝追星的新入口。",
+    "image_url": "/images/projects/2024F-019.jpg",
+    "tags": [
+      "AI",
+      "娱乐",
+      "社交",
+      "消费应用"
+    ],
+    "founders": [
+      {
+        "name": "何东阳",
+        "role": "创始人/CEO",
+        "bio": "00 后创业者。清华大学本科，大四休学连续创业。曾创办 AI 算命项目“苏打先生”，月营收过万。曾是北京知名 AI 社区“AI Tamer”联创。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "邓鈞元",
+        "role": "联创/CTO",
+        "bio": "00 后极客，连续创业者。悉尼科技大学本科，大二 GAP 创业中。8 岁开始接触编程，具备丰富的技术积累和开发经历。",
+        "education": [
+          "University of Technology Sydney"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "于文浩",
+        "role": "联创/COO",
+        "bio": "清华本硕，连续创业者。曾在红杉中国、鼎辉投资、源码资本、易方达等知名投资机构从事消费软件领域的投资和研究工作。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": [
+          "Sequoia China",
+          "Source Code Capital"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-020",
+    "batch_id": "2024F",
+    "name": "建宇智造",
+    "one_liner": "大模型应用于设施农业的管理，提升设施内作物的光合效率。",
+    "description": "建宇智造——设施农业大模型，可超越人工，对农业设施进行更加精细化、标准化与科学化的管理，能够将设施内作物的光合作用效率拉至接近理论最大值，使得作物能够提早上市至少 3 天，提升产量至少 10%，有效节约人力成本接近 50%。",
+    "image_url": "/images/projects/2024F-020.jpg",
+    "tags": [
+      "农业",
+      "大模型",
+      "AI",
+      "IoT"
+    ],
+    "founders": [
+      {
+        "name": "邹金根",
+        "role": "创始人/CEO",
+        "bio": "北京航空航天大学硕士，北京理工大学博士，农业领域创业多年。",
+        "education": [
+          "北京航空航天大学",
+          "北京理工大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "吴岸城",
+        "role": "联合创始人/CTO",
+        "bio": "浙江大学本科，北京航空航天大学硕士，出版算法相关书籍 3 本，技术类专利 11 项，曾获得阅读理解比赛 Squad2 单模型第一名。",
+        "education": [
+          "浙江大学",
+          "北京航空航天大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "陈昱先",
+        "role": "联合创始人",
+        "bio": "西安电子科技大学硕士，先后任职于百度、阿里云物联网 IOT 架构组，推动行业实例化、物联网云网边端一体、云边协同的架构模式。",
+        "education": [
+          "西安电子科技大学"
+        ],
+        "work_history": [
+          "百度",
+          "阿里云"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-021",
+    "batch_id": "2024F",
+    "name": "NeuraInsight",
+    "one_liner": "AGI 需要的脑科学数据库。",
+    "description": "NeuraInsight 专注于成为 Neuro Data 领域的领军企业，构建全行业 / 情景的先进脑科学数据库。团队在真实生活环境采集某行业的数据，注重“脑电数据+场景数据”的对齐，也整合相关的公开数据集。公司接下来将打造脑电领域的 Scale AI 模式，拓宽宽度，形成可持续发展的闭环。",
+    "image_url": "/images/projects/2024F-021.jpg",
+    "tags": [
+      "脑科学",
+      "数据",
+      "AI Infra",
+      "AGI"
+    ],
+    "founders": [
+      {
+        "name": "谢屯洋",
+        "role": "创始人/CEO",
+        "bio": "剑桥大学数学专业学士、系统生物学专业硕士。有AI制药公司的丰富工作经验。曾在哈佛大学医学院等处做脑科学研究。",
+        "education": [
+          "Cambridge",
+          "Harvard"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "Arnaud Delorme",
+        "role": "教授",
+        "bio": "图卢兹第三大学、UCSF 教授。EEGLAB 主要开发者。总引用量达 42191，位居脑电领域世界前十。",
+        "education": [
+          "Université Paul Sabatier",
+          "UCSF"
+        ],
+        "work_history": [
+          "UCSF"
+        ]
+      },
+      {
+        "name": "王肇凯",
+        "role": "CTO",
+        "bio": "北京航空航天大学计算机专业学士，北京大学经济专业学士（双学位），上海交通大学人工智能博士。前商汤员工。",
+        "education": [
+          "北京航空航天大学",
+          "北京大学",
+          "上海交通大学"
+        ],
+        "work_history": [
+          "商汤科技"
+        ]
+      },
+      {
+        "name": "刘辰飞",
+        "role": "首席工程师",
+        "bio": "清华大学电机工程与应用电子技术系学士，苏黎世联邦理工学院电子信息硕士。前腾讯员工。",
+        "education": [
+          "清华大学",
+          "ETH Zurich"
+        ],
+        "work_history": [
+          "腾讯"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-022",
+    "batch_id": "2024F",
+    "name": "PhysicalDreamer",
+    "one_liner": "为具身智能和自动驾驶保驾护航的大一统仿真测试平台。",
+    "description": "PhysicalDreamer 专注于打造基于真实场景孪生生成的统一仿真测试平台，是全球领先的接近真实物理世界测试的解决方案。该平台通过持续进化的端到端仿真能力，不断逼近真实测试效果。同时平台支持任意传感器配置输入，提供全面的端到端测试能力，显著提升算法验证效率和适用性。",
+    "image_url": "/images/projects/2024F-022.jpg",
+    "tags": [
+      "仿真",
+      "自动驾驶",
+      "具身智能",
+      "AI Infra"
+    ],
+    "founders": [
+      {
+        "name": "未知",
+        "role": "创始人/CEO",
+        "bio": "香港大学 MMLAB 在读博士，前清华大学-智能产业研究院 Tech Lead，前商汤自动驾驶研究员，全球首个真实协同自动驾驶数据集构建者。",
+        "education": [
+          "香港大学"
+        ],
+        "work_history": [
+          "清华大学AIR",
+          "商汤科技"
+        ]
+      },
+      {
+        "name": "未知",
+        "role": "联合创始人/产品负责人",
+        "bio": "北京大学计算机专业学士和硕士学位，曾任职于外企视觉相关岗位和商汤研究院-自动驾驶。",
+        "education": [
+          "北京大学"
+        ],
+        "work_history": [
+          "商汤科技"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-023",
+    "batch_id": "2024F",
+    "name": "水翼电动船",
+    "one_liner": "打造舒适、纯电驱的智能水上出行载具。",
+    "description": "智屿创新是⼀家专注于研发、生产和销售高性能独特的水翼电动船的企业，致力于通过技术创新推动水上交通方式向更加环保、高效、驾驶 / 乘坐体验更加舒适的方向发展。智屿坚信，水翼电动船将会是未来船艇电动化发展的必然趋势，同时会以此带来新的水上智能交通范式。",
+    "image_url": "/images/projects/2024F-023.jpg",
+    "tags": [
+      "新能源",
+      "智能硬件",
+      "交通",
+      "水上出行"
+    ],
+    "founders": [
+      {
+        "name": "罗瑞东",
+        "role": "创始人/CEO",
+        "bio": "连续创业者；中山大学硕士，师从李泽湘教授；互联网产品经理；船艇爱好者。",
+        "education": [
+          "中山大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "赵云淞",
+        "role": "联合创始人/COO",
+        "bio": "美国西北大学硕士；具有扩张千万级市场份额的经验。",
+        "education": [
+          "Northwestern University"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "蒋晨悦",
+        "role": "联合创始人/CO-CTO",
+        "bio": "上海交通大学船舶与海洋工程专业硕博连读，师从王磊教授；无人船 / 无人机 / 探空火箭极客。",
+        "education": [
+          "上海交通大学"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-024",
+    "batch_id": "2024F",
+    "name": "TalkHeap",
+    "one_liner": "AI 时代的 Twilio 提供商务沟通的免代码基础设施面向中小企业 AI+ 全渠道赋能。",
+    "description": "AI 时代的 Twilio，提供商务沟通免代码的基础设施。面向中小企业，通过如电话、短信、邮件、传真、WhatsApp 等渠道并应用 AI 技术，为中小企业和他们的客户沟通赋能。",
+    "image_url": "/images/projects/2024F-024.jpg",
+    "tags": [
+      "SaaS",
+      "AI",
+      "企业服务",
+      "通讯"
+    ],
+    "founders": [
+      {
+        "name": "陈日闪",
+        "role": "创始人/CEO",
+        "bio": "本科 / 硕士毕业于北京大学计算机系。美国加州大学博士生（辍学）。在创办目前公司之前，是 Whova 公司创始团队成员。",
+        "education": [
+          "北京大学",
+          "University of California"
+        ],
+        "work_history": [
+          "Whova"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-025",
+    "batch_id": "2024F",
+    "name": "奇塑科技X-CNC",
+    "one_liner": "大模型时代的创新工厂，让用户所想即所得。",
+    "description": "奇塑科技致力于用 AI 实现 prompt to product。用户只需要描述想要什么，奇塑就能生产出来。奇塑科技将成为人类最重要的基础设施。奇塑科技正在搭建 AI 自主决策的柔性工厂。在多品种小批量的非标零部件加工领域，奇塑科技最多最高可以降低零件制造成本 80%。",
+    "image_url": "/images/projects/2024F-025.jpg",
+    "tags": [
+      "智能制造",
+      "AI",
+      "工业"
+    ],
+    "founders": [
+      {
+        "name": "夏楠",
+        "role": "创始人/CEO",
+        "bio": "浙江大学计算机系。2010 年就预见到 CUDA 在 AI 领域的前景。",
+        "education": [
+          "浙江大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "王珂",
+        "role": "联合创始人/COO",
+        "bio": "浙江大学硕士，师从郑津洋院士，研究方向为重大装备的加工制造，参与国家重大课题，研究成果被用于制定国家标准。曾任国企核心技术人员。",
+        "education": [
+          "浙江大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "徐贤华",
+        "role": "联合创始人/CTO",
+        "bio": "浙江大学计算机系，全栈工程师。",
+        "education": [
+          "浙江大学"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-026",
+    "batch_id": "2024F",
+    "name": "分布式深远海水下观测节点",
+    "one_liner": "商业化全球海洋观测方案。",
+    "description": "陕西卫澜深海信息科技有限公司致力于提供全球海洋水下观测方案。公司核心产品——分布式深远海水下观测节点，可通过空基船基机动部署，快速在全球范围内任意海域形成水下观测能力。分布式水下观测可节省巨额海底电缆建设成本，节点部署范围不受离岸距离限制，是唯一可商业化的全球海洋观测方案。",
+    "image_url": "/images/projects/2024F-026.jpg",
+    "tags": [
+      "海洋科技",
+      "硬科技",
+      "IoT"
+    ],
+    "founders": [
+      {
+        "name": "张大禹",
+        "role": "创始人",
+        "bio": "西安交通大学博士研究生，连续创业者；主持首批国家自然科学基金博士生项目，首批中国科协青年人才托举工程博士生专项计划。",
+        "education": [
+          "西安交通大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "郭朋华",
+        "role": "联合创始人",
+        "bio": "西安交通大学教授，博士生导师，流体机械领域专家，获得中国产学研合作创新成果奖。",
+        "education": [
+          "西安交通大学"
+        ],
+        "work_history": [
+          "西安交通大学"
+        ]
+      },
+      {
+        "name": "胡桥",
+        "role": "首席技术顾问",
+        "bio": "西安交通大学二级教授，国家级人才，西安交通大学海洋技术与装备协同创新研究院院长。",
+        "education": [
+          "西安交通大学"
+        ],
+        "work_history": [
+          "西安交通大学"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-027",
+    "batch_id": "2024F",
+    "name": "Hunter.AI",
+    "one_liner": "专注服务中国出海企业的 AI 猎头。",
+    "description": "AI 化招聘流程，包括在跨文化，跨国境，新兴行业（如 AI）场景下的需求对接、老板访谈、智能线索搜寻、候选人初筛、当地雇佣法律咨询。",
+    "image_url": "/images/projects/2024F-027.jpg",
+    "tags": [
+      "AI",
+      "招聘",
+      "出海",
+      "企业服务"
+    ],
+    "founders": [
+      {
+        "name": "虞俊飞",
+        "role": "CEO",
+        "bio": "Dartmouth College 工程学士，AI 行业连续创业者；曾经在年销售额百亿的独角兽科技公司担任总经理助理，协助完成 CFO、CHO 的猎头工作和招聘。",
+        "education": [
+          "Dartmouth College"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "Yuchen Li",
+        "role": "首席AI科学家",
+        "bio": "默罕默德·本·扎耶德人工智能大学（MBZUAI）计算机视觉博士，迪拜商业英才(DBA)。深耕中东地区四年，熟悉中东的文化和风土人情。",
+        "education": [
+          "MBZUAI"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "Allen Wu",
+        "role": "CTO",
+        "bio": "Dartmouth College 计算机硕士，Staff Engineer at Meta；全栈工程师，对于开发AI产品具有极大热情。",
+        "education": [
+          "Dartmouth College"
+        ],
+        "work_history": [
+          "Meta"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-028",
+    "batch_id": "2024F",
+    "name": "Infini AI",
+    "one_liner": "AI 驱动的游戏化地点发现平台。",
+    "description": "Infini 是一款以北美 Z 世代为核心，以游戏化和个性化推荐重新定义地点发现的 AI 平台。",
+    "image_url": "/images/projects/2024F-028.jpg",
+    "tags": [
+      "AI",
+      "社交",
+      "消费应用",
+      "Z世代"
+    ],
+    "founders": [
+      {
+        "name": "李依萌",
+        "role": "CEO",
+        "bio": "加州大学伯克利分校辍学，连续创业者，大学创建了一个高精度地图的众包平台，实现从 0-1 的开发和落地。",
+        "education": [
+          "UC Berkeley"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "徐翔宇",
+        "role": "CTO",
+        "bio": "加州大学伯克利分校计算机和数学系毕业，高中期间获得美国大赛区机器人比赛亚军，本科深耕机器学习加速和软硬件协同设计，发表一篇 IEEE 论文。",
+        "education": [
+          "UC Berkeley"
+        ],
+        "work_history": [
+          "华为"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-029",
+    "batch_id": "2024F",
+    "name": "微链智能",
+    "one_liner": "全自动动物 ID 建库系统，为全球百亿动物建立身份证，保障农场、银行、保险公司的农业资产安全。",
+    "description": "微链（宁波）智能科技有限公司是集设计、研发、制造于一体的农用专业智慧摄像头厂商，为全球农业动物提供精准 ID 建库服务，致力于为农场、银行、保险公司提供资产保障服务。公司拥有国际领先的小目标检测算法、双目深度估计算法、超分辨算法，能在复杂的农业场景中实现精准的目标检测任务。",
+    "image_url": "/images/projects/2024F-029.jpg",
+    "tags": [
+      "农业",
+      "AI",
+      "智能硬件",
+      "金融科技"
+    ],
+    "founders": [
+      {
+        "name": "宁冬冬",
+        "role": "CEO",
+        "bio": "浙江大学农学院博士生，曾任 CSDN 产品经理、翔创科技（畜脸识别头部）算法工程师算法工程师，对农业算法需求有非常深刻的理解。",
+        "education": [
+          "浙江大学"
+        ],
+        "work_history": [
+          "CSDN",
+          "翔创科技"
+        ]
+      },
+      {
+        "name": "徐浩",
+        "role": "CTO",
+        "bio": "华东师范人工智能方向硕士，曾负责福佑科技人工智能算法开发，有丰富的智能硬件开发、量产经验。",
+        "education": [
+          "华东师范大学"
+        ],
+        "work_history": [
+          "福佑科技"
+        ]
+      },
+      {
+        "name": "安晶琛",
+        "role": "COO",
+        "bio": "浙江大学计算机学院毕业生，法国硕士休学，对欧洲农业算法需求理解深刻，与欧洲农业头部渠道商建立良好关系。",
+        "education": [
+          "浙江大学"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-030",
+    "batch_id": "2024F",
+    "name": "经时金融信息流引擎",
+    "one_liner": "用 AI 推理能力实现投资分析规模化。",
+    "description": "芯格科技致力于用 AI 推理能力构建自动化信息流和分析产线，实现投资分析规模化；专注金融行业，以经时金融信息流引擎为核心产品，帮助金融二级市场研究机构和投资管理团队，从海量信息流洞察交易时机。",
+    "image_url": "/images/projects/2024F-030.jpg",
+    "tags": [
+      "金融科技",
+      "AI",
+      "投资"
+    ],
+    "founders": [
+      {
+        "name": "林家桢",
+        "role": "创始人/CEO",
+        "bio": "清华计算机博士，研发的 AI 系统投产 8 年，应用于海康威视、大华等公司的核心产品；学术成果发表在 SOSP 等顶级会议；拥有量化交易实盘经验。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": [
+          "海康威视",
+          "大华"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-031",
+    "batch_id": "2024F",
+    "name": "Emagen AI",
+    "one_liner": "构建操作系统级 Agent，推动人类与硅基生命协同进化。",
+    "description": "CyberAgent 是基于操作系统哲学设计的 Agent 框架，支持分层管理跨线程记忆，提供持久化多模态存储，通过调度算法实现多任务并发。内置 App CyberLife，作为个人时间、信息、事务管家，协助用户实现明确的长期目标。",
+    "image_url": "/images/projects/2024F-031.jpg",
+    "tags": [
+      "AI Agent",
+      "操作系统",
+      "个人助理"
+    ],
+    "founders": [
+      {
+        "name": "周溢茂",
+        "role": "创始人/CEO",
+        "bio": "上海交通大学大二休学。AIGC Class 项目 Leader。四年级开始写代码；中学接触 AI 带队获奖；大学弃医从文，并加入上海交通大学人工智能实验室研究强化学习、世界模型方向。",
+        "education": [
+          "上海交通大学"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-032",
+    "batch_id": "2024F",
+    "name": "阿卡西导盲机器人",
+    "one_liner": "基于端到端模型的导航小脑及导盲机器人。",
+    "description": "端到端导航小脑开创了无图导航新时代，机器人再不需要建图，只使用四个普通的 RGB 相机就能实现自驾级避障，大幅降低成本。基于导航小脑，公司开发了一款导盲机器人，帮助 2.95 亿视障患者实现出行自由。",
+    "image_url": "/images/projects/2024F-032.jpg",
+    "tags": [
+      "机器人",
+      "辅助技术",
+      "AI",
+      "公益"
+    ],
+    "founders": [
+      {
+        "name": "李永",
+        "role": "CEO",
+        "bio": "连续创业者，北京理工大学工学硕士。商汤超早期员工，知境 AR 创始人，小米机器人核心骨干。",
+        "education": [
+          "北京理工大学"
+        ],
+        "work_history": [
+          "商汤科技",
+          "小米",
+          "知境 AR"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-033",
+    "batch_id": "2024F",
+    "name": "维度之间",
+    "one_liner": "AR / VR 设备上的内容平台。",
+    "description": "维度之间的首款产品是 Meta Quest 平台上的一款视频类应用，上线以来产品高速自然增长，在所有非游戏应用中营收排名前列。首款产品的成功验证了团队对于行业和用户需求的准确理解以及原创技术创新能力。在未来，维度之间将打造一款内容平台型产品。",
+    "image_url": "/images/projects/2024F-033.jpg",
+    "tags": [
+      "AR/VR",
+      "内容平台",
+      "娱乐"
+    ],
+    "founders": [
+      {
+        "name": "张健伟 Jerry",
+        "role": "创始人/CEO",
+        "bio": "连续创业者。上海交大计算机本科毕业， Berkeley 硕士 dropout。",
+        "education": [
+          "上海交通大学",
+          "UC Berkeley"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-034",
+    "batch_id": "2024F",
+    "name": "Coco Factory",
+    "one_liner": "机器人的培训学校。",
+    "description": "Coco Factory 的团队由牛津大学的人工智能、机器人专家组成，致力于开发机器人的应用场景，制作适合已有机器人硬件的软件方案，解决机器人落地问题。Coco Factory 开发了独创的数据采集方案，不同于主流机器人训练所用的数据（例如物理引擎生成的数据，或者人类远程操控的数据），团队采集真实场景中的专家示范，可以高效的迁移到多种机器人硬件模型身上。",
+    "image_url": "/images/projects/2024F-034.jpg",
+    "tags": [
+      "机器人",
+      "数据",
+      "AI"
+    ],
+    "founders": [
+      {
+        "name": "林舒雨",
+        "role": "CEO",
+        "bio": "牛津大学计算机博士，生成模型领域专家，曾在多家科技公司（包括 Meta、Toshiba Research 和英国独角兽 Tractable AI）工作，开发 AI 算法。",
+        "education": [
+          "Oxford"
+        ],
+        "work_history": [
+          "Meta",
+          "Toshiba",
+          "Tractable AI"
+        ]
+      },
+      {
+        "name": "Ronald Clark",
+        "role": "首席科学家",
+        "bio": "牛津大学计算机教授，计算机视觉、深度学习、机器人领域专家，发表超过 30 篇 AI、计算机、视觉顶级期刊论文。目前在牛津大学计算机系任教，是PIXL (Perceptual Intelligence and Extended Reality Lab) 的创始人。",
+        "education": [
+          "Oxford"
+        ],
+        "work_history": [
+          "Oxford",
+          "Imperial College London"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-035",
+    "batch_id": "2024F",
+    "name": "Skylow",
+    "one_liner": "北美的 AI clone 平台。",
+    "description": "Skylow 是 AI 时代的互动型 YouTube，正在开发一款 mobile app，能够克隆用户，使它和其他人以文字、语音和视频的形式聊天互动。在大语言模型（LLM）的智力超越人类之前（即 LLM 没有很好的功能性目的时），从网红市场入手，来克隆用于娱乐的网红。",
+    "image_url": "/images/projects/2024F-035.jpg",
+    "tags": [
+      "AI",
+      "社交",
+      "数字人",
+      "消费应用"
+    ],
+    "founders": [
+      {
+        "name": "宋非侗",
+        "role": "CEO",
+        "bio": "加州大学伯克利分校计算机系辍学，高中创业项目利润超 200 万人民币，3 万粉丝博主。本科多段初创公司软件工程、产品、创业经验。奇绩 / 真格 VC 经验。",
+        "education": [
+          "UC Berkeley"
+        ],
+        "work_history": [
+          "奇绩创坛",
+          "真格基金"
+        ]
+      },
+      {
+        "name": "韩尚典",
+        "role": "CTO",
+        "bio": "加州大学伯克利分校计算机+数学荣誉学位毕业。大二辍学在 Microsoft Research 独立开发了最新 Excel AI。本科期间曾在伯克利包括 Sky Lab 的三个实验室做研究，发表 ICML，以及在华为做软件工程。",
+        "education": [
+          "UC Berkeley"
+        ],
+        "work_history": [
+          "Microsoft Research",
+          "华为"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-036",
+    "batch_id": "2024F",
+    "name": "WisdomPlan",
+    "one_liner": "以私教 1% 的价格量身定制职业技能学习方案。",
+    "description": "WisdomPlan 是一个为用户提供个性化学习计划和指导的职业技能学习平台，致力于帮助欧美地区的求职者和职场人士快速高效地习得所需的专业技能，打造未来每个人的“个人大学”，获得了 Product Hunt 月度最佳教育类产品。",
+    "image_url": "/images/projects/2024F-036.jpg",
+    "tags": [
+      "教育",
+      "AI",
+      "职业培训"
+    ],
+    "founders": [
+      {
+        "name": "赵衍堃",
+        "role": "创始人兼 CEO",
+        "bio": "计算机+教育学交叉背景。卡内基梅隆大学硕士，香港科技大学本科。在人工智能、人机交互和教育科技领域顶会发表过多篇论文。",
+        "education": [
+          "CMU",
+          "HKUST"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-037",
+    "batch_id": "2024F",
+    "name": "枢式科技",
+    "one_liner": "百倍加速全自动的物理仿真，让工程智能触手可及。",
+    "description": "枢式科技致力于用数据智能重塑物理仿真。依托突破性的几何深度学习技术，枢式科技实现了实时、全自动、高精度的端到端仿真能力。面向具身智能、汽车、航空航天、医疗等高要求行业，提供创新的仿真与 3D 合成数据解决方案，为客户打造工程智能新引擎。",
+    "image_url": "/images/projects/2024F-037.jpg",
+    "tags": [
+      "仿真",
+      "AI",
+      "工业软件"
+    ],
+    "founders": [
+      {
+        "name": "高鑫",
+        "role": "联合创始人兼 CEO",
+        "bio": "迈阿密大学博士，密西根大学博士后。曾任 SilicoSpine 联合创始人，南京航空航天大学副研究员，拥有 10 年 AI 与仿真经验。",
+        "education": [
+          "University of Miami",
+          "University of Michigan",
+          "南京航空航天大学"
+        ],
+        "work_history": [
+          "SilicoSpine",
+          "南京航空航天大学"
+        ]
+      },
+      {
+        "name": "邱康",
+        "role": "联合创始人兼 CTO",
+        "bio": "武汉大学计算机博士。前航天科工集团副主任工程师。专注 AI 与物理仿真交叉创新，为核心技术突破提供关键支撑。",
+        "education": [
+          "武汉大学"
+        ],
+        "work_history": [
+          "航天科工集团"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-038",
+    "batch_id": "2024F",
+    "name": "端点 ResearchNode.ai",
+    "one_liner": "用大模型发现材料和工艺解决方案。",
+    "description": "ResearchNode.ai 致力于实现大模型驱动的新材料发现。通过化学机理知识嵌入和自有高通量实验的数据赋能，实现大模型自动设计材料配方和工艺，准确率和有效性超过人类专家水平。相较于传统研发流程，能大幅减少后续人工实验次数，节约全周期研发成本超 50%。",
+    "image_url": "/images/projects/2024F-038.jpg",
+    "tags": [
+      "AI for Science",
+      "新材料",
+      "大模型"
+    ],
+    "founders": [
+      {
+        "name": "YunWei",
+        "role": "创始人/CEO",
+        "bio": "清华大学化学工程系博士研究生，能源材料领域丰富研究经验。2024 年清华大学研究生特等奖学金提名。在 Nature 子刊、Cell 姊妹刊等顶刊上发表 6 篇一作研究论文。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "YuChen",
+        "role": "联合创始人/CTO",
+        "bio": "清华大学化学工程系博士研究生，研究方向为 AI 辅助新材料设计。AI+ 材料方向 2 篇一作顶刊论文。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-039",
+    "batch_id": "2024F",
+    "name": "镶嵌",
+    "one_liner": "从社会科学的 Perplexity 出发，捕获 AI 时代最聪明的数据。",
+    "description": "一款由社科专家和 AI 工程师团队开发的社会科学 AI 工具，让社会科学跨越式进入 AI 时代。镶嵌，基于最全的论文、政策、基金等社科场景数据，结合文献语义检索和分析研判能力，让社科人在纷杂信息中找到最有价值的信息，轻松构建定制化AI知识库。",
+    "image_url": "/images/projects/2024F-039.jpg",
+    "tags": [
+      "AI",
+      "科研工具",
+      "社会科学"
+    ],
+    "founders": [
+      {
+        "name": "周子轩",
+        "role": "联合创始人/CEO",
+        "bio": "斯坦福大学机械工程机器人方向硕士，前 Pony.ai 算法工程师。连续创业者。",
+        "education": [
+          "Stanford"
+        ],
+        "work_history": [
+          "Pony.ai"
+        ]
+      },
+      {
+        "name": "江天河",
+        "role": "联合创始人",
+        "bio": "社会学硕，管理学博，人口学和经济地理学访问学者。有高校任教经历，在 4 个社科子领域担任权威期刊审稿人。",
+        "education": [],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-040",
+    "batch_id": "2024F",
+    "name": "JUMPWORK.AI 起源跃动",
+    "one_liner": "边玩边采集 4D 数据的 VR 全身追踪。",
+    "description": "JUMPWORK.AI（起源跃动）是一家 4D 无缝数字化的公司，目前推出的首款产品——JUMPWORK Series VR 全身追踪系统，基于两台激光雷达实现无穿戴 VR 全身追踪，算法精度世界领先，是目前最好用的无穿戴 VR 全身追踪。进入室内即玩，节省时间超过 100 倍，误差相比同类视觉追踪低 8.9 倍。",
+    "image_url": "/images/projects/2024F-040.jpg",
+    "tags": [
+      "VR/AR",
+      "具身智能",
+      "数据采集",
+      "娱乐"
+    ],
+    "founders": [
+      {
+        "name": "李昊燃",
+        "role": "CEO",
+        "bio": "西南石油大学软件工程 / 工商管理双学位本科，亚利桑那州立大学雷鸟商学院领导力与管理硕士（QS 国际贸易第一）。8 年连续创业者，40 人 NLP 公司技术总监，PUBG 东南亚服第一，DIY 国内第一台太阳能特斯拉，DIY 易拉罐喷气式发动机，Hacker 型产品经理。",
+        "education": [
+          "西南石油大学",
+          "Arizona State University"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "韦宝",
+        "role": "技术联创",
+        "bio": "南京理工大学本科计算机专业，本科毕业加入 JUMPWORK.AI 。",
+        "education": [
+          "南京理工大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "刘方超",
+        "role": "技术联创",
+        "bio": "南京理工大学计算机科学与技术本科，本科毕业加入 JUMPWORK.AI 。",
+        "education": [
+          "南京理工大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "臧家选",
+        "role": "CMO",
+        "bio": "西南石油大学教育学与工商管理本科双学位，大二联创带队校园版美团-“青趴”，曾任职某供应链 KA 市场高管。",
+        "education": [
+          "西南石油大学"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-041",
+    "batch_id": "2024F",
+    "name": "Terracotta 陶御科技",
+    "one_liner": "守护网络安全的 AI Agent。",
+    "description": "Terracotta 利用 AI Agent 为企业打造高效低成本的网络安全防护，让安全漏洞看得见、补得快。收集和监测安全日志，自动分析安全日志生成修复建议，真正做到按一个按钮就解决所有安全漏洞。Terracotta 切中并泛化中小企全行业全领域，做到网络安全数据的 Scaling Law，构建未来万物互联的时代全方位的网络免疫系统。",
+    "image_url": "/images/projects/2024F-041.jpg",
+    "tags": [
+      "网络安全",
+      "AI Agent",
+      "SaaS"
+    ],
+    "founders": [
+      {
+        "name": "李兆麒 Rocky",
+        "role": "CEO",
+        "bio": "港科大计算机与金融学士，清华网络空间研究院研究者，自幼对网络安全与创业充满热情，曾为上市公司和机构挖掘漏洞。精通五门语言，荣获香港创新科技奖学金。",
+        "education": [
+          "HKUST",
+          "清华大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "孙迪往 Michio",
+        "role": "CTO",
+        "bio": "清华大学计算机科学学士。曾任美团 AI 工程师，主导大模型开发。领导团队荣获全国高中机器人比赛冠军，以卓越的动手能力和技术创新推动公司前进。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": [
+          "美团"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-042",
+    "batch_id": "2024F",
+    "name": "食铁兽科技",
+    "one_liner": "全场景商业园林机器人，1 台主机 + N 种功能。",
+    "description": "食铁兽纯电割草机通过万亩实测的“自适应作业算法架构”，能够实现 45° 斜坡稳定作业，复杂草丛一次性除草率 > 98%。通过极致的模块化设计，支持除雪、运载、喷药等多种作业模块任意组合，单次充电可满足用户持续作业 6-10 小时，作业效率高达每小时 3000-6000 平方米，适配于商业园林、果园场景。",
+    "image_url": "/images/projects/2024F-042.jpg",
+    "tags": [
+      "机器人",
+      "园林",
+      "智能硬件"
+    ],
+    "founders": [
+      {
+        "name": "周永峰",
+        "role": "CEO",
+        "bio": "胡润 U30，曾就职于京东科技、快手科技。",
+        "education": [],
+        "work_history": [
+          "京东",
+          "快手"
+        ]
+      },
+      {
+        "name": "何源",
+        "role": "CTO",
+        "bio": "连续创业者，多个硬件项目 0-1 开发、批量生产经验。",
+        "education": [],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-043",
+    "batch_id": "2024F",
+    "name": "盒智科技",
+    "one_liner": "把世界变成课堂，重塑大模型时代学习方式。",
+    "description": "盒智科技基于大模型多模态实时推理技术，致力于让学习突破课本和屏幕，把世界变成课堂。核心产品是一款面向儿童的智能随身硬件，能听、能看、能教。当前产品主打英语学习场景，未来将形成多学科、多形态的场景化教学软硬件生态，开拓教育行业新千亿市场。",
+    "image_url": "/images/projects/2024F-043.jpg",
+    "tags": [
+      "教育",
+      "智能硬件",
+      "AI"
+    ],
+    "founders": [
+      {
+        "name": "鲁雅琦",
+        "role": "创始人/CEO",
+        "bio": "哥伦比亚大学教育学 & 经济学硕士，8 年教育+AI 行业经验，牵头多款产品从 0 到 1，过往背景兼具教育底层理论、商业经营策略、前沿技术应用的综合认知，大一开始创业，曾就职于好未来总裁办、字节教育产品战略、快手技术战略。",
+        "education": [
+          "Columbia University"
+        ],
+        "work_history": [
+          "好未来",
+          "字节跳动",
+          "快手"
+        ]
+      },
+      {
+        "name": "Sunny",
+        "role": "联合创始人/硬件负责人",
+        "bio": "中南大学工程本科，清华大学 EMBA，10 年硬件经验，前比亚迪智能驾驶系统负责人，连续创业者，具有百万台儿童陪伴机器人量产和销售经验。",
+        "education": [
+          "中南大学",
+          "清华大学"
+        ],
+        "work_history": [
+          "比亚迪"
+        ]
+      },
+      {
+        "name": "李昊东",
+        "role": "联合创始人/产品负责人",
+        "bio": "哈尔滨理工大学工程本科，8 年教育行业资深产品经理，曾就职猿辅导等头部教育公司，具备教育行业 ToC 、ToG 、软硬件、学科教育、素质教育全链条经验。",
+        "education": [
+          "哈尔滨理工大学"
+        ],
+        "work_history": [
+          "猿辅导"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-044",
+    "batch_id": "2024F",
+    "name": "Neurobo",
+    "one_liner": "真正的陪伴从「养谷」开始。",
+    "description": "Neurobo提供了一套「养谷」平台，赋予「谷子」等二次元周边与物理世界交互的能力。平台结合 LLM 与现实场景数据，让每一个二次元用户将任意「谷子」变为随身相伴，随时触达的实体情感伴侣。",
+    "image_url": "/images/projects/2024F-044.jpg",
+    "tags": [
+      "二次元",
+      "AI",
+      "消费应用",
+      "情感陪伴"
+    ],
+    "founders": [
+      {
+        "name": "郭轶捷",
+        "role": "CEO",
+        "bio": "清华大学未来实验室人机交互博士，日本筑波大学机器人硕士。从初中开始搞二次元，在人机交互方面有突出的技术和设计能力。",
+        "education": [
+          "清华大学",
+          "University of Tsukuba"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "黄镇涵",
+        "role": "CTO",
+        "bio": "日本科学振兴机构 ( JST ) SPRING Fellowship 奖学金获得者，日本筑波大学强化学习方向博士，WashU 硕士，RPI 本科。此前曾负责 Bayer 的无代码机器学习平台开发，并在 GE 等公司从事数据科学研究工作。",
+        "education": [
+          "University of Tsukuba",
+          "Washington University in St. Louis",
+          "Rensselaer Polytechnic Institute"
+        ],
+        "work_history": [
+          "Bayer",
+          "GE"
+        ]
+      },
+      {
+        "name": "王汝涵",
+        "role": "COO",
+        "bio": "清华大学信息艺术设计交叉学科硕士，北师大电子系本科，日本筑波大学人机交互方向交换访问经历。深度二次元用户，从小学开始搞同人，资深 OC 人，对用户需求判断精准。",
+        "education": [
+          "清华大学",
+          "北京师范大学",
+          "University of Tsukuba"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-045",
+    "batch_id": "2024F",
+    "name": "ADA 生壹数科",
+    "one_liner": "围绕科研数据，重塑科研生态与科研体系。",
+    "description": "ADA 生壹数科以数据为核心，重构科研流程，从软硬结合的工具起步，以过程数据为价值纽带，用模型系统性地提升科学流程的每一个环节。目前产品主要包括数据处理的软硬件功能矩阵，用于科研数据收集、分析和可视化（多模块、可交互、开箱即用）。",
+    "image_url": "/images/projects/2024F-045.jpg",
+    "tags": [
+      "AI for Science",
+      "科研工具",
+      "数据"
+    ],
+    "founders": [
+      {
+        "name": "田梦怡",
+        "role": "创始人兼 CEO",
+        "bio": "清华大学神经科学博士。本科就读于化学工程专业，跨专业保研至清华大学生命学院，获得国家奖学金和清华大学未来学者奖学金。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "马冀豪",
+        "role": "联合创始人兼 CPO",
+        "bio": "清华大学神经科学硕士。曾获得全国生物学竞赛金牌，精通 MATLAB、Python 等编程语言及机器学习算法。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "林泽栋",
+        "role": "联合创始人兼 CTO",
+        "bio": "清华大学计算机硕士，拥有丰富的软件工程经验，精通全栈开发。擅长将复杂技术问题拆解为可执行的解决方案，并能高效协调跨部门团队推动项目进展。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-046",
+    "batch_id": "2024F",
+    "name": "无限工坊机器人",
+    "one_liner": "机械加工具身学徒。",
+    "description": "机械加工是具身时代最大的商业机会之一，其核心在于占领场景，获得数据。而占领场景的唯一路径就是从“学徒”做起。无限工坊从沿袭了数千年的师徒制得到启发，创新地打造了“具身学徒”。通过从占比 90% 的机械重复性脏活累活干起，进入工厂，观察、模仿学习人类师傅，并通过持续地算法迭代，掌握最后的 10% 高难度场景，实现完全无人工厂。",
+    "image_url": "/images/projects/2024F-046.jpg",
+    "tags": [
+      "具身智能",
+      "机器人",
+      "工业"
+    ],
+    "founders": [
+      {
+        "name": "谢博文",
+        "role": "创始人/CEO",
+        "bio": "毕业于加拿大阿尔伯塔大学，机械工程硕士。加拿大工程器械自动驾驶公司 Robolution 公司联合创始人 / CEO；后就职于大疆，作为核心感知算法负责人参与了多个预研项目的研发和落地工作。",
+        "education": [
+          "University of Alberta"
+        ],
+        "work_history": [
+          "Robolution",
+          "大疆"
+        ]
+      },
+      {
+        "name": "项林坚",
+        "role": "创始人/CTO",
+        "bio": "毕业于加拿大阿尔伯塔大学，电子与电气工程硕士，机器人控制领域专家。加拿大首支 RoboMaster 机甲大师比赛团队创始人。前 Robolution 公司联合创始人 / CTO。大疆农业无人机航线规划负责人，拥有多项国际专利。",
+        "education": [
+          "University of Alberta"
+        ],
+        "work_history": [
+          "Robolution",
+          "大疆"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-047",
+    "batch_id": "2024F",
+    "name": "未来动力-具身智能“动力引擎”",
+    "one_liner": "打造具身智能领域的“比亚迪”。",
+    "description": "最会赚钱的具身智能公司，自研最具性价比的关节电机，公司推出 1.99 万元人形机器人，680元 36nm 的一体化关节电机，999 元 120nm 的一体化关节电机。公司首先切入教育市场，目前已经具备盈利能力，打造了人工智能与机器人教育体系，与各大普通院校和职业院校共建人工智能与机器人学科。",
+    "image_url": "/images/projects/2024F-047.jpg",
+    "tags": [
+      "具身智能",
+      "机器人",
+      "电机",
+      "教育"
+    ],
+    "founders": [
+      {
+        "name": "张茂峰",
+        "role": "创始人，CEO兼CTO",
+        "bio": "香港科技大学广州机器人硕士。16 岁创立哆哆工作室，18 岁创立猫叔数科，21 岁曾在万集科技和字节跳动大厂任职，22 岁曾任于中科骊久 CTO，研发了多款机器人，23 岁创立未来动力，研发了五款足式机器人。",
+        "education": [
+          "HKUST(GZ)"
+        ],
+        "work_history": [
+          "万集科技",
+          "字节跳动",
+          "中科骊久"
+        ]
+      },
+      {
+        "name": "刘明",
+        "role": "联合创始人，首席科学家",
+        "bio": "港科大广州机器人创系主任，AI2000-IROS 机器人华人科学家第一，研发香港第一台无人车，发表论文 300 余篇，引用 23000 余次。",
+        "education": [],
+        "work_history": [
+          "HKUST(GZ)"
+        ]
+      },
+      {
+        "name": "赵国洋",
+        "role": "技术开发",
+        "bio": "香港科技大学（广州），机器人博士，自动驾驶中心成员，从事研发多款机器人，负责团队技术开发。",
+        "education": [
+          "HKUST(GZ)"
+        ],
+        "work_history": []
+      }
+    ]
+  },
+  {
+    "id": "2024F-048",
+    "batch_id": "2024F",
+    "name": "AxisNow",
+    "one_liner": "机器身份驱动 AI 和自动化世界。",
+    "description": "AxisNow 由连续网络安全创业者王晓旭和胡金涌于 2023 年创办，总部位于新加坡。致力于解决 AI 和自动化时代下机器间的互联通信面临的安全挑战。AxisNow 的使命是帮助人类释放生产力，重塑非人类的互联方式。",
+    "image_url": "/images/projects/2024F-048.jpg",
+    "tags": [
+      "网络安全",
+      "AI",
+      "IoT"
+    ],
+    "founders": [
+      {
+        "name": "王晓旭",
+        "role": "CEO",
+        "bio": "连续网络安全创新创业者，2011 年创办上海云盾，2019 年被白山云并购。管理白山云年收入 3 亿美元的产品团队，将安全业务 3 年增长 5 倍。",
+        "education": [],
+        "work_history": [
+          "上海云盾",
+          "白山云"
+        ]
+      },
+      {
+        "name": "胡金涌",
+        "role": "CTO",
+        "bio": "毕业于同济大学计算机硕士。与王晓旭共同创办上海云盾之后加入白山云。有丰富的全栈工程架构经验。",
+        "education": [
+          "同济大学"
+        ],
+        "work_history": [
+          "上海云盾",
+          "白山云"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-049",
+    "batch_id": "2024F",
+    "name": "GrimoAI",
+    "one_liner": "Cursor for writing",
+    "description": "GrimoAI 打造企业级的 AI 写作工具，引入提示词封装、版本管理与自动优化，为营销团队搭建可管理、可调试的定制化内容生产管线。",
+    "image_url": "/images/projects/2024F-049.jpg",
+    "tags": [
+      "AI",
+      "写作工具",
+      "SaaS"
+    ],
+    "founders": [
+      {
+        "name": "Stain Lu",
+        "role": "创始人",
+        "bio": "字节跳动强化学习，Lilith 游戏设计师，HirobotoStudio 独立开发者。",
+        "education": [],
+        "work_history": [
+          "字节跳动",
+          "Lilith",
+          "HirobotoStudio"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-050",
+    "batch_id": "2024F",
+    "name": "RetainerAI",
+    "one_liner": "零门槛 AI 游戏生成器。",
+    "description": "RetainerAI 制作零门槛 AI 游戏生成器，是国内第一款能从语言描述生成完整小游戏的产品，赋予所有人在虚拟世界自由创造的能力，特点是 30 秒生成程序策划美术并组装成完整游戏。这一 AI 游戏生成器是用户的 AI 员工，不止提供方案，更会实现方案。",
+    "image_url": "/images/projects/2024F-050.jpg",
+    "tags": [
+      "游戏",
+      "AI",
+      "AIGC"
+    ],
+    "founders": [
+      {
+        "name": "吴同",
+        "role": "创始人/CEO",
+        "bio": "北京邮电大学硕士，曾因游戏开发比赛第 1 名入职 Unity，3 年做了近 20 款游戏，相关游戏 B 站播放 200万。",
+        "education": [
+          "北京邮电大学"
+        ],
+        "work_history": [
+          "Unity"
+        ]
+      },
+      {
+        "name": "贺烨毅",
+        "role": "软件合伙人",
+        "bio": "荷兰埃因霍温理工大学硕士，曾任职 ING，本科时担任加拿大 AI 创业公司技术负责人，主攻自动化方向。",
+        "education": [
+          "Eindhoven University of Technology"
+        ],
+        "work_history": [
+          "ING"
+        ]
+      },
+      {
+        "name": "刘嘉润",
+        "role": "AI合伙人",
+        "bio": "北京邮电大学硕士，曾任职微软，本科加入 AI 公司创业，发表 2 篇 SCI 论文，临港杯 AI 竞赛金奖。",
+        "education": [
+          "北京邮电大学"
+        ],
+        "work_history": [
+          "Microsoft"
+        ]
+      },
+      {
+        "name": "王超斑",
+        "role": "内容合伙人",
+        "bio": "香港浸会大学硕士，曾任职字节跳动、完美世界游戏策划，有 3 部历史方向著作和译作。",
+        "education": [
+          "Hong Kong Baptist University"
+        ],
+        "work_history": [
+          "字节跳动",
+          "完美世界"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-051",
+    "batch_id": "2024F",
+    "name": "缔零科技",
+    "one_liner": "一站式内容安全解决方案。",
+    "description": "缔零科技是一家专注于内容安全风险识别的 AI 原生企业。据估计人工智能领域 10% 的预算将用于安全性保障，AI 安全将形成千亿级市场。基于自研的 Cordon 架构，推出文本全域风险识别产品“缔零法则”，实现无审核员介入的全风险域文本审查能力，审查成本下降 60%、效率提升 50 倍。",
+    "image_url": "/images/projects/2024F-051.jpg",
+    "tags": [
+      "内容安全",
+      "AI",
+      "SaaS"
+    ],
+    "founders": [
+      {
+        "name": "谭亦朗",
+        "role": "创始人/CEO",
+        "bio": "前小红书内容安全评估主管。落地过亿级 DAU 的安全治理架构评估体系、人机一体化审核体系，是 LLM 在内容安全应用最有想象力的实践者。",
+        "education": [],
+        "work_history": [
+          "小红书"
+        ]
+      },
+      {
+        "name": "李凯",
+        "role": "联合创始人/CTO",
+        "bio": "前腾讯内容安全总监。拥有超过十五年的内容安全算法经验，曾负责搭建最早期的腾讯内容安全中心、小红书内容安全算法部门。",
+        "education": [],
+        "work_history": [
+          "腾讯",
+          "小红书"
+        ]
+      },
+      {
+        "name": "邵捷",
+        "role": "联合创始人/COO",
+        "bio": "千人规模安全治理团队负责人，丰富的政府内容安全事务对接经验，曾服务于携程、一下科技和小红书等知名企业。",
+        "education": [],
+        "work_history": [
+          "携程",
+          "一下科技",
+          "小红书"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-052",
+    "batch_id": "2024F",
+    "name": "Genii 智驾仪",
+    "one_liner": "低空经济的 Omniverse。",
+    "description": "杭州酷塔致力于打造低空产业的 Omniverse。以智驾仪切入，用领先行业的 MBD 数实融合开发模式，迭代模型积累数据，解决单台低空飞行器智驾可靠性问题，并持续深耕全球最大的智驾仪开源社区，强化与开发者之间的数据价值纽带，由软硬一体的智驾体系逐步生长出一个低空 Omniverse。",
+    "image_url": "/images/projects/2024F-052.jpg",
+    "tags": [
+      "低空经济",
+      "无人机",
+      "开源"
+    ],
+    "founders": [
+      {
+        "name": "金洁",
+        "role": "CEO",
+        "bio": "10 年+ 飞控领域创业者，获得两轮投资，首创多款业界领先的飞控与集群数据链产品。无人机集群控制博士，博士就读于爱尔兰都柏林城市大学。",
+        "education": [
+          "Dublin City University"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "邹佳池",
+        "role": "CTO",
+        "bio": "硕士毕业于荷兰埃因霍温理工。全球 No.1 的 MBD 开源智驾仪项目 FMT 创始人，拥有 8 年以上飞控系统开发经验。曾负责开发全球第一款量产商用倾转翼尖 eVTOL 无人机飞控系统。",
+        "education": [
+          "Eindhoven University of Technology"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "邵朋院",
+        "role": "飞控算法专家",
+        "bio": "西北工业大学控制、导航与制导专业本硕博。曾负责中国商飞 919 大飞机飞控仿真系统研制工作、京东集团大型物流无人机仿真系统研发。",
+        "education": [
+          "西北工业大学"
+        ],
+        "work_history": [
+          "中国商飞",
+          "京东"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-053",
+    "batch_id": "2024F",
+    "name": "汤问致新",
+    "one_liner": "打造最还原、最智能的伙伴机器人。",
+    "description": "汤问致新机器人科技，致力于打造最还原、最智能的消费级具身机器人伙伴，基于交互机器人方向领先的机器人+AI 技术与团队，实现桌面级机器人在外观、运动、交互、智能等方面的突破，使机器人真正进入用户的三次元世界成为他们的贴心伙伴与智能终端。",
+    "image_url": "/images/projects/2024F-053.jpg",
+    "tags": [
+      "机器人",
+      "消费电子",
+      "AI"
+    ],
+    "founders": [
+      {
+        "name": "孙翔宇",
+        "role": "创始人/CEO",
+        "bio": "哈尔滨工业大学机器人技术与系统全国重点实验室博士生，天眼 FAST 缆索检测机器人总设计师，设计机器人在中国天眼实际运行并接受新华社专访。",
+        "education": [
+          "哈尔滨工业大学"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "曹长丹",
+        "role": "联合创始人/COO",
+        "bio": "清华大学社会科学硕士，8 年 C 端产品运营与项目管理经验，四年创业实现千万以上营收，曾任知乎签约写手、清华 AI 治理研究院编辑。",
+        "education": [
+          "清华大学"
+        ],
+        "work_history": [
+          "知乎"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-054",
+    "batch_id": "2024F",
+    "name": "UniversalLab",
+    "one_liner": "分析测试领域的台积电。",
+    "description": "在分析测试领域，UniversalLab 发现了一个类似台积电的产业变革机遇，Fabless 之后将是 Labless。全球首个分析测试专家 AI，将分析测试超 70% 工作智能化、自动化，提出分析测试新范式。",
+    "image_url": "/images/projects/2024F-054.jpg",
+    "tags": [
+      "AI",
+      "科研服务",
+      "材料科学"
+    ],
+    "founders": [
+      {
+        "name": "陈文",
+        "role": "创始人/CEO",
+        "bio": "曾为超 1000 位材料科学家定制测试和研究方案。超十年分析测试从业经验。国家级人才，瑞士洛桑联邦理工材料学+机器学习博士，连续创业者，前科研分析测试仪器应用科学家和销售工程师，前爱立信商业咨询顾问，前雷诺汽车检测和认证专家。",
+        "education": [
+          "EPFL"
+        ],
+        "work_history": [
+          "Ericsson",
+          "Renault"
+        ]
+      },
+      {
+        "name": "林名轩",
+        "role": "联合创始人/CTO",
+        "bio": "德国亚琛工业大学材料博士辍学创业，材料+数值模拟+软件开发+AI 复合型老兵。",
+        "education": [
+          "RWTH Aachen University"
+        ],
+        "work_history": []
+      },
+      {
+        "name": "金临霄",
+        "role": "联合创始人/AI应用总监",
+        "bio": "加州科技大学 AI 应用主管, 清华计算机系本科，麻省大学硕士，甲骨文高级工程师，化学奥赛一等奖保送清华。",
+        "education": [
+          "清华大学",
+          "UMass"
+        ],
+        "work_history": [
+          "Oracle",
+          "CSTU"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024F-055",
+    "batch_id": "2024F",
+    "name": "Orca Studio",
+    "one_liner": "国产 Omniverse ——提升物理 AI 训练效率 1000 倍。",
+    "description": "松应科技致力于打造世界一流物理 AI 仿真系统。公司历时三年自主研发中国首个物理精确模拟器 ORCA，是对标英伟达 Omniverse 的唯一平台。物理精确仿真+合成数据，是实现具身智能的最佳路径，ORCA 全面支持具身智能机器人 / 自动驾驶 / 低空经济 / 智能制造等多领域的高精度物理仿真与智能体训练。",
+    "image_url": "/images/projects/2024F-055.jpg",
+    "tags": [
+      "AI Infra",
+      "仿真",
+      "具身智能"
+    ],
+    "founders": [
+      {
+        "name": "聂凯旋",
+        "role": "创始人/CEO",
+        "bio": "前华为云鲲鹏解决方案副总指挥，华为云互动与云游戏原总经理，投资研发首款图形 GPU，华为欧洲合营云原首席架构师、解决方案团队负责人。",
+        "education": [],
+        "work_history": [
+          "华为"
+        ]
+      },
+      {
+        "name": "黄巍",
+        "role": "联合创始人/CTO",
+        "bio": "前华为鲲鹏开发部百人研发团队负责人，公司金牌个人。历任育碧 Gameloft 工程师、中央研究院、华为海思。",
+        "education": [],
+        "work_history": [
+          "华为",
+          "Ubisoft",
+          "Gameloft"
+        ]
+      },
+      {
+        "name": "张小波",
+        "role": "联合创始人/CPO",
+        "bio": "历任华为私有云架构师团队主管，华为欧洲云产品总监，腾讯资深技术方案及生态合作专家，英特尔 Intel 中国资深技术专家。",
+        "education": [],
+        "work_history": [
+          "华为",
+          "腾讯",
+          "Intel"
+        ]
+      },
+      {
+        "name": "郭斯强",
+        "role": "联合创始人/CFO",
+        "bio": "清华大学工学学士，杜克大学工程管理硕士。先后任职于国家开发投资公司、中信建投资本、集富亚洲投资公司；8 年科技行业风险投资经验。",
+        "education": [
+          "清华大学",
+          "Duke University"
+        ],
+        "work_history": [
+          "国家开发投资公司",
+          "中信建投资本",
+          "JAFCO Asia"
+        ]
+      }
+    ]
+  }
+]
