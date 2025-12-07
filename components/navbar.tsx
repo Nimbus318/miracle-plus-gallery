@@ -24,7 +24,7 @@ export function Navbar() {
         </div>
         <div className="flex items-center gap-4">
           <Link
-            href="https://github.com/Startups-Gallery"
+            href="https://github.com/Nimbus318/miracle-plus-gallery"
             target="_blank"
             rel="noreferrer"
             className="text-foreground/60 hover:text-brand transition-colors"
