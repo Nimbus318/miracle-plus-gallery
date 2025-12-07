@@ -1,9 +1,7 @@
 import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
-// 需要先安装 class-variance-authority，稍后统一安装
-// 这里先写个简单的版本，不依赖 cva 以减少复杂度，除非必要
+// 简易版 Badge，不依赖 cva
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "default" | "secondary" | "outline" | "brand";
