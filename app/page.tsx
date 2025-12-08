@@ -5,7 +5,8 @@ import { getTopUniversities, getTopTags, getBatches } from "@/lib/data";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Zap, GraduationCap, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-
+import { Card } from "@/components/ui/card";
+import { TouchLink } from "@/components/ui/touch-link";
 export default function Home() {
   const topUniversities = getTopUniversities();
   const topTags = getTopTags(20);
@@ -31,25 +32,37 @@ export default function Home() {
               从 Agent 到具身智能，从清华北大到全球顶尖高校，发现下一个独角兽。
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-              <Link
+              <TouchLink
                 href="/batches"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-brand px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-brand/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                prefetch={false}
+                className="group block touch-manipulation active:scale-[0.98] transition-transform"
+                aria-label="浏览历届项目"
               >
-                浏览历届项目
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-              <Link
+                <Card className="h-12 md:h-10 px-8 flex items-center justify-center bg-brand text-primary-foreground border-0 shadow [@media(hover:hover)]:hover:bg-brand/90 transition-colors">
+                  <span className="text-sm font-medium flex items-center">
+                    浏览历届项目
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </span>
+                </Card>
+              </TouchLink>
+              <TouchLink
                 href="/insights"
-                className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                prefetch={false}
+                className="group block touch-manipulation active:scale-[0.98] transition-transform"
+                aria-label="查看深度分析"
               >
-                查看深度分析
-              </Link>
+                <Card className="h-12 md:h-10 px-8 flex items-center justify-center bg-background text-foreground border border-input shadow-sm [@media(hover:hover)]:hover:bg-accent [@media(hover:hover)]:hover:text-accent-foreground transition-colors">
+                  <span className="text-sm font-medium">
+                    查看深度分析
+                  </span>
+                </Card>
+              </TouchLink>
             </div>
           </div>
         </div>
         
         {/* Background gradient decoration */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand/5 blur-[120px] rounded-full -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand/5 blur-[120px] rounded-full -z-10 pointer-events-none" />
       </section>
 
       {/* Global Insights Dashboard */}
@@ -101,8 +114,8 @@ export default function Home() {
               }
 
               return (
-              <Link key={batch.id} href={`/batch/${batch.id}`} className="group block">
-                <div className="relative overflow-hidden rounded-xl border-0 shadow-sm bg-card text-card-foreground transition-all hover:shadow-xl hover:-translate-y-1 h-full">
+              <Link key={batch.id} href={`/batch/${batch.id}`} className="group block touch-manipulation active:scale-[0.99] transition-transform">
+                <div className="relative overflow-hidden rounded-xl border-0 shadow-sm bg-card text-card-foreground transition-all [@media(hover:hover)]:hover:shadow-xl [@media(hover:hover)]:hover:-translate-y-1 h-full">
                   <div className="p-8">
                     <div className="flex items-center justify-between mb-4">
                       <Badge variant="outline" className="text-lg px-3 py-1">

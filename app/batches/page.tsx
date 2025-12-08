@@ -36,8 +36,8 @@ export default function BatchesPage() {
             }
 
             return (
-            <Link key={batch.id} href={`/batch/${batch.id}`} className="group block">
-              <div className="relative overflow-hidden rounded-xl border-0 shadow-sm bg-card text-card-foreground transition-all hover:shadow-xl hover:-translate-y-1 h-full">
+            <Link key={batch.id} href={`/batch/${batch.id}`} className="group block touch-manipulation active:scale-[0.99] transition-transform">
+              <div className="relative overflow-hidden rounded-xl border-0 shadow-sm bg-card text-card-foreground transition-all [@media(hover:hover)]:hover:shadow-xl [@media(hover:hover)]:hover:-translate-y-1 h-full">
                 <div className="p-8">
                   <div className="flex items-center justify-between mb-4">
                     <Badge variant="outline" className="text-lg px-3 py-1">

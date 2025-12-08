@@ -23,7 +23,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <Link href={`/project/${project.id}`} className="group h-full block">
-      <Card className="h-full overflow-hidden border-0 bg-white/50 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:bg-white dark:bg-white/5">
+      <Card className="h-full overflow-hidden border-0 bg-white/50 shadow-sm transition-all duration-300 [@media(hover:hover)]:hover:shadow-xl [@media(hover:hover)]:hover:-translate-y-1 [@media(hover:hover)]:hover:bg-white dark:bg-white/5">
         {/* 图片区域：如果有图展示图，没图展示 Placeholder 渐变 */}
         <div className="aspect-video w-full relative bg-secondary/50 overflow-hidden">
           {project.image_url ? (
@@ -36,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 alt={project.name}
                 fill
                 className={cn(
-                  "object-cover transition-all duration-500 group-hover:scale-105",
+                  "object-cover transition-all duration-500 [@media(hover:hover)]:group-hover:scale-105",
                   isLoading ? "opacity-0 scale-100" : "opacity-100"
                 )}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -61,7 +61,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <CardHeader className="p-4 pb-2">
-          <h3 className="text-lg font-bold line-clamp-1 group-hover:text-brand transition-colors">
+          <h3 className="text-lg font-bold line-clamp-1 [@media(hover:hover)]:group-hover:text-brand transition-colors">
             {project.name}
           </h3>
           <p className="text-sm text-muted-foreground line-clamp-2 h-10">
