@@ -29,18 +29,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.image_url ? (
             <div className="w-full h-full relative">
               {isLoading && (
-                <Skeleton className="absolute inset-0 z-10 rounded-none bg-muted" />
+                <Skeleton className="absolute inset-0 z-10 w-full h-full rounded-none bg-muted" />
               )}
               <Image 
                 src={project.image_url} 
                 alt={project.name}
                 fill
                 className={cn(
-                  "object-cover transition-transform duration-500 group-hover:scale-105",
-                  isLoading ? "opacity-0" : "opacity-100"
+                  "object-cover transition-all duration-500 group-hover:scale-105",
+                  isLoading ? "opacity-0 scale-100" : "opacity-100"
                 )}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 onLoad={() => setIsLoading(false)}
+                onError={() => setIsLoading(false)}
               />
             </div>
           ) : (

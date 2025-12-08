@@ -2,8 +2,8 @@ import { getAllProjects, getProjectById, getRelatedProjects, getProjectsByBatch,
 import { Navbar } from "@/components/navbar";
 import { Badge } from "@/components/ui/badge";
 import { ProjectCard } from "@/components/project-card";
+import { ProjectImage } from "@/components/project-image";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowLeft, GraduationCap, Briefcase, User, Link as LinkIcon } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -62,22 +62,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             
             {/* Hero Info */}
             <div className="space-y-6">
-              <div className="aspect-video w-full rounded-xl overflow-hidden bg-secondary/30 relative">
-                {project.image_url ? (
-                  <Image 
-                    src={project.image_url} 
-                    alt={project.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 800px"
-                    priority
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground text-2xl font-bold">
-                    {project.name}
-                  </div>
-                )}
-              </div>
+              {project.image_url ? (
+                <ProjectImage 
+                  src={project.image_url} 
+                  alt={project.name}
+                  priority
+                />
+              ) : (
+                <div className="aspect-video w-full rounded-xl overflow-hidden bg-secondary/30 relative flex items-center justify-center text-muted-foreground text-2xl font-bold">
+                  {project.name}
+                </div>
+              )}
               
               <div className="space-y-4">
                 <div className="flex items-start justify-between">
