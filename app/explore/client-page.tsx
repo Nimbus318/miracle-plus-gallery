@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useMemo, useEffect } from "react"
-import { useSearchParams } from "next/navigation"
+import { useSearchParams, useRouter } from "next/navigation"
 import { Project } from "@/lib/types"
 import { TAXONOMY, TaxonomyNode, getCategoryForTag } from "@/lib/taxonomy"
 import { Navbar } from "@/components/navbar"
@@ -23,6 +23,7 @@ interface ExploreClientPageProps {
 
 export default function ExploreClientPage({ initialProjects }: ExploreClientPageProps) {
   const searchParams = useSearchParams()
+  const router = useRouter()
 
   // --- State ---
   // Initialize state from URL params
@@ -34,7 +35,28 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
   const [showPhDOnly, setShowPhDOnly] = useState(false)
   const [showOverseasOnly, setShowOverseasOnly] = useState(false)
   
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  // Derive selected project from URL
+  const projectId = searchParams.get("projectId")
+  const selectedProject = useMemo(() => 
+    projectId ? initialProjects.find(p => p.id === projectId) || null : null
+  , [projectId, initialProjects])
+  
+  // Helper to update URL without full reload
+  const updateUrl = (newParams: URLSearchParams) => {
+    router.push(`?${newParams.toString()}`, { scroll: false })
+  }
+
+  const openProject = (project: Project) => {
+    const params = new URLSearchParams(searchParams.toString())
+    params.set("projectId", project.id)
+    updateUrl(params)
+  }
+
+  const closeProject = () => {
+    const params = new URLSearchParams(searchParams.toString())
+    params.delete("projectId")
+    updateUrl(params)
+  }
   
   // Update state when URL params change (e.g. browser back button)
   useEffect(() => {
@@ -44,9 +66,6 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
     if (q !== query) setQuery(q)
     if (tag && !selectedCategories.includes(tag)) {
        setSelectedCategories([tag])
-    } else if (!tag && !searchParams.get("q") && !searchParams.get("uni")) {
-       // If URL is clean, maybe clear filters? 
-       // For now, let's just respect the explicit params.
     }
   }, [searchParams])
   
@@ -317,7 +336,7 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
           {filteredProjects.length > 0 ? (
             <div className="grid grid-cols-1 gap-4">
               {filteredProjects.map(project => (
-                <div key={project.id} onClick={() => setSelectedProject(project)} className="group block cursor-pointer">
+                <div key={project.id} onClick={() => openProject(project)} className="group block cursor-pointer">
                   <Card className="p-4 md:p-5 transition-all hover:shadow-md border-border/50 hover:border-brand/30">
                     <div className="flex flex-col md:flex-row gap-4 md:items-start">
                       
@@ -385,9 +404,9 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
       <ProjectSheet 
         project={selectedProject} 
         isOpen={!!selectedProject} 
-        onClose={() => setSelectedProject(null)} 
+        onClose={closeProject} 
         allProjects={initialProjects}
-        onSelectProject={setSelectedProject}
+        onSelectProject={openProject}
       />
 
     </div>

@@ -5,10 +5,10 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area" // You might need to add this component or just use div overflow
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
-import { ArrowUpRight, GraduationCap, Briefcase, User, Calendar, Tag, ExternalLink } from "lucide-react"
+import { ArrowUpRight, GraduationCap, Briefcase, User, Calendar, Tag, ExternalLink, ChevronLeft } from "lucide-react"
 import Link from "next/link"
 import { ProjectImage } from "@/components/project-image"
-import { useMemo } from "react"
+import { useMemo, useRef } from "react"
 
 // Simple client-side recommendation logic (mirrors lib/data.ts)
 function getRelated(current: Project, all: Project[], limit = 3) {
@@ -39,16 +39,62 @@ export function ProjectSheet({ project, allProjects, isOpen, onClose, onSelectPr
     return getRelated(project, allProjects)
   }, [project, allProjects])
 
+  // --- Touch Gesture Handling ---
+  const touchStart = useRef<{ x: number, y: number } | null>(null)
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStart.current = {
+      x: e.changedTouches[0].clientX,
+      y: e.changedTouches[0].clientY
+    }
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStart.current) return
+    
+    const touchEnd = {
+      x: e.changedTouches[0].clientX,
+      y: e.changedTouches[0].clientY
+    }
+    
+    const deltaX = touchEnd.x - touchStart.current.x
+    const deltaY = touchEnd.y - touchStart.current.y
+    
+    // Swipe Right to Close
+    // Threshold: 70px
+    // Condition: Horizontal swipe > Vertical swipe (to avoid closing while scrolling)
+    if (deltaX > 70 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      onClose()
+    }
+    
+    touchStart.current = null
+  }
+
   if (!project) return null
 
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <SheetContent className="w-full sm:max-w-xl md:max-w-2xl overflow-y-auto p-0 gap-0 border-l border-border/50 shadow-2xl">
+        <div 
+          className="min-h-full flex flex-col"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
         
         {/* Header Section */}
         <div className="sticky top-0 z-20 bg-background/80 backdrop-blur-md border-b border-border/50 p-6 pb-4">
-          <div className="flex items-start justify-between gap-4">
-            <div className="space-y-1">
+          <div className="flex items-start gap-3">
+            {/* Mobile Back Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden -ml-2 -mt-1 h-8 w-8 shrink-0"
+              onClick={onClose}
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </Button>
+            
+            <div className="space-y-1 flex-1">
               <div className="flex items-center gap-2">
                 <Badge variant="outline" className="font-mono text-xs text-muted-foreground">
                   {project.batch_id}
@@ -161,6 +207,7 @@ export function ProjectSheet({ project, allProjects, isOpen, onClose, onSelectPr
             </Link>
           </div>
 
+        </div>
         </div>
       </SheetContent>
     </Sheet>

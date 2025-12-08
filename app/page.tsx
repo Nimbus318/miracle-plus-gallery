@@ -27,7 +27,7 @@ export default function Home() {
         <div className="container px-4 md:px-6 mx-auto relative z-10">
           <div className="flex flex-col items-center space-y-4 text-center">
             <Badge variant="brand" className="px-3 py-1 text-sm">
-              ✨ 全新发布：收录 2021-2025 完整创业档案
+              ✨ 收录 2021-2025 完整创业档案
             </Badge>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
               奇绩创坛<br /> 历届项目数据洞察
@@ -52,7 +52,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col items-center p-4 rounded-lg bg-secondary/20 border border-border/50">
                 <Users className="h-5 w-5 mb-2 text-brand" />
-                <span className="text-2xl font-bold">10+</span>
+                <span className="text-2xl font-bold">9</span>
                 <span className="text-xs text-muted-foreground">创业营期数</span>
               </div>
               <div className="flex flex-col items-center p-4 rounded-lg bg-secondary/20 border border-border/50">
