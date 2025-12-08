@@ -1,16 +1,22 @@
 import { Navbar } from "@/components/navbar";
 import { UniversityChart } from "@/components/charts/university-chart";
 import { TrackChart } from "@/components/charts/track-chart";
-import { getTopUniversities, getTopTags, getBatches } from "@/lib/data";
+import { SearchHero } from "@/components/search-hero";
+import { getTopUniversities, getTopTags, getBatches, getAllProjects } from "@/lib/data";
+import { getCategoryTrends } from "@/lib/analytics";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Zap, GraduationCap, Globe } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, GraduationCap, Globe, Database, Users, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { TouchLink } from "@/components/ui/touch-link";
+
 export default function Home() {
   const topUniversities = getTopUniversities();
   const topTags = getTopTags(20);
   const batches = getBatches();
+  const projects = getAllProjects();
+  const totalProjects = projects.length;
+  const { chartData: trendData, categories: trendTags } = getCategoryTrends();
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -21,42 +27,44 @@ export default function Home() {
         <div className="container px-4 md:px-6 mx-auto relative z-10">
           <div className="flex flex-col items-center space-y-4 text-center">
             <Badge variant="brand" className="px-3 py-1 text-sm">
-              ✨ 收录 2025 全年 {topUniversities.length > 0 ? "100+" : ""} 精选项目
+              ✨ 全新发布：收录 2021-2025 完整创业档案
             </Badge>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-              奇绩创坛<br /> 创业项目数据洞察
+              奇绩创坛<br /> 历届项目数据洞察
             </h1>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              探索中国最前沿的 Researcher Founders。
+              从 2021 到 2025，探索中国最前沿的 Researcher Founders。
               <br/>
-              从 Agent 到具身智能，从清华北大到全球顶尖高校，发现下一个独角兽。
+              透视技术趋势演变，发现下一个独角兽。
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-              <TouchLink
-                href="/batches"
-                prefetch={false}
-                className="group block touch-manipulation active:scale-[0.98] transition-transform"
-                aria-label="浏览历届项目"
-              >
-                <Card className="h-12 md:h-10 px-8 flex items-center justify-center bg-brand text-primary-foreground border-0 shadow [@media(hover:hover)]:hover:bg-brand/90 transition-colors">
-                  <span className="text-sm font-medium flex items-center">
-                    浏览历届项目
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </span>
-                </Card>
-              </TouchLink>
-              <TouchLink
-                href="/insights"
-                prefetch={false}
-                className="group block touch-manipulation active:scale-[0.98] transition-transform"
-                aria-label="查看深度分析"
-              >
-                <Card className="h-12 md:h-10 px-8 flex items-center justify-center bg-background text-foreground border border-input shadow-sm [@media(hover:hover)]:hover:bg-accent [@media(hover:hover)]:hover:text-accent-foreground transition-colors">
-                  <span className="text-sm font-medium">
-                    查看深度分析
-                  </span>
-                </Card>
-              </TouchLink>
+            
+            {/* Search Component */}
+            <div className="w-full max-w-2xl mx-auto z-20">
+              <SearchHero />
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 w-full max-w-3xl">
+              <div className="flex flex-col items-center p-4 rounded-lg bg-secondary/20 border border-border/50">
+                <Database className="h-5 w-5 mb-2 text-brand" />
+                <span className="text-2xl font-bold">{totalProjects}</span>
+                <span className="text-xs text-muted-foreground">收录项目</span>
+              </div>
+              <div className="flex flex-col items-center p-4 rounded-lg bg-secondary/20 border border-border/50">
+                <Users className="h-5 w-5 mb-2 text-brand" />
+                <span className="text-2xl font-bold">10+</span>
+                <span className="text-xs text-muted-foreground">创业营期数</span>
+              </div>
+              <div className="flex flex-col items-center p-4 rounded-lg bg-secondary/20 border border-border/50">
+                <GraduationCap className="h-5 w-5 mb-2 text-brand" />
+                <span className="text-2xl font-bold">500+</span>
+                <span className="text-xs text-muted-foreground">博士/校友</span>
+              </div>
+               <div className="flex flex-col items-center p-4 rounded-lg bg-secondary/20 border border-border/50">
+                <TrendingUp className="h-5 w-5 mb-2 text-brand" />
+                <span className="text-2xl font-bold">5年</span>
+                <span className="text-xs text-muted-foreground">数据跨度</span>
+              </div>
             </div>
           </div>
         </div>

@@ -17,6 +17,12 @@ export function Navbar() {
           </TouchLink>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link
+              href="/explore"
+              className="transition-colors text-foreground/60 touch-manipulation active:opacity-80 [@media(hover:hover)]:hover:text-foreground/80 [@media(hover:hover)]:hover:text-brand"
+            >
+              探索库
+            </Link>
+            <Link
               href="/batches"
               className="transition-colors text-foreground/60 touch-manipulation active:opacity-80 [@media(hover:hover)]:hover:text-foreground/80 [@media(hover:hover)]:hover:text-brand"
             >

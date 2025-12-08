@@ -22,7 +22,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     notFound();
   }
 
-  const relatedProjects = getRelatedProjects(project);
+  const relatedData = getRelatedProjects(project);
   
   // 人脉网络推荐：优先基于 Founder 的学校和工作经历
   const networkProjects = getNetworkProjects(project);
@@ -32,7 +32,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
   let sidebarProjects = networkProjects.map(n => ({ ...n.project, reason: n.reason }));
   
   if (sidebarProjects.length < 3) {
-    const existingIds = new Set([project.id, ...relatedProjects.map(p => p.id), ...sidebarProjects.map(p => p.id)]);
+    const existingIds = new Set([project.id, ...relatedData.map(r => r.project.id), ...sidebarProjects.map(p => p.id)]);
     
     // 获取同届其他项目进行补位
     const batchFillers = getProjectsByBatch(project.batch_id)
@@ -147,15 +147,20 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
           {/* Right Column: Sidebar (4 cols) */}
           <div className="lg:col-span-4 space-y-10">
-            {relatedProjects.length > 0 && (
+            {relatedData.length > 0 && (
               <section>
                 <h3 className="font-bold text-lg mb-4 flex items-center">
                   <span className="w-1 h-5 bg-brand rounded-full mr-2"></span>
                   相似赛道推荐
                 </h3>
                 <div className="flex flex-col gap-4">
-                  {relatedProjects.map(p => (
-                    <ProjectCard key={p.id} project={p} />
+                  {relatedData.map(item => (
+                    <div key={item.project.id} className="relative">
+                      <ProjectCard project={item.project} />
+                      <Badge variant="secondary" className="absolute top-2 left-2 text-[10px] px-1.5 py-0.5 h-5 bg-white/90 backdrop-blur shadow-sm border border-brand/10 text-brand z-10">
+                        匹配: {item.commonTags.slice(0, 2).join(", ")}
+                      </Badge>
+                    </div>
                   ))}
                 </div>
               </section>
