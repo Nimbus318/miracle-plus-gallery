@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Github } from "lucide-react"
+import { MobileMenu } from "@/components/mobile-menu"
 
 export function Navbar() {
   return (
@@ -32,6 +33,7 @@ export function Navbar() {
             <Github className="h-5 w-5" />
             <span className="sr-only">GitHub</span>
           </Link>
+          <MobileMenu />
         </div>
       </div>
     </header>
