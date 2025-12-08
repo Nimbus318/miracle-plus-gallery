@@ -17,7 +17,7 @@ export function ProjectImage({ src, alt, priority = false }: ProjectImageProps) 
   return (
     <div className="aspect-video w-full rounded-xl overflow-hidden bg-secondary/30 relative">
       {isLoading && (
-        <Skeleton className="absolute inset-0 z-10 w-full h-full bg-muted-foreground/20" />
+        <Skeleton className="absolute inset-0 z-10 w-full h-full bg-muted-foreground/20 pointer-events-none" />
       )}
       <Image 
         src={src} 

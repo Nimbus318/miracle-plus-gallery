@@ -29,7 +29,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.image_url ? (
             <div className="w-full h-full relative">
               {isLoading && (
-                <Skeleton className="absolute inset-0 z-10 w-full h-full rounded-none bg-muted" />
+                <Skeleton className="absolute inset-0 z-10 w-full h-full rounded-none bg-muted pointer-events-none" />
               )}
               <Image 
                 src={project.image_url} 
