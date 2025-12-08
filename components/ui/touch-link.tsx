@@ -6,10 +6,12 @@ import { cn } from "@/lib/utils"
 
 type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-interface TouchLinkProps extends LinkProps, AnchorProps {
-  className?: string
-  children: React.ReactNode
-}
+// Avoid the href type conflict between Next.js LinkProps and anchor props.
+type TouchLinkProps = LinkProps &
+  Omit<AnchorProps, "href" | "onTouchStart" | "onTouchEnd" | "onClick"> & {
+    className?: string
+    children: React.ReactNode
+  }
 
 /**
  * Touch 优化的 Link：

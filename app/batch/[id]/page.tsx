@@ -47,8 +47,20 @@ export default async function BatchPage({ params }: { params: Promise<{ id: stri
     batch_id: project.batch_id
   }));
 
-  // 提取该届次的所有 Tags 用于简单的 Filter 展示 (当前仅展示，不做客户端交互以免复杂化)
-  const allTags = Array.from(new Set(projects.flatMap(p => p.tags)));
+  // 提取该届次的所有 Tags，按出现次数降序取前 10 作为“热门赛道”
+  const tagCounts: Record<string, number> = {};
+  projects.forEach((p) => {
+    p.tags.forEach((tag) => {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+  });
+  const allTags = Object.entries(tagCounts)
+    .sort((a, b) => {
+      if (b[1] === a[1]) return a[0].localeCompare(b[0]); // 频次相同时按字母序
+      return b[1] - a[1];
+    })
+    .slice(0, 10)
+    .map(([tag]) => tag);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
