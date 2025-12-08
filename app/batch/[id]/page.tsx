@@ -25,6 +25,28 @@ export default async function BatchPage({ params }: { params: Promise<{ id: stri
 
   const projects = getProjectsByBatch(id);
 
+  // 1. 数据瘦身 (Sanitization)
+  // 因为 ProjectCard 是 Client Component，所有传递给它的 props 都会被序列化到 HTML 中。
+  // 为了显著减少 HTML 体积，我们只传递卡片展示所需的最小数据集。
+  const sanitizedProjects = projects.map(project => ({
+    id: project.id,
+    name: project.name,
+    one_liner: project.one_liner,
+    image_url: project.image_url,
+    tags: project.tags,
+    founders: project.founders.map(f => ({
+      name: f.name, // 保留名字用于 key 或展示
+      education: f.education,
+      work_history: f.work_history,
+      // 移除 'role' 和 'bio'，ProjectCard 暂时不需要 bio，role 也不是核心展示
+      role: "", 
+      bio: ""
+    })),
+    // 移除大段文本
+    description: "",
+    batch_id: project.batch_id
+  }));
+
   // 提取该届次的所有 Tags 用于简单的 Filter 展示 (当前仅展示，不做客户端交互以免复杂化)
   const allTags = Array.from(new Set(projects.flatMap(p => p.tags)));
 
@@ -111,7 +133,7 @@ export default async function BatchPage({ params }: { params: Promise<{ id: stri
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {projects.map(project => (
+              {sanitizedProjects.map(project => (
                 <ProjectCard key={project.id} project={project} />
               ))}
             </div>

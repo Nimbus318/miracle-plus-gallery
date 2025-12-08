@@ -47,7 +47,7 @@
     "name": "Textea",
     "one_liner": "无代码NLP，让人人都能分析文字数据",
     "description": "Textea的使命是解放自然语言处理(NLP)的力量，让人人都可以将手上文字数据转换成insights，而无需求助NLP工程师。公司首创表格和数据流的编程环境，把编程从传统的代码(包括Excel公式) 中解放出来，用户点鼠标和输入文字表达的需求会被匹配到算法、参数和模型上。",
-    "image_url": "/images/projects/2022S-004.png",
+    "image_url": "/images/projects/2022S-004.jpg",
     "tags": [
       "NLP",
       "低代码",
@@ -103,7 +103,7 @@
     "name": "FedML.ai",
     "one_liner": "构建任意地点任意规模的开放协作式人工智能平台与内容社区",
     "description": "FedML是一个跨用户、跨数据孤岛、跨设备的创新性的云边端一体化机器学习平台与内容社区，用户无需在它们之间或向云端移动任何数据，因此最大程度上保障了用户的隐私、数据使用的合规性、并降低了系统研发成本。FedML提供了“AI应用商店”和Web 3交易市场。",
-    "image_url": "/images/projects/2022S-008.png",
+    "image_url": "/images/projects/2022S-008.jpg",
     "tags": [
       "AI Infra",
       "联邦学习",
@@ -159,7 +159,7 @@
     "name": "边缘智造",
     "one_liner": "边缘智造，重构全球商业生态",
     "description": "公司创造去中心化解决方案，制造20尺货柜大小的迷你智能工厂，小到随处可放；数十万款产品按需定制，柔性生产，平均20min/pc的即时交付接单定制，当天即可交付，创作者圈层裂变，NFT赋能，全球创作，在用户家门口生产和交付一体。",
-    "image_url": "/images/projects/2022S-012.png",
+    "image_url": "/images/projects/2022S-012.jpg",
     "tags": [
       "智能制造",
       "分布式",
@@ -173,7 +173,7 @@
     "name": "RhythMo（域动）",
     "one_liner": "元宇宙中的“门户网站”",
     "description": "RhythMo域动数字将“帮助用户以最低门槛体验最高技术内容”作为公司使命，致力于成为元宇宙的门户。公司以全栈式轻量级动作捕捉技术、动作交互生成等技术为核心，帮助用户无缝零门槛体验各种虚拟世界，帮助元宇宙企业更高效获客。",
-    "image_url": "/images/projects/2022S-013.png",
+    "image_url": "/images/projects/2022S-013.jpg",
     "tags": [
       "元宇宙",
       "动作捕捉",
@@ -229,7 +229,7 @@
     "name": "指数深空",
     "one_liner": "致力于推动指数级的空间资源探索与利用",
     "description": "指数深空致力于持续推动指数级的空间资源探索与利用路线图，通过多阶段的工程演进，实现大规模太空工业的长远目标。近期产品集中在大型空间光伏与电推进系统，为运载火箭轨道升轨与分配提供经济高效的途径。",
-    "image_url": "/images/projects/2022S-017.png",
+    "image_url": "/images/projects/2022S-017.jpg",
     "tags": [
       "商业航天",
       "能源",
@@ -285,7 +285,7 @@
     "name": "不切实际",
     "one_liner": "把烹饪交给机器人和算法，为用户提供个性化饮食",
     "description": "不切实际试图在饮食领域，复制“胶囊咖啡”的产品体验。在未来，用户只需要购买生鲜蔬菜包，投放进机器，机器在云端算法控制下，为用户提供新鲜、个性化的饮食。公司从物理学和生物学角度研究烹饪本质、建立模型，把“好吃”这个概念量化为一系列物理、生物指标。",
-    "image_url": "/images/projects/2022S-021.png",
+    "image_url": "/images/projects/2022S-021.jpg",
     "tags": [
       "机器人",
       "食品科技",
@@ -369,7 +369,7 @@
     "name": "组知 OpenCorp",
     "one_liner": "数据驱动的“人力 x 业务”决策引擎",
     "description": "组知是国内首个从“人力 x 业务”场景出发的数据决策解决方案提供商，目前已拥有100+自研量化数据分析模型。基于人力和业务交叉的具体场景和高频需求，组知以“轻咨询 + SaaS”的模式，为企业级客户提供低成本、高效、安全、数据驱动的智慧解决方案。",
-    "image_url": "/images/projects/2022S-027.png",
+    "image_url": "/images/projects/2022S-027.jpg",
     "tags": [
       "企业服务",
       "数据决策",
@@ -383,7 +383,7 @@
     "name": "Motphys动作物理引擎",
     "one_liner": "用前沿技术驱动人类3D交互的未来",
     "description": "Motphys动作物理引擎是业内第一款将动作引擎和物理引擎统一设计的引擎产品，结合业内前沿技术，配合在算法和工程上的优化，能够实时驱动虚拟世界中全部运动，提供跨平台、高性能、高拟真的实时动作物理模拟，是虚拟世界的基础设施之一。",
-    "image_url": "/images/projects/2022S-028.png",
+    "image_url": "/images/projects/2022S-028.jpg",
     "tags": [
       "物理引擎",
       "3D",
@@ -453,7 +453,7 @@
     "name": "MetaData · 原子回声",
     "one_liner": "自然语言生成表格，让一切决策从表格开始",
     "description": "MetaData的核心能力是自然语言结构化。通过领先的自然语言处理技术，将非结构化的业务文件转化为结构化的表格，同时能将互联网开放知识引入企业数据分析流程，让企业决策更智能。MetaData面向数据分析师，无需机器学习背景，开箱即用。",
-    "image_url": "/images/projects/2022S-033.png",
+    "image_url": "/images/projects/2022S-033.jpg",
     "tags": [
       "NLP",
       "数据分析",
@@ -467,7 +467,7 @@
     "name": "离子阱量子计算机",
     "one_liner": "技术水准国内领先、世界一流的离子阱路线量子计算整机硬件公司",
     "description": "华翊量子充分利用技术优势，持续研发迭代并提供世界领先水平的离子阱量子计算机硬件，在未来几年内通过满足政府部门、科研与事业单位、商业公司研究性部门等应用量子计算技术的需求以实现持续发展，最终实现大规模通用量子计算。",
-    "image_url": "/images/projects/2022S-034.png",
+    "image_url": "/images/projects/2022S-034.jpg",
     "tags": [
       "量子计算",
       "硬科技",
@@ -481,7 +481,7 @@
     "name": "SHAN · 善",
     "one_liner": "身心同养的生活方式品牌",
     "description": "SHAN善（原SHAN宫小膳）是身心同养生活方式的开创者。坚信身体和心理的共同调养才能从源头带来健康。既有养身的基于独家产地和专利技术的食补保健品激发身体免疫调节神经，也有养心的交互平台配合产品线来提供音疗冥想、身心健康内容以及互动式疗愈游戏等。",
-    "image_url": "/images/projects/2022S-035.png",
+    "image_url": "/images/projects/2022S-035.jpg",
     "tags": [
       "大健康",
       "消费品牌",
@@ -537,7 +537,7 @@
     "name": "伯牙智能音乐",
     "one_liner": "基于AI智能引擎提供“创作—确权—授权”的商用音乐解决方案",
     "description": "伯牙音乐致力于解决音乐版权确权维权难的行业痛点，利用工具引擎帮助中腰部音乐大量创造价值，通过全国首家将音乐NFT与音乐版权绑定的联盟链及智能合约，帮助音乐人大量获得价值，打造全新音乐人价值共同体。",
-    "image_url": "/images/projects/2022S-039.png",
+    "image_url": "/images/projects/2022S-039.jpg",
     "tags": [
       "AIGC",
       "音乐",
@@ -621,7 +621,7 @@
     "name": "KIRI Engine app/platform",
     "one_liner": "我们通过手机拍照的方式建立全球增速最快的超写实3D模型资产平台",
     "description": "为了降低超写实3D模型素材的获取成本，我们开发了简单易用的3D扫描建模工具——KIRI Engine app。通过这款工具应用程序我们正在建立全球增速最快的超写实3D模型资产平台。产品上线2个月达到10W+注册用户。",
-    "image_url": "/images/projects/2022S-045.png",
+    "image_url": "/images/projects/2022S-045.jpg",
     "tags": [
       "3D",
       "AIGC",
@@ -635,7 +635,7 @@
     "name": "晞德求解器",
     "one_liner": "Mathematics-as-a-Service",
     "description": "晞德求解器致力于为各行各业提供高性能、可靠易用的Mathematics-as-a-Service（数学即服务, MaaS），为各场景提升决策效率与安全。通过在各领域沉淀模型和算法模块，晞德MaaS将实现0使用门槛操作，为用户提供从问题到数学建模到求解的一站式自动化解决方案。",
-    "image_url": "/images/projects/2022S-046.png",
+    "image_url": "/images/projects/2022S-046.jpg",
     "tags": [
       "数学",
       "工业软件",
@@ -649,7 +649,7 @@
     "name": "Meatoid坨坨肉",
     "one_liner": "用类器官定义未来科技食品口感",
     "description": "Meatoid坨坨肉是世界上首个使用类器官做培养肉的公司，用类器官这一当今医学领域最先进的体外器官模型来制作组织级别的培养肉。相较于当前的细胞培养肉，坨坨肉预期可以实现口感定制，模拟组织结构，并具有很强的可扩展性。",
-    "image_url": "/images/projects/2022S-047.png",
+    "image_url": "/images/projects/2022S-047.jpg",
     "tags": [
       "合成生物学",
       "食品科技",
@@ -719,7 +719,7 @@
     "name": "sealos",
     "one_liner": "以kubernetes为内核的云操作系统发型版，让云原生简单普及",
     "description": "以开源的方式实现一个云原生操作系统，作为今天公有云厂商的一个可选替代方案，解决目前公有云价格昂贵、体系封闭强绑定的问题。未来让每家企业都可以使用简单/便宜/开放/稳定的云操作系统，实现云原生的普及。",
-    "image_url": "/images/projects/2022S-052.png",
+    "image_url": "/images/projects/2022S-052.jpg",
     "tags": [
       "云计算",
       "云原生",
@@ -733,7 +733,7 @@
     "name": "极壳科技 Humanbooster",
     "one_liner": "用数据驱动外骨骼创新，助力人类探索自然未知边界",
     "description": "极壳科技致力于消费类外骨骼产品创新，扩展人类能力边界，打造外骨骼领域的DJI。公司通过模拟技术和人工智能优化的外骨骼最优方案，将产品重量降低到数百克，成本降低到百元级，对新陈代谢的降幅达到传统外骨骼方案的数倍。",
-    "image_url": "/images/projects/2022S-053.png",
+    "image_url": "/images/projects/2022S-053.jpg",
     "tags": [
       "机器人",
       "外骨骼",

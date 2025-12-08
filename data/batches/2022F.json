@@ -1084,7 +1084,7 @@
     "name": "万有引力 GravityXR",
     "one_liner": "为极致用户体验而生的XR芯片公司",
     "description": "万有引力团队从XR芯片和软件生态入手，帮助XR整机客户更轻松地设计出用户体验更好的XR设备。自2021年9月成立以来，万有引力已完成3轮近10亿元融资。",
-    "image_url": "/images/projects/2022F-033.png",
+    "image_url": "/images/projects/2022F-033.jpg",
     "tags": [
       "芯片",
       "XR",
@@ -1164,7 +1164,7 @@
     "name": "Fluxus",
     "one_liner": "并行版「CUDA+」，多卡合一释放大算力",
     "description": "Fluxus 致力于用软件驱动硬件，释放算力的极限。未来一年内，fluxus 将在已有的硬件体系上，构建端云算力自动分配的 FaaS。团队现已在 5 周内落地了多云多 GPU 算力资源管理平台，管理了200+ GPU，并帮助 6 家 AIGC、虚拟人公司，降低 60% 算力成本。",
-    "image_url": "/images/projects/2022F-036.png",
+    "image_url": "/images/projects/2022F-036.jpg",
     "tags": [
       "AI Infra",
       "云计算",

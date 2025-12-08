@@ -56,7 +56,7 @@
     "name": "Reecho 睿声人声大模型",
     "one_liner": "为人机交互与数字创作赋予人性的温度。",
     "description": "言域科技是一家以人工智能技术为主的高新技术企业，致力于将自研尖端多模态技术与深度创新结合，打造情感与拟真度可以媲美真人的人机交互与数字化内容创作体验。言域科技始终相信，提供情绪价值是让人工智能真正融入主流大众的重要途径。",
-    "image_url": "/images/projects/2024S-002.png",
+    "image_url": "/images/projects/2024S-002.jpg",
     "tags": [
       "多模态",
       "AI",
@@ -2153,7 +2153,7 @@
     "name": "硅基流动 SiliconFlow",
     "one_liner": "致力于打造标准化、超高效能的生成式 AI 计算基础设施平台，加速 AGI 普惠人类。",
     "description": "硅基流动专注于打造 AI 基础设施（AI Infra）平台。图片/视频生成加速库 OneDiff 在全球范围内率先实现 Stable Diffusion 1 秒出图，性能提升高达3倍；大语言模型推理引擎 SiliconLLM 实现 10 倍效率提升；云服务平台 SiliconCloud 及一站式 AI 应用开发平台 SiliconBrain。",
-    "image_url": "/images/projects/2024S-053.png",
+    "image_url": "/images/projects/2024S-053.jpg",
     "tags": [
       "AI Infra",
       "云计算",
