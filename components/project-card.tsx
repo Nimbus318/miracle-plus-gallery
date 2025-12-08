@@ -1,15 +1,22 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { useState } from "react"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Skeleton } from "@/components/ui/skeleton"
 import { Project } from "@/lib/data"
 import { GraduationCap, Briefcase } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface ProjectCardProps {
   project: Project
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const [isLoading, setIsLoading] = useState(true)
+
   // 提取该项目所有 Founder 的去重学校和公司标签
   const schools = Array.from(new Set(project.founders.flatMap(f => f.education))).slice(0, 2);
   const companies = Array.from(new Set(project.founders.flatMap(f => f.work_history))).slice(0, 2);
@@ -21,12 +28,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="aspect-video w-full relative bg-secondary/50 overflow-hidden">
           {project.image_url ? (
             <div className="w-full h-full relative">
+              {isLoading && (
+                <Skeleton className="absolute inset-0 z-10 rounded-none bg-muted" />
+              )}
               <Image 
                 src={project.image_url} 
                 alt={project.name}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className={cn(
+                  "object-cover transition-transform duration-500 group-hover:scale-105",
+                  isLoading ? "opacity-0" : "opacity-100"
+                )}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onLoad={() => setIsLoading(false)}
               />
             </div>
           ) : (

@@ -13,7 +13,29 @@ export default function BatchesPage() {
       <main className="container mx-auto px-4 py-12 flex-1">
         <h1 className="text-3xl font-bold mb-8">历届创业营</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {batches.map((batch) => (
+          {batches.map((batch) => {
+            if (batch.disabled) {
+              return (
+                <div key={batch.id} className="relative overflow-hidden rounded-xl border border-dashed border-muted-foreground/20 bg-muted/30 p-8 h-full flex flex-col justify-center items-center text-center">
+                  <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]" />
+                  <div className="relative z-10 flex flex-col items-center gap-4 opacity-60">
+                     <div className="flex items-center gap-3 mb-2">
+                        <Badge variant="outline" className="text-lg px-3 py-1 bg-transparent border-dashed text-muted-foreground">
+                          {batch.year} {batch.season === 'Spring' ? '春季' : '秋季'}
+                        </Badge>
+                     </div>
+                    <h3 className="text-2xl font-bold text-muted-foreground">
+                      {batch.name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground max-w-[200px]">
+                      {batch.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            }
+
+            return (
             <Link key={batch.id} href={`/batch/${batch.id}`} className="group block">
               <div className="relative overflow-hidden rounded-xl border-0 shadow-sm bg-card text-card-foreground transition-all hover:shadow-xl hover:-translate-y-1 h-full">
                 <div className="p-8">
@@ -59,7 +81,8 @@ export default function BatchesPage() {
                 </div>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </main>
     </div>

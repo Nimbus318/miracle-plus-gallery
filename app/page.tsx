@@ -23,7 +23,7 @@ export default function Home() {
               ✨ 收录 2025 全年 {topUniversities.length > 0 ? "100+" : ""} 精选项目
             </Badge>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-              奇绩创坛<br className="hidden sm:inline" /> 创业项目数据洞察
+              奇绩创坛<br /> 创业项目数据洞察
             </h1>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
               探索中国最前沿的 Researcher Founders。
@@ -78,7 +78,29 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {batches.map((batch) => (
+            {batches.map((batch) => {
+              if (batch.disabled) {
+                return (
+                  <div key={batch.id} className="relative overflow-hidden rounded-xl border border-dashed border-muted-foreground/20 bg-muted/30 p-8 h-full flex flex-col justify-center items-center text-center">
+                    <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]" />
+                    <div className="relative z-10 flex flex-col items-center gap-4 opacity-60">
+                       <div className="flex items-center gap-3 mb-2">
+                          <Badge variant="outline" className="text-lg px-3 py-1 bg-transparent border-dashed text-muted-foreground">
+                            {batch.year} {batch.season === 'Spring' ? '春季' : '秋季'}
+                          </Badge>
+                       </div>
+                      <h3 className="text-2xl font-bold text-muted-foreground">
+                        {batch.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground max-w-[200px]">
+                        {batch.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
               <Link key={batch.id} href={`/batch/${batch.id}`} className="group block">
                 <div className="relative overflow-hidden rounded-xl border-0 shadow-sm bg-card text-card-foreground transition-all hover:shadow-xl hover:-translate-y-1 h-full">
                   <div className="p-8">
@@ -129,7 +151,8 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

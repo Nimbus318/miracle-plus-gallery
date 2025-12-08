@@ -1,26 +1,5 @@
 [
   {
-    "id": "2025S",
-    "name": "2025 春季创业营",
-    "year": 2025,
-    "season": "Spring",
-    "date": "2025-06-08",
-    "location": "北京·中关村国际创新中心",
-    "stats": {
-      "project_count": 57,
-      "acceptance_rate": "1.1%",
-      "phd_ratio": "66.3% 硕士及以上",
-      "researcher_founder_ratio": "59.6%"
-    },
-    "highlights": [
-      "场景智能",
-      "空间/具身智能",
-      "认知智能",
-      "科学智能"
-    ],
-    "description": "驱动创新的根本，是在源头支持那些具备研究能力与动手能力的年轻创始人。"
-  },
-  {
     "id": "2025F",
     "name": "2025 秋季创业营",
     "year": 2025,
@@ -43,7 +22,50 @@
       "出海"
     ],
     "description": "创新的门槛迅速降低、价值创造逻辑重塑，创新边界不断拓展。"
-  },  
+  },
+  {
+    "id": "2025S",
+    "name": "2025 春季创业营",
+    "year": 2025,
+    "season": "Spring",
+    "date": "2025-06-08",
+    "location": "北京·中关村国际创新中心",
+    "stats": {
+      "project_count": 57,
+      "acceptance_rate": "1.1%",
+      "phd_ratio": "66.3% 硕士及以上",
+      "researcher_founder_ratio": "59.6%"
+    },
+    "highlights": [
+      "场景智能",
+      "空间/具身智能",
+      "认知智能",
+      "科学智能"
+    ],
+    "description": "驱动创新的根本，是在源头支持那些具备研究能力与动手能力的年轻创始人。"
+  },
+  {
+    "id": "2024F",
+    "name": "2024 秋季创业营",
+    "year": 2024,
+    "season": "Fall",
+    "date": "2024-12-01",
+    "location": "北京·中关村国际创新中心",
+    "stats": {
+      "project_count": 60,
+      "acceptance_rate": "1%",
+      "phd_ratio": "64% 硕士及以上",
+      "founder_age": "平均 29 岁",
+      "female_founder": "12%"
+    },
+    "highlights": [
+      "大模型",
+      "多模态",
+      "数据",
+      "具身智能"
+    ],
+    "description": "前沿创新信号集中爆发：大模型、多模态、数据与具身智能引领新一轮创业浪潮。"
+  },
   {
     "id": "2024S",
     "name": "2024 春季创业营",
@@ -67,25 +89,126 @@
     "description": "申请人越来越年轻，前沿信号越来越强，具身智能、机器人、科研驱动成为主流。"
   },
   {
-    "id": "2024F",
-    "name": "2024 秋季创业营",
-    "year": 2024,
+    "id": "2023F",
+    "name": "2023 秋季创业营",
+    "year": 2023,
     "season": "Fall",
-    "date": "2024-12-01",
-    "location": "北京·中关村国际创新中心",
+    "date": "2023-11",
+    "location": "北京·中关村",
+    "stats": {
+      "project_count": 0,
+      "acceptance_rate": "-",
+      "phd_ratio": "-",
+      "researcher_founder_ratio": "-",
+      "overseas_experience": "-"
+    },
+    "highlights": [],
+    "description": "暂无数据",
+    "disabled": true
+  },
+  {
+    "id": "2023S",
+    "name": "2023 春季创业营",
+    "year": 2023,
+    "season": "Spring",
+    "date": "2023-06-03",
+    "location": "北京·中关村",
     "stats": {
       "project_count": 60,
-      "acceptance_rate": "1%",
-      "phd_ratio": "64% 硕士及以上",
-      "founder_age": "平均 29 岁",
-      "female_founder": "12%"
+      "acceptance_rate": "< 1%",
+      "phd_ratio": "78% 硕士及以上",
+      "overseas_experience": "67%",
+      "founder_age": "平均 29 岁"
     },
     "highlights": [
-      "大模型",
-      "多模态",
-      "数据",
-      "具身智能"
+      "大模型 (39家)",
+      "机器人 (11家)",
+      "100% 技术驱动"
     ],
-    "description": "前沿创新信号集中爆发：大模型、多模态、数据与具身智能引领新一轮创业浪潮。"
+    "description": "大模型元年，前沿信号明显，人工智能及大模型主题公司占绝对主导地位。"
+  },
+  {
+    "id": "2022F",
+    "name": "2022 秋季创业营",
+    "year": 2022,
+    "season": "Fall",
+    "date": "2022-11-20",
+    "location": "北京·中关村",
+    "stats": {
+      "project_count": 55,
+      "acceptance_rate": "< 1%",
+      "phd_ratio": "35% 博士及以上",
+      "overseas_experience": "65%",
+      "founder_age": "平均 31 岁",
+      "female_founder": "40%"
+    },
+    "highlights": [
+      "大模型 (16家)",
+      "元宇宙 (15家)",
+      "人工智能 (19家)"
+    ],
+    "description": "大模型驱动行业发展信号明显，元宇宙、生命科学赛道活跃。"
+  },
+  {
+    "id": "2022S",
+    "name": "2022 春季创业营",
+    "year": 2022,
+    "season": "Spring",
+    "date": "2022-06-12",
+    "location": "线上直播",
+    "stats": {
+      "project_count": 54,
+      "acceptance_rate": "< 1%",
+      "phd_ratio": "69% 硕士及以上",
+      "overseas_experience": "70%",
+      "founder_age": "平均 31 岁"
+    },
+    "highlights": [
+      "元宇宙 (14家)",
+      "Web3 (7家)",
+      "量子计算 (2家)"
+    ],
+    "description": "首次纯线上路演日，元宇宙与Web3成为最大亮点。"
+  },
+  {
+    "id": "2021F",
+    "name": "2021 秋季创业营",
+    "year": 2021,
+    "season": "Fall",
+    "date": "2021-11-28",
+    "location": "北京·中关村",
+    "stats": {
+      "project_count": 52,
+      "acceptance_rate": "< 1.3%",
+      "applications": "4000+"
+    },
+    "highlights": [
+      "元宇宙",
+      "商业航天",
+      "生物科技",
+      "芯片"
+    ],
+    "description": "收到超过4000份申请，元宇宙信号显现，硬科技项目占比高。"
+  },
+  {
+    "id": "2021S",
+    "name": "2021 春季创业营",
+    "year": 2021,
+    "season": "Spring",
+    "date": "2021-06",
+    "location": "北京·中关村",
+    "stats": {
+      "project_count": 34,
+      "acceptance_rate": "< 1%",
+      "phd_ratio": "68% 硕士及以上",
+      "overseas_experience": "55%"
+    },
+    "highlights": [
+      "生物医疗",
+      "芯片半导体",
+      "碳中和",
+      "机器人"
+    ],
+    "description": "生物医疗与硬科技项目集中爆发，碳中和领域初露头角。"
   }
 ]

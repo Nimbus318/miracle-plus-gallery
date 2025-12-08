@@ -41,6 +41,7 @@ export interface Batch {
   stats: BatchStats;
   highlights: string[];
   description: string;
+  disabled?: boolean;
 }
 
 // --- 数据加载 ---

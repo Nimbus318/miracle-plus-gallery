@@ -4,9 +4,9 @@ import requests
 import time
 import random
 
-DATA_DIR = "miracle-plus-gallery/data"
+DATA_DIR = "data"
 BATCHES_DIR = os.path.join(DATA_DIR, "batches")
-IMAGES_DIR = "miracle-plus-gallery/public/images/projects"
+IMAGES_DIR = "public/images/projects"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
