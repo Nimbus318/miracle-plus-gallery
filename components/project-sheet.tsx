@@ -3,7 +3,6 @@
 import { Project, Founder } from "@/lib/types"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area" // You might need to add this component or just use div overflow
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { ArrowUpRight, GraduationCap, Briefcase, User, Calendar, Tag, ExternalLink, ChevronLeft } from "lucide-react"
 import Link from "next/link"

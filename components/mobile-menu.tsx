@@ -21,6 +21,13 @@ export function MobileMenu() {
         <div className="absolute top-14 left-0 right-0 border-b border-gray-100 dark:border-white/10 bg-background/95 backdrop-blur-md p-4 shadow-lg animate-in slide-in-from-top-2 z-50">
           <nav className="flex flex-col space-y-1">
             <Link
+              href="/explore"
+              onClick={() => setIsOpen(false)}
+              className="block py-3 text-lg font-medium text-foreground/60 [@media(hover:hover)]:hover:text-brand transition-colors active:text-brand active:bg-secondary/50 rounded-md px-2"
+            >
+              探索库
+            </Link>
+            <Link
               href="/batches"
               onClick={() => setIsOpen(false)}
               className="block py-3 text-lg font-medium text-foreground/60 [@media(hover:hover)]:hover:text-brand transition-colors active:text-brand active:bg-secondary/50 rounded-md px-2"

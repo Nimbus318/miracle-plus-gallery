@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Project } from "@/lib/types";
-import { getCategoryForTag, normalizeUniversity } from "@/lib/taxonomy";
+import { Category, getCategoryForTag, normalizeUniversity } from "@/lib/taxonomy";
 
 export interface AnalyticsFilters {
   years: number[];
@@ -8,6 +8,15 @@ export interface AnalyticsFilters {
 }
 
 export function useAnalytics(projects: Project[], filters: AnalyticsFilters) {
+  const derivePrimaryCategory = (tags: string[]): Category => {
+    const priority: Category[] = ["AI", "Hardware", "Software", "Bio", "Future", "Consumer", "Other"];
+    const seen = new Set<Category>();
+    tags.forEach(tag => {
+      seen.add(getCategoryForTag(tag));
+    });
+    return priority.find(p => seen.has(p)) || "Other";
+  };
+
   // 1. Filter Projects Base
   const filteredProjects = useMemo(() => {
     return projects.filter(p => {
@@ -57,7 +66,7 @@ export function useAnalytics(projects: Project[], filters: AnalyticsFilters) {
       
       if (!rawMap[batch]) rawMap[batch] = {};
       
-      const category = getCategoryForTag(p.tags[0] || "Other"); // Use primary category
+      const category = derivePrimaryCategory(p.tags || []);
       rawMap[batch][category] = (rawMap[batch][category] || 0) + 1;
     });
 

@@ -1,22 +1,16 @@
 import { Navbar } from "@/components/navbar";
-import { UniversityChart } from "@/components/charts/university-chart";
-import { TrackChart } from "@/components/charts/track-chart";
 import { SearchHero } from "@/components/search-hero";
-import { getTopUniversities, getTopTags, getBatches, getAllProjects } from "@/lib/data";
-import { getCategoryTrends } from "@/lib/analytics";
+import { getBatches, getAllProjects } from "@/lib/data";
+import { SectorTrendChart } from "@/components/charts/sector-trend-chart";
+import { UniversityPowerChart } from "@/components/charts/university-power-chart";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Zap, GraduationCap, Globe, Database, Users, TrendingUp } from "lucide-react";
+import { Sparkles, Zap, GraduationCap, Globe, Database, Users, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { TouchLink } from "@/components/ui/touch-link";
 
 export default function Home() {
-  const topUniversities = getTopUniversities();
-  const topTags = getTopTags(20);
   const batches = getBatches();
   const projects = getAllProjects();
   const totalProjects = projects.length;
-  const { chartData: trendData, categories: trendTags } = getCategoryTrends();
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -78,12 +72,36 @@ export default function Home() {
         <div className="container px-4 mx-auto">
           <div className="flex flex-col space-y-2 mb-8">
             <h2 className="text-2xl font-bold tracking-tight">全貌概览</h2>
-            <p className="text-muted-foreground">通过数据看透 2025 年创业趋势</p>
+            <p className="text-muted-foreground">从 2021 到 2025，见证中国技术创业的演进之路</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <UniversityChart data={topUniversities} />
-            <TrackChart data={topTags} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-background/50 rounded-xl p-6 border border-border/50 shadow-sm flex flex-col">
+              <div className="mb-6">
+                 <h3 className="text-lg font-bold">赛道风向标</h3>
+                 <p className="text-sm text-muted-foreground">AI 与硬科技赛道在过去五年中的占比攀升趋势</p>
+              </div>
+               {/* Mobile: 300px, Desktop: 400px */}
+               <div className="md:hidden">
+                 <SectorTrendChart projects={projects} height={300} />
+               </div>
+               <div className="hidden md:block">
+                 <SectorTrendChart projects={projects} height={400} />
+               </div>
+            </div>
+            <div className="bg-background/50 rounded-xl p-6 border border-border/50 shadow-sm flex flex-col">
+              <div className="mb-6">
+                 <h3 className="text-lg font-bold">高校势力榜 Top 10</h3>
+                 <p className="text-sm text-muted-foreground">清北复交与海外名校共同构成了核心创业力量</p>
+              </div>
+               {/* Mobile: 250px, Desktop: 400px */}
+               <div className="md:hidden">
+                 <UniversityPowerChart projects={projects} limit={10} height={250} />
+               </div>
+               <div className="hidden md:block">
+                 <UniversityPowerChart projects={projects} limit={10} height={400} />
+               </div>
+            </div>
           </div>
         </div>
       </section>

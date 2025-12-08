@@ -1,6 +1,7 @@
 import { getAllProjects } from "@/lib/data"
 import ExploreClientPage from "./client-page"
 import { Metadata } from "next"
+import { Suspense } from "react"
 
 export const metadata: Metadata = {
   title: "探索项目库 | 奇绩创坛 2021-2025 全景数据库",
@@ -11,6 +12,8 @@ export default function Page() {
   const projects = getAllProjects()
   
   return (
-    <ExploreClientPage initialProjects={projects} />
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <ExploreClientPage initialProjects={projects} />
+    </Suspense>
   )
 }

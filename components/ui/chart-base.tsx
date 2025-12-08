@@ -3,20 +3,19 @@
 import React, { useEffect, useRef } from 'react';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from 'next-themes';
+import { cn } from "@/lib/utils";
 
 interface ChartBaseProps {
   options: any;
   height?: string | number;
   loading?: boolean;
   onEvents?: Record<string, Function>;
+  minimal?: boolean; // New prop to control border/background
 }
 
-export function ChartBase({ options, height = 400, loading = false, onEvents }: ChartBaseProps) {
+export function ChartBase({ options, height = 400, loading = false, onEvents, minimal = false }: ChartBaseProps) {
   const { theme } = useTheme();
   const chartRef = useRef<ReactECharts>(null);
-
-  // Auto-resize is handled by echarts-for-react internally, 
-  // but we can force it if needed.
   
   // Inject Theme Colors
   const isDark = theme === 'dark';
@@ -49,7 +48,10 @@ export function ChartBase({ options, height = 400, loading = false, onEvents }: 
   };
 
   return (
-    <div className="w-full rounded-lg border border-border/50 bg-card p-4 shadow-sm">
+    <div className={cn(
+      "w-full",
+      !minimal && "rounded-lg border border-border/50 bg-card p-4 shadow-sm"
+    )}>
       <ReactECharts
         ref={chartRef}
         option={defaultOption}

@@ -1,20 +1,17 @@
 "use client"
 
-import { useState, useMemo, useEffect } from "react"
+import { useState, useMemo } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { Project } from "@/lib/types"
-import { TAXONOMY, TaxonomyNode, getCategoryForTag } from "@/lib/taxonomy"
+import { TAXONOMY, getCategoryForTag } from "@/lib/taxonomy"
 import { Navbar } from "@/components/navbar"
-import Link from "next/link"
-import { Search, Filter, X, GraduationCap, Globe, Building2, SlidersHorizontal, ArrowUpRight } from "lucide-react"
+import { Search, Filter, GraduationCap, Globe } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { Slider } from "@/components/ui/slider"
-import { TouchLink } from "@/components/ui/touch-link"
 import { ProjectSheet } from "@/components/project-sheet"
 
 interface ExploreClientPageProps {
@@ -24,14 +21,21 @@ interface ExploreClientPageProps {
 export default function ExploreClientPage({ initialProjects }: ExploreClientPageProps) {
   const searchParams = useSearchParams()
   const router = useRouter()
+  const categorySet = useMemo(() => new Set(TAXONOMY.map(node => node.category)), [])
+  const isCategory = (val: string | null): val is (typeof TAXONOMY)[number]["category"] =>
+    !!val && categorySet.has(val as (typeof TAXONOMY)[number]["category"])
+
+  const initialTag = searchParams.get("tag")
+  const initialQuery = searchParams.get("q") || searchParams.get("uni") || (initialTag && !isCategory(initialTag) ? initialTag : "")
 
   // --- State ---
   // Initialize state from URL params
-  const [query, setQuery] = useState(searchParams.get("q") || searchParams.get("uni") || "")
+  const [query, setQuery] = useState(initialQuery)
   const [selectedYears, setSelectedYears] = useState<number[]>([])
   const [selectedCategories, setSelectedCategories] = useState<string[]>(
-    searchParams.get("tag") ? [searchParams.get("tag")!] : []
+    initialTag && isCategory(initialTag) ? [initialTag] : []
   )
+  const searchKey = searchParams.toString()
   const [showPhDOnly, setShowPhDOnly] = useState(false)
   const [showOverseasOnly, setShowOverseasOnly] = useState(false)
   
@@ -58,16 +62,6 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
     updateUrl(params)
   }
   
-  // Update state when URL params change (e.g. browser back button)
-  useEffect(() => {
-    const q = searchParams.get("q") || searchParams.get("uni") || ""
-    const tag = searchParams.get("tag")
-    
-    if (q !== query) setQuery(q)
-    if (tag && !selectedCategories.includes(tag)) {
-       setSelectedCategories([tag])
-    }
-  }, [searchParams])
   
   // --- Constants ---
   const years = [2025, 2024, 2023, 2022, 2021]
@@ -171,7 +165,7 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div key={searchKey} className="min-h-screen bg-background flex flex-col">
       <Navbar />
       
       <div className="container mx-auto px-4 py-8 flex-1 flex flex-col md:flex-row gap-8">
@@ -227,7 +221,7 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
                   <Checkbox 
                     id="phd-filter" 
                     checked={showPhDOnly}
-                    onCheckedChange={(c) => setShowPhDOnly(!!c)}
+                  onCheckedChange={(c: boolean | "indeterminate") => setShowPhDOnly(!!c)}
                   />
                   <label htmlFor="phd-filter" className="text-sm font-medium leading-none flex items-center gap-1">
                     <GraduationCap className="h-3 w-3" />
@@ -238,7 +232,7 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
                   <Checkbox 
                     id="overseas-filter" 
                     checked={showOverseasOnly}
-                    onCheckedChange={(c) => setShowOverseasOnly(!!c)}
+                  onCheckedChange={(c: boolean | "indeterminate") => setShowOverseasOnly(!!c)}
                   />
                   <label htmlFor="overseas-filter" className="text-sm font-medium leading-none flex items-center gap-1">
                     <Globe className="h-3 w-3" />

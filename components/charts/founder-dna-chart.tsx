@@ -14,11 +14,6 @@ interface FounderDNAChartProps {
 export function FounderDNAChart({ stats }: FounderDNAChartProps) {
   
   const option = {
-    title: {
-      text: '创始人画像',
-      subtext: `基于 ${stats.totalFounders} 位创始人的背景分析`,
-      left: 'center'
-    },
     tooltip: {
       trigger: 'item'
     },
@@ -29,7 +24,7 @@ export function FounderDNAChart({ stats }: FounderDNAChartProps) {
       {
         name: '学历分布',
         type: 'pie',
-        radius: ['40%', '70%'],
+        radius: ['50%', '70%'],
         center: ['25%', '50%'],
         avoidLabelOverlap: false,
         itemStyle: {
@@ -44,8 +39,9 @@ export function FounderDNAChart({ stats }: FounderDNAChartProps) {
         emphasis: {
           label: {
             show: true,
-            fontSize: 20,
-            fontWeight: 'bold'
+            fontSize: 16,
+            fontWeight: 'bold',
+            formatter: '{b}\n{d}%'
           }
         },
         labelLine: {
@@ -53,13 +49,13 @@ export function FounderDNAChart({ stats }: FounderDNAChartProps) {
         },
         data: [
           { value: Math.round(stats.phdRatio * 100), name: '博士/PhD' },
-          { value: 100 - Math.round(stats.phdRatio * 100), name: '硕士/本科' }
+          { value: 100 - Math.round(stats.phdRatio * 100), name: '其他' }
         ]
       },
       {
         name: '教育背景',
         type: 'pie',
-        radius: ['40%', '70%'],
+        radius: ['50%', '70%'],
         center: ['75%', '50%'],
         avoidLabelOverlap: false,
         itemStyle: {
@@ -74,8 +70,9 @@ export function FounderDNAChart({ stats }: FounderDNAChartProps) {
         emphasis: {
           label: {
             show: true,
-            fontSize: 20,
-            fontWeight: 'bold'
+            fontSize: 16,
+            fontWeight: 'bold',
+            formatter: '{b}\n{d}%'
           }
         },
         data: [
@@ -87,6 +84,6 @@ export function FounderDNAChart({ stats }: FounderDNAChartProps) {
   };
 
   return (
-    <ChartBase options={option} height={350} />
+    <ChartBase options={option} height={350} minimal={true} />
   );
 }
