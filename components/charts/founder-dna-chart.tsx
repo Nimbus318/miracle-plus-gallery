@@ -4,7 +4,7 @@ import { ChartBase } from "@/components/ui/chart-base";
 
 interface FounderDNAChartProps {
   stats: {
-    phdRatio: number;
+    advancedDegreeRatio: number;
     overseasRatio: number;
     totalFounders: number;
     totalProjects: number;
@@ -48,8 +48,8 @@ export function FounderDNAChart({ stats }: FounderDNAChartProps) {
           show: false
         },
         data: [
-          { value: Math.round(stats.phdRatio * 100), name: '博士/PhD' },
-          { value: 100 - Math.round(stats.phdRatio * 100), name: '其他' }
+          { value: Math.round(stats.advancedDegreeRatio * 100), name: '硕士及以上' },
+          { value: 100 - Math.round(stats.advancedDegreeRatio * 100), name: '其他' }
         ]
       },
       {

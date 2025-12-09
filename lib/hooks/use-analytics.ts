@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { Project } from "@/lib/types";
 import { Category, getCategoryForTag, normalizeUniversity } from "@/lib/taxonomy";
+import { analyzeFounderProfile } from "@/lib/founder-analysis";
 
 export interface AnalyticsFilters {
   years: number[];
@@ -90,50 +91,72 @@ export function useAnalytics(projects: Project[], filters: AnalyticsFilters) {
 
   // 3. Compute Top Universities (Drill-down ready)
   const universityStats = useMemo(() => {
-    const uniCounts: Record<string, number> = {};
+    const uniFounders: Record<string, Set<string>> = {};
+    
     filteredProjects.forEach(p => {
       p.founders.forEach(f => {
+        const founderId = f.name || "Unknown";
         f.education.forEach(edu => {
           if (!edu) return;
           const norm = normalizeUniversity(edu);
-          uniCounts[norm] = (uniCounts[norm] || 0) + 1;
+          
+          if (!uniFounders[norm]) {
+            uniFounders[norm] = new Set();
+          }
+          uniFounders[norm].add(founderId);
         });
       });
     });
 
-    return Object.entries(uniCounts)
-      .map(([name, value]) => ({ name, value }))
+    return Object.entries(uniFounders)
+      .map(([name, founderSet]) => ({ name, value: founderSet.size }))
       .sort((a, b) => b.value - a.value)
       .slice(0, 15); // Top 15
   }, [filteredProjects]);
 
-  // 4. Compute Founder DNA (PhD vs Others, Overseas vs Local)
+  // 4. Compute Founder DNA (Advanced Degree vs Others, Overseas vs Local)
   const founderStats = useMemo(() => {
-    let phdCount = 0;
-    let overseasCount = 0;
-    let totalFounders = 0;
-
-    const overseasKeywords = ["University", "College", "Institute", "MIT", "CMU", "Stanford", "Harvard", "Oxford", "Cambridge"];
+    // 使用 Map 进行去重 (Key: 姓名)
+    const uniqueFounders = new Map<string, {
+      isPhD: boolean;
+      isAdvancedDegree: boolean;
+      isOverseas: boolean;
+    }>();
 
     filteredProjects.forEach(p => {
       p.founders.forEach(f => {
-        totalFounders++;
-        
-        // PhD Check
-        const isPhD = f.bio.toLowerCase().includes("phd") || 
-                      f.bio.toLowerCase().includes("博士") ||
-                      f.education.some(e => e.toLowerCase().includes("phd") || e.toLowerCase().includes("博士"));
-        if (isPhD) phdCount++;
+        const name = f.name ? f.name.trim() : "";
+        if (!name) return;
 
-        // Overseas Check
-        const isOverseas = f.education.some(e => 
-          overseasKeywords.some(k => e.includes(k) && !e.includes("Chinese") && !e.includes("Beijing"))
-        );
-        if (isOverseas) overseasCount++;
+        const profile = analyzeFounderProfile(f);
+        const existing = uniqueFounders.get(name);
+
+        if (existing) {
+           // 合并信息
+           uniqueFounders.set(name, {
+             isPhD: existing.isPhD || profile.isPhD,
+             isAdvancedDegree: existing.isAdvancedDegree || profile.isAdvancedDegree,
+             isOverseas: existing.isOverseas || profile.isOverseas
+           });
+        } else {
+           uniqueFounders.set(name, profile);
+        }
       });
     });
 
+    let advancedDegreeCount = 0;
+    let phdCount = 0;
+    let overseasCount = 0;
+    const totalFounders = uniqueFounders.size;
+
+    uniqueFounders.forEach(profile => {
+        if (profile.isAdvancedDegree) advancedDegreeCount++;
+        if (profile.isPhD) phdCount++;
+        if (profile.isOverseas) overseasCount++;
+    });
+
     return {
+      advancedDegreeRatio: totalFounders ? (advancedDegreeCount / totalFounders) : 0,
       phdRatio: totalFounders ? (phdCount / totalFounders) : 0,
       overseasRatio: totalFounders ? (overseasCount / totalFounders) : 0,
       totalFounders,

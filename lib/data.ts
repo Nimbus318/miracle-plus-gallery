@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { normalizeTag, normalizeUniversity } from './taxonomy';
-import { Project, Batch, Founder, BatchStats } from './types';
+import { analyzeFounderProfile } from './founder-analysis';
+import { Project, Batch } from './types';
 
 export * from './types';
 
@@ -113,6 +114,62 @@ export function getTopUniversities(limit = 10): { name: string; count: number }[
     .slice(0, limit);
 }
 
+// 获取总体统计数据
+export function getGlobalStats() {
+  const projects = getAllProjects();
+  
+  // 使用 Map 进行去重 (Key: 姓名)
+  // 假设同名即同人 (虽然有风险，但比重复计算好)
+  const uniqueFounders = new Map<string, {
+    isPhD: boolean;
+    isAdvancedDegree: boolean;
+    isOverseas: boolean;
+  }>();
+
+  projects.forEach(p => {
+    p.founders.forEach(f => {
+      const name = f.name ? f.name.trim() : "";
+      if (!name) return;
+
+      const profile = analyzeFounderProfile(f);
+      const existing = uniqueFounders.get(name);
+
+      if (existing) {
+        // 合并信息：如果任一记录显示有该特征，则认为有
+        uniqueFounders.set(name, {
+          isPhD: existing.isPhD || profile.isPhD,
+          isAdvancedDegree: existing.isAdvancedDegree || profile.isAdvancedDegree,
+          isOverseas: existing.isOverseas || profile.isOverseas
+        });
+      } else {
+        uniqueFounders.set(name, profile);
+      }
+    });
+  });
+
+  const totalFounders = uniqueFounders.size;
+  let phdFounders = 0;
+  let advancedDegreeFounders = 0;
+  let overseasFounders = 0;
+
+  uniqueFounders.forEach(profile => {
+    if (profile.isPhD) phdFounders++;
+    if (profile.isAdvancedDegree) advancedDegreeFounders++;
+    if (profile.isOverseas) overseasFounders++;
+  });
+
+  return {
+    totalProjects: projects.length,
+    totalFounders,
+    phdFounders,
+    advancedDegreeFounders,
+    overseasFounders,
+    phdRatio: totalFounders ? (phdFounders / totalFounders) : 0,
+    advancedDegreeRatio: totalFounders ? (advancedDegreeFounders / totalFounders) : 0,
+    overseasRatio: totalFounders ? (overseasFounders / totalFounders) : 0
+  };
+}
+
 // 关联推荐：根据当前项目，推荐相似项目
 // 逻辑：优先匹配相同 Tag 数量最多的项目
 export function getRelatedProjects(currentProject: Project, limit = 3): { project: Project; score: number; commonTags: string[] }[] {
@@ -143,7 +200,7 @@ export function getNetworkProjects(currentProject: Project, limit = 3): { projec
     .filter(p => p.id !== currentProject.id)
     .map(p => {
       let score = 0;
-      let reasons: string[] = [];
+      const reasons: string[] = [];
 
       // 检查学校重合
       const pSchools = new Set(p.founders.flatMap(f => f.education));

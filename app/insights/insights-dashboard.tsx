@@ -102,7 +102,7 @@ export function InsightsDashboard({ projects }: InsightsDashboardProps) {
         {[
           { label: "项目总数", value: founderStats.totalProjects },
           { label: "覆盖创始人", value: founderStats.totalFounders },
-          { label: "博士/PhD 含量", value: `${(founderStats.phdRatio * 100).toFixed(1)}%` },
+          { label: "硕士及以上", value: `${(founderStats.advancedDegreeRatio * 100).toFixed(1)}%` },
           { label: "海外背景", value: `${(founderStats.overseasRatio * 100).toFixed(1)}%` },
         ].map((stat, i) => (
           <div key={i} className="flex flex-col items-start space-y-1">

@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { SearchHero } from "@/components/search-hero";
-import { getBatches, getAllProjects } from "@/lib/data";
+import { getBatches, getAllProjects, getGlobalStats } from "@/lib/data";
 import { SectorTrendChart } from "@/components/charts/sector-trend-chart";
 import { UniversityPowerChart } from "@/components/charts/university-power-chart";
 import Link from "next/link";
@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 export default function Home() {
   const batches = getBatches();
   const projects = getAllProjects();
-  const totalProjects = projects.length;
+  const stats = getGlobalStats();
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -27,9 +27,9 @@ export default function Home() {
               奇绩创坛<br /> 历届项目数据洞察
             </h1>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              从 2021 到 2025，探索中国最前沿的 Researcher Founders。
+              从 2021 到 2025，全景呈现中国最具野心的技术创新者。
               <br/>
-              透视技术趋势演变，发现下一个独角兽。
+              透视前沿趋势演变，发现下一个独角兽。
             </p>
             
             {/* Search Component */}
@@ -41,23 +41,23 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 w-full max-w-3xl">
               <div className="flex flex-col items-center p-4 rounded-lg bg-secondary/20 border border-border/50">
                 <Database className="h-5 w-5 mb-2 text-brand" />
-                <span className="text-2xl font-bold">{totalProjects}</span>
+                <span className="text-2xl font-bold">{stats.totalProjects}</span>
                 <span className="text-xs text-muted-foreground">收录项目</span>
               </div>
               <div className="flex flex-col items-center p-4 rounded-lg bg-secondary/20 border border-border/50">
                 <Users className="h-5 w-5 mb-2 text-brand" />
-                <span className="text-2xl font-bold">9</span>
-                <span className="text-xs text-muted-foreground">创业营期数</span>
+                <span className="text-2xl font-bold">{stats.totalFounders}</span>
+                <span className="text-xs text-muted-foreground">收录创始人</span>
               </div>
               <div className="flex flex-col items-center p-4 rounded-lg bg-secondary/20 border border-border/50">
                 <GraduationCap className="h-5 w-5 mb-2 text-brand" />
-                <span className="text-2xl font-bold">500+</span>
-                <span className="text-xs text-muted-foreground">博士/校友</span>
+                <span className="text-2xl font-bold">{(stats.advancedDegreeRatio * 100).toFixed(0)}%</span>
+                <span className="text-xs text-muted-foreground">硕士及以上</span>
               </div>
                <div className="flex flex-col items-center p-4 rounded-lg bg-secondary/20 border border-border/50">
-                <TrendingUp className="h-5 w-5 mb-2 text-brand" />
-                <span className="text-2xl font-bold">5年</span>
-                <span className="text-xs text-muted-foreground">数据跨度</span>
+                <Globe className="h-5 w-5 mb-2 text-brand" />
+                <span className="text-2xl font-bold">{(stats.overseasRatio * 100).toFixed(0)}%</span>
+                <span className="text-xs text-muted-foreground">海外背景</span>
               </div>
             </div>
           </div>
@@ -200,7 +200,7 @@ export default function Home() {
         <div className="container px-4 mx-auto text-center text-sm text-muted-foreground">
           <p>© 2025 MiraclePlus Gallery. Unofficial Fan Project.</p>
           <p className="mt-2">
-            Built with Next.js, Tailwind CSS & Recharts. Data parsed from public articles.
+            Built with Next.js, Tailwind CSS & ECharts. Data parsed from public articles.
           </p>
         </div>
       </footer>

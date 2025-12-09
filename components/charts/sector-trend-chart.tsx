@@ -27,10 +27,12 @@ export function SectorTrendChart({ projects, height = 400 }: SectorTrendChartPro
 
   // Create a map for Category ID -> Chinese Label
   const categoryLabelMap = useMemo(() => {
-    return TAXONOMY.reduce((acc, curr) => {
+    const map = TAXONOMY.reduce((acc, curr) => {
       acc[curr.category] = curr.label;
       return acc;
     }, {} as Record<string, string>);
+    map["Other"] = "其他";
+    return map;
   }, []);
 
   const derivePrimaryCategory = (tags: string[]): Category => {
@@ -67,7 +69,7 @@ export function SectorTrendChart({ projects, height = 400 }: SectorTrendChartPro
     });
 
     // 3. Transform to percentages
-    const categories = ["AI", "Bio", "Hardware", "Software", "Future", "Consumer"];
+    const categories = ["AI", "Bio", "Hardware", "Software", "Future", "Consumer", "Other"];
     
     return {
        batches: sortedBatches,
@@ -88,7 +90,7 @@ export function SectorTrendChart({ projects, height = 400 }: SectorTrendChartPro
   }, [projects, categoryLabelMap]);
 
   const option = {
-    color: ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#6366f1'],
+    color: ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#6366f1', '#9ca3af'],
     title: {
       text: '赛道风向标',
       subtext: '核心赛道在各期项目中的占比趋势',

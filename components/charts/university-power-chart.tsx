@@ -16,23 +16,36 @@ export function UniversityPowerChart({ projects, limit = 15, height = 600 }: Uni
 
   // Compute stats: Top unis overall
   const data = useMemo(() => {
-    const uniCounts: Record<string, number> = {};
-    const overseasKeywords = ["University", "College", "Institute", "MIT", "CMU", "Stanford", "Harvard", "Oxford", "Cambridge"];
+    const uniFounders: Record<string, Set<string>> = {};
+    const overseasKeywords = ["University", "College", "Institute", "MIT", "CMU", "Stanford", "Harvard", "Oxford", "Cambridge", "Yale", "Princeton", "Berkeley", "UCLA", "UCSD", "Cornell", "Columbia", "Imperial", "UCL", "NUS", "NTU", "ETH", "EPFL", "Toronto", "Waterloo"];
+    const overseasChineseKeywords = ["香港", "澳门", "新加坡", "斯坦福", "哈佛", "麻省理工", "剑桥", "牛津", "耶鲁", "普林斯顿", "伯克利", "哥伦比亚", "康奈尔", "帝国理工", "伦敦大学", "卡内基梅隆", "芝加哥", "宾夕法尼亚", "多伦多", "滑铁卢"];
+    const chinaKeywords = ["china", "chinese", "beijing", "shanghai", "tsinghua", "peking", "fudan", "zhejiang", "nanjing", "wuhan", "hust", "harbin", "xi'an", "tongji", "nankai", "xiamen", "shandong", "sichuan", "jilin", "dalian", "beihang", "bit", "ustc", "renmin", "shenzhen", "guangzhou", "chengdu", "chongqing", "tianjin", "hangzhou", "suzhou", "ningbo", "kunshan", "westlake", "scut", "sustech"];
 
     projects.forEach(p => {
       p.founders.forEach(f => {
+        const founderId = f.name || "Unknown"; // Use name as ID for deduplication
         f.education.forEach(edu => {
           if (!edu) return;
-          // Normalize done in lib/data, assume clean here for now or re-clean if needed
-          uniCounts[edu] = (uniCounts[edu] || 0) + 1;
+          if (!uniFounders[edu]) {
+            uniFounders[edu] = new Set();
+          }
+          uniFounders[edu].add(founderId);
         });
       });
     });
 
-    return Object.entries(uniCounts)
-      .map(([name, value]) => {
-        // Simple heuristic for color coding
-        const isOverseas = overseasKeywords.some(k => name.includes(k) && !name.includes("Chinese") && !name.includes("Beijing"));
+    return Object.entries(uniFounders)
+      .map(([name, foundersSet]) => {
+        const value = foundersSet.size;
+        
+        // Improved overseas detection
+        const n = name.toLowerCase();
+        const hasEnglishKeyword = overseasKeywords.some(k => n.includes(k.toLowerCase()));
+        const hasChineseKeyword = overseasChineseKeywords.some(k => name.includes(k));
+        const isChina = chinaKeywords.some(k => n.includes(k.toLowerCase()));
+        
+        const isOverseas = (hasEnglishKeyword || hasChineseKeyword) && !isChina;
+        
         return { name, value, isOverseas };
       })
       .sort((a, b) => b.value - a.value)
