@@ -149,7 +149,7 @@ export function InsightsDashboard({ projects }: InsightsDashboardProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
            <div>
              <h3 className="text-sm font-medium text-muted-foreground mb-6 pl-2">高校势力榜 Top 15</h3>
-             <UniversityPowerChart projects={filteredProjects} />
+             <UniversityPowerChart projects={filteredProjects} height={350} />
            </div>
            
            <div>
