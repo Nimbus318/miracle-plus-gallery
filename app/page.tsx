@@ -196,7 +196,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="py-6 border-t border-gray-100 dark:border-white/10 bg-secondary/30">
+      <footer className="py-6 border-t border-border/40 bg-secondary/30">
         <div className="container px-4 mx-auto text-center text-sm text-muted-foreground">
           <p>© 2025 MiraclePlus Gallery. Unofficial Fan Project.</p>
           <p className="mt-2">

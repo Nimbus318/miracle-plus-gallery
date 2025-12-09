@@ -13,6 +13,7 @@ interface ProjectImageProps {
 
 export function ProjectImage({ src, alt, priority = false }: ProjectImageProps) {
   const [isLoading, setIsLoading] = useState(true)
+  const [currentSrc, setCurrentSrc] = useState(src.replace(/\.(jpg|jpeg|png)$/i, '.webp'))
 
   return (
     <div className="aspect-video w-full rounded-xl overflow-hidden bg-secondary/30 relative">
@@ -20,7 +21,7 @@ export function ProjectImage({ src, alt, priority = false }: ProjectImageProps) 
         <Skeleton className="absolute inset-0 z-10 w-full h-full bg-muted-foreground/20 pointer-events-none" />
       )}
       <Image 
-        src={src} 
+        src={currentSrc} 
         alt={alt}
         fill
         className={cn(
@@ -30,7 +31,14 @@ export function ProjectImage({ src, alt, priority = false }: ProjectImageProps) 
         sizes="(max-width: 1024px) 100vw, 800px"
         priority={priority}
         onLoad={() => setIsLoading(false)}
-        onError={() => setIsLoading(false)}
+        onError={() => {
+          if (currentSrc.endsWith('.webp') && currentSrc !== src) {
+            // Try loading the original format if WebP fails
+            setCurrentSrc(src);
+          } else {
+            setIsLoading(false);
+          }
+        }}
       />
     </div>
   )

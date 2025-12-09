@@ -16,6 +16,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const [isLoading, setIsLoading] = useState(true)
+  const [imgSrc, setImgSrc] = useState(project.image_url ? project.image_url.replace(/\.(jpg|jpeg|png)$/i, '.webp') : null)
 
   // 提取该项目所有 Founder 的去重学校和公司标签
   const schools = Array.from(new Set(project.founders.flatMap(f => f.education))).slice(0, 2);
@@ -23,16 +24,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <Link href={`/project/${project.id}`} className="group h-full block">
-      <Card className="h-full overflow-hidden border-0 bg-white/50 shadow-sm transition-all duration-300 [@media(hover:hover)]:hover:shadow-xl [@media(hover:hover)]:hover:-translate-y-1 [@media(hover:hover)]:hover:bg-white dark:bg-white/5">
+      <Card
+        className={cn(
+          "h-full overflow-hidden border-0 bg-white/5 shadow-sm transition-all duration-300",
+          "hover:shadow-xl hover:-translate-y-1 hover:bg-white/10",
+        )}
+      >
         {/* 图片区域：如果有图展示图，没图展示 Placeholder 渐变 */}
         <div className="aspect-video w-full relative bg-secondary/50 overflow-hidden">
-          {project.image_url ? (
+          {imgSrc ? (
             <div className="w-full h-full relative">
               {isLoading && (
                 <Skeleton className="absolute inset-0 z-10 w-full h-full rounded-none bg-muted pointer-events-none" />
               )}
               <Image 
-                src={project.image_url} 
+                src={imgSrc} 
                 alt={project.name}
                 fill
                 className={cn(
@@ -41,7 +47,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 )}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 onLoad={() => setIsLoading(false)}
-                onError={() => setIsLoading(false)}
+                onError={() => {
+                  if (imgSrc.endsWith('.webp') && imgSrc !== project.image_url) {
+                     setImgSrc(project.image_url);
+                  } else {
+                     setIsLoading(false);
+                  }
+                }}
               />
             </div>
           ) : (
