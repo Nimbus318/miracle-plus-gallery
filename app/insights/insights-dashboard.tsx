@@ -125,11 +125,15 @@ export function InsightsDashboard({ projects }: InsightsDashboardProps) {
            </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-           <div className="lg:col-span-2 space-y-4">
-              <SectorTrendChart projects={filteredProjects} />
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+           <div className="lg:col-span-3 space-y-4">
+              <SectorTrendChart 
+                key={selectedCategories.join(',')}
+                projects={filteredProjects} 
+                selectedCategories={selectedCategories as any} 
+              />
            </div>
-           <div className="lg:col-span-1">
+           <div className="lg:col-span-2">
               <YearlyBuzzwords projects={filteredProjects} />
            </div>
         </div>

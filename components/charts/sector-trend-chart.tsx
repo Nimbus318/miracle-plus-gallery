@@ -8,7 +8,8 @@ import { Category, getCategoryForTag, TAXONOMY } from "@/lib/taxonomy";
 
 interface SectorTrendChartProps {
   projects: Project[];
-  height?: number; // Add optional height prop
+  height?: number;
+  selectedCategories?: Category[];
 }
 
 type TooltipPoint = {
@@ -22,10 +23,9 @@ type ClickParams = {
   seriesName: string;
 };
 
-export function SectorTrendChart({ projects, height = 400 }: SectorTrendChartProps) {
+export function SectorTrendChart({ projects, height = 400, selectedCategories = [] }: SectorTrendChartProps) {
   const router = useRouter();
 
-  // Create a map for Category ID -> Chinese Label
   const categoryLabelMap = useMemo(() => {
     const map = TAXONOMY.reduce((acc, curr) => {
       acc[curr.category] = curr.label;
@@ -35,67 +35,153 @@ export function SectorTrendChart({ projects, height = 400 }: SectorTrendChartPro
     return map;
   }, []);
 
-  const derivePrimaryCategory = (tags: string[]): Category => {
-    const priority: Category[] = ["AI", "Hardware", "Software", "Bio", "Future", "Consumer", "Other"];
-    const seen = new Set<Category>();
-    tags.forEach(tag => {
-      seen.add(getCategoryForTag(tag));
-    });
-    return priority.find(p => seen.has(p)) || "Other";
-  };
+  const chartMode = useMemo(() => {
+    if (selectedCategories.length === 0) return 'overview';
+    if (selectedCategories.length === 1) return 'drilldown';
+    return 'comparison';
+  }, [selectedCategories]);
 
-  // Process Data: Calculate percentage of each category per batch
   const data = useMemo(() => {
-    const batchMap: Record<string, Record<string, number>> = {};
     const batchTotals: Record<string, number> = {};
+    const allBatches = new Set<string>();
+
+    // 1. Pre-process Projects & Batches
+    // Map Project -> Set of Categories
+    const projectCategoryMap = new Map<string, Set<Category>>();
     
-    // 1. Count categories per batch
     projects.forEach(p => {
       const batch = p.batch_id;
-      const category = derivePrimaryCategory(p.tags || []);
-      
-      if (!batchMap[batch]) batchMap[batch] = {};
-      batchMap[batch][category] = (batchMap[batch][category] || 0) + 1;
-      
+      allBatches.add(batch);
       batchTotals[batch] = (batchTotals[batch] || 0) + 1;
+
+      const cats = new Set<Category>();
+      p.tags.forEach(t => {
+        const c = getCategoryForTag(t);
+        // Only collect specific categories first
+        if (c !== 'Other') {
+          cats.add(c);
+        }
+      });
+      
+      // Implement "Exclusive Other": 
+      // Only assign 'Other' if the project has NO specific categories
+      if (cats.size === 0) {
+        cats.add('Other');
+      }
+      
+      projectCategoryMap.set(p.id, cats);
     });
 
-    // 2. Sort batches chronologically
-    const sortedBatches = Object.keys(batchMap).sort((a, b) => {
+    // Sort Batches
+    const sortedBatches = Array.from(allBatches).sort((a, b) => {
        const yA = parseInt(a.substring(0, 4));
        const yB = parseInt(b.substring(0, 4));
        if (yA !== yB) return yA - yB;
        return (a.endsWith('F') ? 2 : 1) - (b.endsWith('F') ? 2 : 1);
     });
 
-    // 3. Transform to percentages
-    const categories = ["AI", "Bio", "Hardware", "Software", "Future", "Consumer", "Other"];
+    // --- MODE: DRILL DOWN (Tags) ---
+    if (chartMode === 'drilldown') {
+       const targetCategory = selectedCategories[0];
+       const taxonomyNode = TAXONOMY.find(n => n.category === targetCategory);
+       const allowedTags = new Set(taxonomyNode?.tags || []);
+       
+       // Identify Top Tags
+       const tagCounts: Record<string, number> = {};
+       projects.forEach(p => {
+          p.tags.forEach(t => {
+             if (allowedTags.has(t)) {
+                tagCounts[t] = (tagCounts[t] || 0) + 1;
+             }
+          });
+       });
+       
+       const topTags = Object.entries(tagCounts)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 7)
+          .map(e => e[0]);
+
+       // Build Series (Tag Level)
+       const series = topTags.map(tag => {
+         const batchCounts: Record<string, number> = {};
+         projects.forEach(p => {
+           if (p.tags.includes(tag)) {
+             batchCounts[p.batch_id] = (batchCounts[p.batch_id] || 0) + 1;
+           }
+         });
+
+         return {
+             name: tag,
+             originalKey: tag,
+             type: 'line',
+             smooth: true,
+             symbol: 'circle',
+             symbolSize: 6,
+             data: sortedBatches.map(batch => {
+                const count = batchCounts[batch] || 0;
+                const total = batchTotals[batch] || 1;
+                return parseFloat(((count / total) * 100).toFixed(1));
+             })
+         };
+       });
+
+       return {
+          batches: sortedBatches,
+          series,
+          title: `${categoryLabelMap[targetCategory] || targetCategory} · 细分趋势`
+       };
+    } 
     
-    return {
-       batches: sortedBatches,
-       series: categories.map(cat => ({
-         name: categoryLabelMap[cat] || cat, // Use Chinese Label
-         originalKey: cat, // Keep original key for routing
-         type: 'line',
-         smooth: true,
-         symbol: 'circle',
-         symbolSize: 6,
-         data: sortedBatches.map(batch => {
-           const count = batchMap[batch][cat] || 0;
-           const total = batchTotals[batch] || 1;
-           return parseFloat(((count / total) * 100).toFixed(1));
-         })
-       }))
-    };
-  }, [projects, categoryLabelMap]);
+    // --- MODE: OVERVIEW or COMPARISON (Categories) ---
+    else {
+        let categoriesToShow: Category[] = [];
+        if (chartMode === 'comparison') {
+           categoriesToShow = selectedCategories;
+        } else {
+           categoriesToShow = ["AI", "Bio", "Hardware", "Software", "Future", "Consumer", "Other"];
+        }
+
+        const series = categoriesToShow.map(cat => {
+           const batchCounts: Record<string, number> = {};
+           
+           projects.forEach(p => {
+              const pCats = projectCategoryMap.get(p.id);
+              if (pCats && pCats.has(cat)) {
+                 batchCounts[p.batch_id] = (batchCounts[p.batch_id] || 0) + 1;
+              }
+           });
+
+           return {
+             name: categoryLabelMap[cat] || cat, 
+             originalKey: cat,
+             type: 'line',
+             smooth: true,
+             symbol: 'circle',
+             symbolSize: 6,
+             data: sortedBatches.map(batch => {
+               const count = batchCounts[batch] || 0;
+               const total = batchTotals[batch] || 1;
+               return parseFloat(((count / total) * 100).toFixed(1));
+             })
+           };
+        });
+
+        return {
+           batches: sortedBatches,
+           series,
+           title: chartMode === 'comparison' ? '赛道对比' : '赛道风向标'
+        };
+    }
+  }, [projects, selectedCategories, chartMode, categoryLabelMap]);
 
   const option = {
     color: ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#6366f1', '#9ca3af'],
     title: {
-      text: '赛道风向标',
-      subtext: '核心赛道在各期项目中的占比趋势',
-      left: 'left',
-      show: false // Hide internal title to use external one
+      text: data.title,
+      textStyle: { fontSize: 14, fontWeight: 'normal', color: '#666' },
+      left: 'center',
+      top: 0,
+      show: true 
     },
     tooltip: {
       trigger: 'axis',
@@ -117,14 +203,14 @@ export function SectorTrendChart({ projects, height = 400 }: SectorTrendChartPro
     },
     legend: {
       data: data.series.map(s => s.name),
-      top: 0,
+      top: 25,
       icon: 'circle'
     },
     grid: {
       left: '0%',
       right: '2%',
       bottom: '3%',
-      top: '15%',
+      top: '20%',
       containLabel: true
     },
     xAxis: {
@@ -136,21 +222,19 @@ export function SectorTrendChart({ projects, height = 400 }: SectorTrendChartPro
     },
     yAxis: {
       type: 'value',
-      // max: 100, // Removed fixed max
       splitLine: {
         lineStyle: {
           type: 'dashed'
         }
+      },
+      axisLabel: {
+        formatter: '{value}%'
       }
     },
     series: data.series
   };
 
   const handleChartClick = (params: ClickParams) => {
-    // We need to map back from Chinese Label to Category Key for the URL
-    // Or we can attach the key to the series data, but ECharts click event params are tricky.
-    // Easiest way: Find the series object that matches the name.
-    
     const clickedSeriesName = params.seriesName;
     const seriesItem = data.series.find(s => s.name === clickedSeriesName);
     

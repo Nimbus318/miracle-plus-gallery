@@ -1,7 +1,6 @@
 import { getBatches, getProjectsByBatch, getProjectById } from "@/lib/data";
 import { Navbar } from "@/components/navbar";
-import { ProjectCard } from "@/components/project-card";
-import { Badge } from "@/components/ui/badge";
+import { BatchProjectList } from "./batch-project-list";
 import Link from "next/link";
 import { ArrowLeft, Calendar, MapPin, Users, Info } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -133,23 +132,7 @@ export default async function BatchPage({ params }: { params: Promise<{ id: stri
 
         {/* Filter & Grid */}
         <div className="container mx-auto px-4 py-12">
-          <div className="flex flex-col gap-8">
-            {/* 简单的标签云展示 */}
-            <div className="flex flex-wrap gap-2">
-              <span className="text-sm font-medium py-1">热门赛道：</span>
-              {allTags.slice(0, 10).map(tag => (
-                <Badge key={tag} variant="outline" className="cursor-default">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {sanitizedProjects.map(project => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-          </div>
+           <BatchProjectList projects={sanitizedProjects} topTags={allTags} />
         </div>
       </main>
     </div>

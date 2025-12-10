@@ -26,15 +26,22 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
     !!val && categorySet.has(val as (typeof TAXONOMY)[number]["category"])
 
   const initialTag = searchParams.get("tag")
+  const initialExactTag = searchParams.get("exact_tag")
+  const initialCat = searchParams.get("cat")
   const initialQuery = searchParams.get("q") || searchParams.get("uni") || (initialTag && !isCategory(initialTag) ? initialTag : "")
+  const initialYear = searchParams.get("year") ? parseInt(searchParams.get("year")!) : null
 
   // --- State ---
   // Initialize state from URL params
   const [query, setQuery] = useState(initialQuery)
-  const [selectedYears, setSelectedYears] = useState<number[]>([])
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(
-    initialTag && isCategory(initialTag) ? [initialTag] : []
-  )
+  const [selectedYears, setSelectedYears] = useState<number[]>(initialYear ? [initialYear] : [])
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(() => {
+    const cats = new Set<string>()
+    if (initialTag && isCategory(initialTag)) cats.add(initialTag)
+    if (initialCat && isCategory(initialCat)) cats.add(initialCat)
+    return Array.from(cats)
+  })
+  const [exactTags, setExactTags] = useState<string[]>(initialExactTag ? [initialExactTag] : [])
   const searchKey = searchParams.toString()
   const [showPhDOnly, setShowPhDOnly] = useState(false)
   const [showOverseasOnly, setShowOverseasOnly] = useState(false)
@@ -69,6 +76,13 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
   // --- Filtering Logic ---
   const filteredProjects = useMemo(() => {
     const results = initialProjects.filter(p => {
+      // 0. Exact Tag Filter (New)
+      if (exactTags.length > 0) {
+        // Must contain ALL exact tags
+        const hasAllTags = exactTags.every(t => p.tags.includes(t))
+        if (!hasAllTags) return false
+      }
+
       // 1. Keyword Search
       if (query) {
         const q = query.toLowerCase()
@@ -141,7 +155,7 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
       
       return scoreB - scoreA;
     });
-  }, [initialProjects, query, selectedYears, selectedCategories, showPhDOnly, showOverseasOnly])
+  }, [initialProjects, query, selectedYears, selectedCategories, showPhDOnly, showOverseasOnly, exactTags])
 
   // --- Handlers ---
   const toggleYear = (year: number) => {
@@ -155,11 +169,22 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
       prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]
     )
   }
+  
+  const removeExactTag = (tag: string) => {
+    setExactTags(prev => prev.filter(t => t !== tag))
+  }
+
+  const toggleExactTag = (tag: string) => {
+    setExactTags(prev => 
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    )
+  }
 
   const clearFilters = () => {
     setQuery("")
     setSelectedYears([])
     setSelectedCategories([])
+    setExactTags([])
     setShowPhDOnly(false)
     setShowOverseasOnly(false)
   }
@@ -212,6 +237,28 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
                 ))}
               </div>
             </div>
+
+            {/* Dynamic Sub-Category Tags (Level 2) */}
+            {selectedCategories.length > 0 && (
+              <div className="space-y-3 mb-6 animate-in slide-in-from-left-2 duration-300">
+                <h4 className="text-sm font-medium text-muted-foreground">细分领域</h4>
+                <div className="flex flex-wrap gap-2">
+                  {TAXONOMY
+                    .filter(node => selectedCategories.includes(node.category))
+                    .flatMap(node => node.tags)
+                    .map(tag => (
+                      <Badge
+                        key={tag}
+                        variant={exactTags.includes(tag) ? "default" : "outline"}
+                        className="cursor-pointer hover:bg-secondary/80"
+                        onClick={() => toggleExactTag(tag)}
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                </div>
+              </div>
+            )}
 
             {/* Other Filters */}
             <div className="space-y-3">
@@ -319,10 +366,29 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
             </div>
 
             {/* Results Count & Active Tags */}
-            <div className="flex items-center justify-between">
-              <p className="text-sm text-muted-foreground">
-                找到 <span className="font-bold text-foreground">{filteredProjects.length}</span> 个项目
-              </p>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center justify-between">
+                <p className="text-sm text-muted-foreground">
+                  找到 <span className="font-bold text-foreground">{filteredProjects.length}</span> 个项目
+                </p>
+              </div>
+              
+              {/* Active Exact Tag Filters */}
+              {exactTags.length > 0 && (
+                 <div className="flex flex-wrap gap-2">
+                   {exactTags.map(tag => (
+                     <Badge 
+                       key={tag} 
+                       variant="default" 
+                       className="px-2 py-1 flex items-center gap-1 cursor-pointer hover:bg-primary/90"
+                       onClick={() => removeExactTag(tag)}
+                     >
+                       #{tag}
+                       <span className="ml-1 text-xs opacity-70">✕</span>
+                     </Badge>
+                   ))}
+                 </div>
+              )}
             </div>
           </div>
 
