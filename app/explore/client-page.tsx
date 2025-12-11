@@ -42,7 +42,13 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
     return Array.from(cats)
   })
   const [exactTags, setExactTags] = useState<string[]>(initialExactTag ? [initialExactTag] : [])
-  const searchKey = searchParams.toString()
+  // Keep component remounting in sync with filter URL params, but ignore projectId
+  // so opening the drawer doesn't remount and replay animations (e.g. sub-category slide-in)
+  const searchKey = useMemo(() => {
+    const params = new URLSearchParams(searchParams.toString())
+    params.delete("projectId")
+    return params.toString()
+  }, [searchParams])
   const [showPhDOnly, setShowPhDOnly] = useState(false)
   const [showOverseasOnly, setShowOverseasOnly] = useState(false)
   
