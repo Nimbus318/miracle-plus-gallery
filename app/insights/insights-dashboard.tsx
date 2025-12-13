@@ -7,6 +7,9 @@ import { useAnalytics } from "@/lib/hooks/use-analytics";
 import { SectorTrendChart } from "@/components/charts/sector-trend-chart";
 import { UniversityPowerChart } from "@/components/charts/university-power-chart";
 import { FounderDNAChart } from "@/components/charts/founder-dna-chart";
+import { FounderWorkHistoryChart } from "@/components/charts/founder-work-history-chart";
+import { FounderTrendChart } from "@/components/charts/founder-trend-chart";
+import { TeamSizeTrendChart } from "@/components/charts/team-size-trend-chart";
 import { YearlyBuzzwords } from "@/components/charts/yearly-buzzwords";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
@@ -33,7 +36,7 @@ export function InsightsDashboard({ projects }: InsightsDashboardProps) {
     setSelectedCategories([]);
   };
 
-  const { filteredProjects, founderStats } = useAnalytics(projects, {
+  const { filteredProjects, founderStats, workHistoryStats, founderTrendData } = useAnalytics(projects, {
     years: selectedYears,
     categories: selectedCategories
   });
@@ -146,19 +149,38 @@ export function InsightsDashboard({ projects }: InsightsDashboardProps) {
         <div className="px-2">
            <h2 className="text-xl font-light tracking-tight text-foreground">创新源头</h2>
            <p className="text-sm text-muted-foreground mt-1 max-w-2xl font-light">
-             创始团队的教育背景与地域分布
+             创始团队的画像分布、教育背景与职业履历
            </p>
         </div>
 
+        {/* Founder DNA (Persona) - Top Priority */}
+        <div className="bg-card/50 rounded-xl p-6 border border-border/50">
+           <h3 className="text-sm font-medium text-muted-foreground mb-6">创始人画像分布</h3>
+           <FounderDNAChart stats={founderStats} />
+        </div>
+
+        {/* Trends Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+           <div>
+              <h3 className="text-sm font-medium text-muted-foreground mb-6 pl-2">创始人画像趋势演变</h3>
+              <FounderTrendChart data={founderTrendData} />
+           </div>
+           <div>
+              <h3 className="text-sm font-medium text-muted-foreground mb-6 pl-2">创始团队规模演变</h3>
+              <TeamSizeTrendChart data={founderTrendData} />
+           </div>
+        </div>
+
+        {/* Source Row */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
            <div>
              <h3 className="text-sm font-medium text-muted-foreground mb-6 pl-2">高校势力榜 Top 15</h3>
-             <UniversityPowerChart projects={filteredProjects} height={350} />
+             <UniversityPowerChart projects={filteredProjects} height={400} />
            </div>
-           
+
            <div>
-              <h3 className="text-sm font-medium text-muted-foreground mb-6 text-center">创始人画像分布</h3>
-              <FounderDNAChart stats={founderStats} />
+             <h3 className="text-sm font-medium text-muted-foreground mb-6 pl-2">大厂/独角兽校友 Top 20</h3>
+             <FounderWorkHistoryChart stats={workHistoryStats} height={400} />
            </div>
         </div>
       </section>

@@ -5,7 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation"
 import { Project } from "@/lib/types"
 import { TAXONOMY, getCategoryForTag } from "@/lib/taxonomy"
 import { Navbar } from "@/components/navbar"
-import { Search, Filter, GraduationCap, Globe } from "lucide-react"
+import { Search, Filter, GraduationCap, Globe, Download } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -195,6 +195,31 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
     setShowOverseasOnly(false)
   }
 
+  const downloadCSV = () => {
+    const headers = ["Batch", "Name", "One Liner", "Tags", "Founders", "Education", "Work History"];
+    const rows = filteredProjects.map(p => [
+       p.batch_id,
+       `"${p.name.replace(/"/g, '""')}"`,
+       `"${p.one_liner.replace(/"/g, '""')}"`,
+       `"${p.tags.join('; ')}"`,
+       `"${p.founders.map(f => f.name).join('; ')}"`,
+       `"${p.founders.map(f => f.education.join('|')).join('; ')}"`,
+       `"${p.founders.map(f => f.work_history.join('|')).join('; ')}"`
+    ]);
+    
+    const csvContent = "data:text/csv;charset=utf-8,\uFEFF" 
+        + headers.join(",") + "\n" 
+        + rows.map(e => e.join(",")).join("\n");
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `miracleplus_projects_${new Date().toISOString().split('T')[0]}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   return (
     <div key={searchKey} className="min-h-screen bg-background flex flex-col">
       <Navbar />
@@ -377,6 +402,10 @@ export default function ExploreClientPage({ initialProjects }: ExploreClientPage
                 <p className="text-sm text-muted-foreground">
                   找到 <span className="font-bold text-foreground">{filteredProjects.length}</span> 个项目
                 </p>
+                <Button variant="ghost" size="sm" onClick={downloadCSV} className="text-xs text-muted-foreground hover:text-foreground h-8 px-2">
+                   <Download className="h-3.5 w-3.5 mr-1.5" />
+                   导出 CSV
+                </Button>
               </div>
               
               {/* Active Exact Tag Filters */}

@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Project } from "@/lib/types";
 import { Category, getCategoryForTag, normalizeUniversity } from "@/lib/taxonomy";
-import { analyzeFounderProfile } from "@/lib/founder-analysis";
+import { analyzeFounderProfile, analyzeWorkHistory } from "@/lib/founder-analysis";
 
 export interface AnalyticsFilters {
   years: number[];
@@ -121,22 +121,42 @@ export function useAnalytics(projects: Project[], filters: AnalyticsFilters) {
       isPhD: boolean;
       isAdvancedDegree: boolean;
       isOverseas: boolean;
+      isSerialEntrepreneur: boolean;
+      isYoungFounder: boolean;
     }>();
 
+    const teamSizeCounts: Record<string, number> = {
+      "1人": 0,
+      "2人": 0,
+      "3人": 0,
+      "4人+": 0
+    };
+
     filteredProjects.forEach(p => {
+      // 1. Team Size Stats
+      const count = p.founders.length;
+      if (count > 0) {
+        if (count === 1) teamSizeCounts["1人"]++;
+        else if (count === 2) teamSizeCounts["2人"]++;
+        else if (count === 3) teamSizeCounts["3人"]++;
+        else teamSizeCounts["4人+"]++;
+      }
+
+      // 2. Founder Profile Stats
       p.founders.forEach(f => {
         const name = f.name ? f.name.trim() : "";
         if (!name) return;
 
-        const profile = analyzeFounderProfile(f);
+        const profile = analyzeFounderProfile(f, p.batch_id);
         const existing = uniqueFounders.get(name);
 
         if (existing) {
-           // 合并信息
            uniqueFounders.set(name, {
              isPhD: existing.isPhD || profile.isPhD,
              isAdvancedDegree: existing.isAdvancedDegree || profile.isAdvancedDegree,
-             isOverseas: existing.isOverseas || profile.isOverseas
+             isOverseas: existing.isOverseas || profile.isOverseas,
+             isSerialEntrepreneur: existing.isSerialEntrepreneur || profile.isSerialEntrepreneur,
+             isYoungFounder: existing.isYoungFounder || profile.isYoungFounder
            });
         } else {
            uniqueFounders.set(name, profile);
@@ -147,27 +167,105 @@ export function useAnalytics(projects: Project[], filters: AnalyticsFilters) {
     let advancedDegreeCount = 0;
     let phdCount = 0;
     let overseasCount = 0;
-    const totalFounders = uniqueFounders.size;
+    let serialCount = 0;
+    let youngCount = 0;
 
     uniqueFounders.forEach(profile => {
         if (profile.isAdvancedDegree) advancedDegreeCount++;
         if (profile.isPhD) phdCount++;
         if (profile.isOverseas) overseasCount++;
+        if (profile.isSerialEntrepreneur) serialCount++;
+        if (profile.isYoungFounder) youngCount++;
     });
+
+    const totalFounders = uniqueFounders.size;
+    
+    // Sort team size for chart
+    const teamSizeDistribution = [
+      { name: "1人", value: teamSizeCounts["1人"] },
+      { name: "2人", value: teamSizeCounts["2人"] },
+      { name: "3人", value: teamSizeCounts["3人"] },
+      { name: "4人+", value: teamSizeCounts["4人+"] }
+    ];
 
     return {
       advancedDegreeRatio: totalFounders ? (advancedDegreeCount / totalFounders) : 0,
       phdRatio: totalFounders ? (phdCount / totalFounders) : 0,
       overseasRatio: totalFounders ? (overseasCount / totalFounders) : 0,
+      serialEntrepreneurRatio: totalFounders ? (serialCount / totalFounders) : 0,
+      youngFounderRatio: totalFounders ? (youngCount / totalFounders) : 0,
+      teamSizeDistribution,
       totalFounders,
       totalProjects: filteredProjects.length
     };
   }, [filteredProjects]);
 
+  // 6. Compute Founder Trends (Over Time) - Ignores Year Filter, Respects Category Filter
+  const founderTrendData = useMemo(() => {
+    // 1. Filter by Category only
+    const trendProjects = projects.filter(p => {
+       if (filters.categories.length > 0) {
+        const pCats = p.tags.map(t => getCategoryForTag(t));
+        if (!pCats.some(c => filters.categories.includes(c))) return false;
+       }
+       return true;
+    });
+
+    // 2. Group by Year
+    const yearMap = new Map<string, Project[]>();
+    trendProjects.forEach(p => {
+       const year = p.batch_id.substring(0, 4);
+       if (!yearMap.has(year)) yearMap.set(year, []);
+       yearMap.get(year)?.push(p);
+    });
+
+    const sortedYears = Array.from(yearMap.keys()).sort();
+
+    return sortedYears.map(year => {
+       const yearProjects = yearMap.get(year) || [];
+       let phdCount = 0;
+       let youngCount = 0;
+       let overseasCount = 0;
+       let serialCount = 0;
+       let totalFounders = 0;
+       
+       yearProjects.forEach(p => {
+          p.founders.forEach(f => {
+             totalFounders++;
+             // Pass batch_id for accurate student detection
+             const profile = analyzeFounderProfile(f, p.batch_id);
+             if (profile.isPhD) phdCount++;
+             if (profile.isYoungFounder) youngCount++;
+             if (profile.isOverseas) overseasCount++;
+             if (profile.isSerialEntrepreneur) serialCount++;
+          });
+       });
+       
+       const validProjects = yearProjects.filter(p => p.founders.length > 0);
+       const validProjectCount = validProjects.length;
+
+       return {
+          name: year,
+          phd: totalFounders ? (phdCount / totalFounders) : 0,
+          young: totalFounders ? (youngCount / totalFounders) : 0,
+          overseas: totalFounders ? (overseasCount / totalFounders) : 0,
+          serial: totalFounders ? (serialCount / totalFounders) : 0,
+          avgTeamSize: validProjectCount ? (totalFounders / validProjectCount) : 0
+       };
+    });
+  }, [projects, filters.categories]);
+
+  // 7. Compute Work History (Big Tech / Star Startups)
+  const workHistoryStats = useMemo(() => {
+    return analyzeWorkHistory(filteredProjects);
+  }, [filteredProjects]);
+
   return {
     filteredProjects,
     sectorTrendData,
+    founderTrendData,
     universityStats,
-    founderStats
+    founderStats,
+    workHistoryStats
   };
 }

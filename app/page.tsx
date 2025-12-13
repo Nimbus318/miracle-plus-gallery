@@ -4,8 +4,9 @@ import { getBatches, getAllProjects, getGlobalStats } from "@/lib/data";
 import { SectorTrendChart } from "@/components/charts/sector-trend-chart";
 import { UniversityPowerChart } from "@/components/charts/university-power-chart";
 import Link from "next/link";
-import { Sparkles, Zap, GraduationCap, Globe, Database, Users, TrendingUp } from "lucide-react";
+import { Sparkles, Zap, GraduationCap, Globe, Database, Users, TrendingUp, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const batches = getBatches();
@@ -70,9 +71,17 @@ export default function Home() {
       {/* Global Insights Dashboard */}
       <section className="py-12 bg-secondary/30">
         <div className="container px-4 mx-auto">
-          <div className="flex flex-col space-y-2 mb-8">
-            <h2 className="text-2xl font-bold tracking-tight">全貌概览</h2>
-            <p className="text-muted-foreground">从 2021 到 2025，见证中国技术创业的演进之路</p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div className="flex flex-col space-y-2">
+              <h2 className="text-2xl font-bold tracking-tight">全貌概览</h2>
+              <p className="text-muted-foreground">从 2021 到 2025，见证中国技术创业的演进之路</p>
+            </div>
+            <Link href="/insights" className="self-center md:self-auto">
+              <Button size="lg" className="group shadow-lg hover:shadow-brand/20 transition-all">
+                深度解读：创业趋势与人才画像
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

@@ -61,3 +61,4 @@ console.log(`Total Founders: ${totalFounders}`);
 console.log(`Overseas Founders: ${overseasFounders}`);
 console.log(`Ratio: ${(overseasFounders / totalFounders * 100).toFixed(2)}%`);
 
+

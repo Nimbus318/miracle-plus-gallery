@@ -46,3 +46,4 @@ console.log(`Total Founders: ${totalFounders}`);
 console.log(`Advanced Degree Founders (PhD || Master || MBA): ${advancedFounders}`);
 console.log(`Ratio: ${(advancedFounders / totalFounders * 100).toFixed(2)}%`);
 
+
