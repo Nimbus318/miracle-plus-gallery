@@ -9,16 +9,16 @@
       "insights": "数据洞察"
     },
     "footer": {
-      "copyright": "© 2025 MiraclePlus Gallery. Unofficial Fan Project.",
+      "copyright": "© 2026 MiraclePlus Gallery. Unofficial Fan Project.",
       "techStack": "Built with Next.js, Tailwind CSS & ECharts. Data parsed from public articles."
     }
   },
   "home": {
     "hero": {
-      "badge": "✨ 收录 2021-2025 完整创业档案",
+      "badge": "✨ 收录 2021-2026 完整创业档案",
       "title_line1": "奇绩创坛",
       "title_line2": "历届项目数据洞察",
-      "description_line1": "从 2021 到 2025，全景呈现中国最具野心的技术创新者。",
+      "description_line1": "从 2021 到 2026，全景呈现中国最具野心的技术创新者。",
       "description_line2": "透视前沿趋势演变，发现下一个独角兽。",
       "stats": {
         "projects": "收录项目",
@@ -40,11 +40,11 @@
     },
     "insights_section": {
       "title": "全貌概览",
-      "subtitle": "从 2021 到 2025，见证中国技术创业的演进之路",
+      "subtitle": "从 2021 到 2026，见证中国技术创业的演进之路",
       "cta": "深度解读：创业趋势与人才画像",
       "sector_chart": {
         "title": "赛道风向标",
-        "desc": "AI 与硬科技赛道在过去五年中的占比攀升趋势"
+        "desc": "按项目主赛道统计的历年结构变化"
       },
       "uni_chart": {
         "title": "高校势力榜 Top 10",
@@ -140,6 +140,10 @@
        "showing": "显示 {count} 个项目"
     },
     "batch_info": {
+      "2026S": {
+        "name": "2026 春季创业营",
+        "desc": "研究型创业者占比 45%，56 个项目覆盖智能体、具身与物理智能、数据、基础设施及 FDE 咨询等方向。"
+      },
       "2025F": {
         "name": "2025 秋季创业营",
         "desc": "创新的门槛迅速降低、价值创造逻辑重塑，创新边界不断拓展。"

@@ -25,6 +25,15 @@ type ClickParams = {
   seriesName: string;
 };
 
+function getPrimaryCategory(tags: string[]): Category {
+  for (const tag of tags) {
+    const category = getCategoryForTag(tag);
+    if (category !== "Other") return category;
+  }
+
+  return "Other";
+}
+
 export function SectorTrendChart({ projects, height = 400, selectedCategories = [], dict }: SectorTrendChartProps) {
   const router = useRouter();
 
@@ -53,8 +62,9 @@ export function SectorTrendChart({ projects, height = 400, selectedCategories = 
     const allBatches = new Set<string>();
 
     // 1. Pre-process Projects & Batches
-    // Map Project -> Set of Categories
+    // Map Project -> Set of Categories for filtering/drilldown.
     const projectCategoryMap = new Map<string, Set<Category>>();
+    const projectPrimaryCategoryMap = new Map<string, Category>();
     
     projects.forEach(p => {
       const batch = p.batch_id;
@@ -77,6 +87,7 @@ export function SectorTrendChart({ projects, height = 400, selectedCategories = 
       }
       
       projectCategoryMap.set(p.id, cats);
+      projectPrimaryCategoryMap.set(p.id, getPrimaryCategory(p.tags));
     });
 
     // Sort Batches
@@ -152,8 +163,8 @@ export function SectorTrendChart({ projects, height = 400, selectedCategories = 
            const batchCounts: Record<string, number> = {};
            
            projects.forEach(p => {
-              const pCats = projectCategoryMap.get(p.id);
-              if (pCats && pCats.has(cat)) {
+              const primaryCategory = projectPrimaryCategoryMap.get(p.id);
+              if (primaryCategory === cat) {
                  batchCounts[p.batch_id] = (batchCounts[p.batch_id] || 0) + 1;
               }
            });

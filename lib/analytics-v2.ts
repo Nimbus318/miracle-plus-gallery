@@ -14,8 +14,11 @@ export function getCategoryTrends() {
   // 注意：我们按"年"而不是"届"来聚合，为了让河流图更平滑
   const yearMap: Record<string, Record<string, number>> = {};
   
-  // 初始化年份
-  const years = [2021, 2022, 2023, 2024, 2025];
+  const years = Array.from(new Set(
+    projects
+      .map(p => parseInt(p.batch_id.substring(0, 4), 10))
+      .filter(Number.isFinite)
+  )).sort((a, b) => a - b);
   years.forEach(y => yearMap[y] = {});
 
   projects.forEach(p => {

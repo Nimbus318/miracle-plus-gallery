@@ -83,7 +83,13 @@ export default function ExploreClientPage({ initialProjects, lang, dict }: Explo
   
   
   // --- Constants ---
-  const years = [2025, 2024, 2023, 2022, 2021]
+  const years = useMemo(() => {
+    const parsedYears = initialProjects
+      .map(project => parseInt(project.batch_id.substring(0, 4), 10))
+      .filter(Number.isFinite)
+
+    return Array.from(new Set(parsedYears)).sort((a, b) => b - a)
+  }, [initialProjects])
 
   // --- Filtering Logic ---
   const filteredProjects = useMemo(() => {

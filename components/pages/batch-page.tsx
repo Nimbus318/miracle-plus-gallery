@@ -18,6 +18,8 @@ interface BatchPageProps {
   dict: Dictionary
 }
 
+const LOW_SIGNAL_TOP_TAGS = new Set(["AI", "人工智能"]);
+
 export default function BatchPage({ id, lang, dict }: BatchPageProps) {
   const batches = getBatches();
   const batch = batches.find((b) => b.id === id);
@@ -58,6 +60,7 @@ export default function BatchPage({ id, lang, dict }: BatchPageProps) {
     });
   });
   const allTags = Object.entries(tagCounts)
+    .filter(([tag]) => !LOW_SIGNAL_TOP_TAGS.has(tag))
     .sort((a, b) => {
       if (b[1] === a[1]) return a[0].localeCompare(b[0]); 
       return b[1] - a[1];

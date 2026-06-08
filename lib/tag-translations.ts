@@ -106,6 +106,8 @@ export function getTranslatedStat(text: string, lang: 'zh' | 'en'): string {
   return text
     .replace('硕士及以上', "Master's+")
     .replace('博士及以上', "PhD+")
+    .replace('博士/博士后', "PhD/Postdoc")
+    .replace('公开履历估算', "public-profile estimate")
     .replace('平均', 'Avg ')
     .replace('岁', ' yo');
 }

@@ -1,5 +1,28 @@
 [
   {
+    "id": "2026S",
+    "name": "2026 春季创业营",
+    "year": 2026,
+    "season": "Spring",
+    "date": "2026-06-07",
+    "location": "北京",
+    "stats": {
+      "project_count": 56,
+      "acceptance_rate": "1%",
+      "phd_ratio": "57% 硕士及以上（公开履历估算）",
+      "doctoral_ratio": "33% 博士/博士后（公开履历估算）",
+      "researcher_founder_ratio": "45%"
+    },
+    "highlights": [
+      "智能体",
+      "具身与物理智能",
+      "数据",
+      "AI 基础设施",
+      "FDE & AI 咨询"
+    ],
+    "description": "研究型创业者占比 45%，56 个项目覆盖智能体、具身与物理智能、数据、基础设施及 FDE 咨询等方向。"
+  },
+  {
     "id": "2025F",
     "name": "2025 秋季创业营",
     "year": 2025,

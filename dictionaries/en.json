@@ -9,16 +9,16 @@
       "insights": "Insights"
     },
     "footer": {
-      "copyright": "© 2025 MiraclePlus Gallery. Unofficial Fan Project.",
+      "copyright": "© 2026 MiraclePlus Gallery. Unofficial Fan Project.",
       "techStack": "Built with Next.js, Tailwind CSS & ECharts. Data parsed from public articles."
     }
   },
   "home": {
     "hero": {
-      "badge": "✨ Including 2021-2025 Complete Startup Archive",
+      "badge": "✨ Including 2021-2026 Complete Startup Archive",
       "title_line1": "MiraclePlus (Formerly YC China)",
       "title_line2": "Startup Archive & Insights",
-      "description_line1": "From 2021 to 2025, a panoramic view of China's most ambitious tech innovators.",
+      "description_line1": "From 2021 to 2026, a panoramic view of China's most ambitious tech innovators.",
       "description_line2": "Discover trends and find the next unicorn.",
       "stats": {
         "projects": "Projects",
@@ -40,11 +40,11 @@
     },
     "insights_section": {
       "title": "Overview",
-      "subtitle": "Witness the evolution of tech entrepreneurship in China from 2021 to 2025",
+      "subtitle": "Witness the evolution of tech entrepreneurship in China from 2021 to 2026",
       "cta": "Deep Dive: Trends & Personas",
       "sector_chart": {
         "title": "Sector Trends",
-        "desc": "Rising share of AI & Deep Tech over the last 5 years"
+        "desc": "Yearly structure based on each project's primary sector"
       },
       "uni_chart": {
         "title": "Top Universities",
@@ -140,6 +140,10 @@
        "showing": "Showing {count} projects"
     },
     "batch_info": {
+      "2026S": {
+        "name": "2026 Spring Batch",
+        "desc": "Researcher founders account for 45%, with 56 projects spanning agents, embodied & physical intelligence, data, infrastructure, and FDE consulting."
+      },
       "2025F": {
         "name": "2025 Fall Batch",
         "desc": "Innovation thresholds drop rapidly, value creation logic is reshaped, and innovation boundaries continue to expand."

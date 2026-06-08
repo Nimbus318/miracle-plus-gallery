@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "MiraclePlus Gallery | 奇绩创坛项目数据洞察",
-  description: "非官方奇绩创坛项目数据库。探索 2021-2025 历届路演项目，发现 AI、具身智能、出海等赛道的下一个独角兽。",
+  description: "非官方奇绩创坛项目数据库。探索 2021-2026 历届路演项目，发现 AI、具身智能、出海等赛道的下一个独角兽。",
   icons: {
     icon: "/favicon.ico",
   },
